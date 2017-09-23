@@ -1,7 +1,7 @@
 <html>
 <head> 
 <meta charset="utf-8">
-
+modificacion de la pagina
 <body height="100%" width="100%">
 <table align="center" border="10">
 <td align="center"><script> document.write('<IMG SRC="vista/imagenes/ADSI.jpg">');</script></td>
