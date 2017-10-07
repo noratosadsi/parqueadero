@@ -7,7 +7,7 @@
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"> 
 <script src="bootstrap/js/bootstrap.min.js"></script> 
 </head> 
-<body>
+<body background="imagenes/tecnologia.jpg">
 
 <?php 
 
@@ -36,7 +36,7 @@ $ruta1="";
 <a class="navbar-brand" href="#">PROYECTO ADSI</a> 
 </div> 
 <ul class="nav navbar-nav"> 
-<li class="active"><a href="menuparqueadero.php">Home</a></li> 
+<li class="active"><a href="../vista/menuparqueadero.php">Inicio</a></li> 
 <li><a href="#">Ficha 1262139 G1-G2</a></li> 
 <li><a href="#">Jornada FSD</a></li>
 </ul> 
@@ -49,8 +49,8 @@ if(isset($_SESSION["usuario"])){ echo $_SESSION["usuario"]." ".$_SESSION["apelli
 </ul>
 </div>
 </nav>
-<h3 align="center"><?php echo "SISTEMA DE CONTROL DE PARQUEADERO"; ?></h3>
-<p align="center">MOCKUP PROYECTO</p> 
+<h3 align="center" style="color:#FFF"><?php echo "SISTEMA DE CONTROL DE PARQUEADERO"; ?></h3>
+<p align="center" style="color:#FFF">MOCKUP PROYECTO</p> 
 </div>
 </body>
 </html> 

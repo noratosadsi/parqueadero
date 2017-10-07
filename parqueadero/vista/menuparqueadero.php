@@ -44,7 +44,7 @@ LISTADO VEHICULOS COBRADOS</td>
 
 <td colspan="2" align="center"><BR>
 <button onclick="window.location.href='vehiculofactura.php'" width="500" style="color:#000000">
-FACTURAR PARQUEO</td>
+CONSULTAR FACTURA</td>
 
 <TABLE class="table">
 <div class="panel-heading"> 
@@ -59,6 +59,10 @@ REGISTRAR SALIDA
 <td colspan="2" align="center"><br>
 <button onclick="window.location.href='borrarvehiculo.php'" width="500" style="color:#000000">
 BORRAR REGISTRO
+</td>
+<td colspan="2" align="center"><br>
+<button onclick="window.location.href='../modelo/cupos.php'" width="500" style="color:#000000">
+ESTACIONAMIENTOS
 </td>
 </tr>
 

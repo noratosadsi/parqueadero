@@ -13,7 +13,7 @@
 <?php include_once 'header.php'; ?>
 
 
-<!-form2-->
+
 <div class="col-sm-12 col-md-12"> 
 <div class="panel panel-default"> 
 <!-- contenedor del titulo--> 
@@ -54,16 +54,22 @@
 <tr><td colspan="12" align="center"><H3>Descripción del vehiculo</H3></td></tr>
 
 <tr><td align="right">Tipo</td>
-<td><input type="text" name="tipo" ><br></td></tr>
+<td>
+<select name="tipo">
+<option value="moto">Moto</option>
+<option value="bicicleta">Bicicleta</option>
+</select>
+<br>
+</td></tr>
 <tr><td align="right">Descripcion</td>
 <td><input type="text" name="descripcion"><br></td></tr>
 <tr><td align="right">Fecha_Ingreso</td>
 <td><input type="datetime" disabled="enabled" value="<?php date_default_timezone_set("America/Bogota"); echo date("Y-m-d") . " " . date("h:i:sa");  ?>" name="fecha_hora" ><br></td>
 </tr>
 <tr><td colspan="12" align="center"><input type="submit" value="REGISTRAR VEHICULO"><br></td></tr>
-<table>
+</table>
 </form>
-
+<p name="error" align="center"><?php if(isset($_REQUEST['error'])) { echo $_REQUEST['error'];}?></p>
 
 </div> 
 </div> 
