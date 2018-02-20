@@ -92,9 +92,10 @@ $cambiarprecio->precio($mysql);
 	  $mysql->query("insert into detallefactura 
       (fechafactura, horaingreso, factura_idFactura) 
       values (now(),now(), $fac[idFactura])")
-      or die ($mysql->error);
-      $mysql->close();
-    
+      or die ($mysql->error);    
+	  
+	  $mysql->close();
+	  
       echo 'Vehiculo registrado';	
   }
   
@@ -140,7 +141,8 @@ $cambiarprecio->precio($mysql);
       on factura.idFactura=detallefactura.factura_idFactura
       inner join usuario
       on factura.usuario_rol_idrol=usuario.rol_idrol
-      where cliente.cedula=$_REQUEST[cedulacliente] and horasalida is not null")
+      where cliente.cedula=$_REQUEST[cedulacliente] and horasalida is not null
+	  and usuario.nombre='$_SESSION[login]' and usuario.apellido='$_SESSION[nombre]'")
   or die ($mysql->error);
   $act=$actualizar->fetch_array();
  

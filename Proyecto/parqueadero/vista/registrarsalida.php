@@ -115,7 +115,8 @@ public function recibo($mysql)
   on factura.idFactura=detallefactura.factura_idFactura
   inner join usuario
   on factura.usuario_rol_idrol=usuario.rol_idrol
-  where cliente.cedula=$_REQUEST[cedulasalida];")
+  where cliente.cedula=$_REQUEST[cedulasalida]
+  and usuario.nombre='$_SESSION[login]' and usuario.apellido='$_SESSION[nombre]';")
 	or die ($mysql->error);
 echo '<form name="areat" action="modelo/procesa_login.php" method="post">';
 echo '<table Border=2 align="center">';

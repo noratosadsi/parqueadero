@@ -44,12 +44,9 @@ $nombre = $_POST['nom'];
 $apellido = $_POST['ape'];
 $contrasena1= $_POST['pass1'];
 $contrasena2=$_POST['pass2'];
+$nivel = $_POST['nivel'];
 
-if (!isset($_SESSION["nivel"]))
-{
-	$nivel = $_POST['nivel'];
-}
-else 
+if ($nivel==0)
 {
 	$nivel = 2;
 }

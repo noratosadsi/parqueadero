@@ -52,7 +52,6 @@ $consulta=$mysql->query("select cliente.*, vehiculo.matricula, vehiculo.marca,
 	  or die ($mysql->error);
 	  $con=$consulta->fetch_array();
 	  
-	 
 ?>
 
 
@@ -60,7 +59,11 @@ $consulta=$mysql->query("select cliente.*, vehiculo.matricula, vehiculo.marca,
 <form action="../modelo/bd.php" method="post">
 <table class="table"> 
 <tr><td align="right">Ingrese cédula</td>
-<td><input type="text" name="cedulacliente" value="<?php echo $cedula; ?>"required><br></td></tr>
+<td>
+<input type="text" name="cedulacliente" value="<?php echo $cedula; ?>"required><br>
+
+</td>
+</tr> 
 <tr><td align="right">Ingrese nombre</td>
 <td><input type="text" name="nombre" value="<?php echo $con['nombre']; ?>" required><br></td></tr>
 <tr><td align="right">Ingrese apellido</td>
@@ -119,9 +122,7 @@ else
 </div> 
 </div> 
 </div>
-
 </header>
-
 </div>
 </strong></em></body>
 </html>

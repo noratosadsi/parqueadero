@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 14-12-2017 a las 21:37:22
--- Versión del servidor: 5.7.19
--- Versión de PHP: 5.6.31
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 11-02-2018 a las 17:17:28
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -28,14 +26,12 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `cliente`
 --
 
-DROP TABLE IF EXISTS `cliente`;
-CREATE TABLE IF NOT EXISTS `cliente` (
+CREATE TABLE `cliente` (
   `cedula` int(11) NOT NULL COMMENT 'Identificacion dueño del vehiculo',
   `nombre` varchar(45) NOT NULL COMMENT 'Nombre dueño vehiculo a ingresar',
   `apellido` varchar(45) NOT NULL COMMENT 'Apellido dueño del vehiculo a ingresar',
   `telefono1` varchar(45) NOT NULL COMMENT 'Primer numero de telefono del cliente',
-  `telefono2` varchar(45) DEFAULT NULL COMMENT 'Segundo numero de telefono del cliente',
-  PRIMARY KEY (`cedula`)
+  `telefono2` varchar(45) DEFAULT NULL COMMENT 'Segundo numero de telefono del cliente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -57,12 +53,10 @@ INSERT INTO `cliente` (`cedula`, `nombre`, `apellido`, `telefono1`, `telefono2`)
 -- Estructura de tabla para la tabla `costo`
 --
 
-DROP TABLE IF EXISTS `costo`;
-CREATE TABLE IF NOT EXISTS `costo` (
+CREATE TABLE `costo` (
   `id` int(11) NOT NULL,
   `vehiculo` varchar(11) NOT NULL,
-  `precio` int(11) NOT NULL DEFAULT '60',
-  PRIMARY KEY (`id`)
+  `precio` int(11) NOT NULL DEFAULT '60'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -79,8 +73,7 @@ INSERT INTO `costo` (`id`, `vehiculo`, `precio`) VALUES
 -- Estructura de tabla para la tabla `detallefactura`
 --
 
-DROP TABLE IF EXISTS `detallefactura`;
-CREATE TABLE IF NOT EXISTS `detallefactura` (
+CREATE TABLE `detallefactura` (
   `fechafactura` datetime NOT NULL COMMENT 'Fecha y hora de  ingreso  del vehiculo ',
   `horaingreso` datetime DEFAULT NULL COMMENT 'Hora ingreso del vehiculo',
   `horasalida` datetime DEFAULT NULL COMMENT 'Fecha y hora de salida del vehiculo',
@@ -88,9 +81,7 @@ CREATE TABLE IF NOT EXISTS `detallefactura` (
   `precio` int(11) DEFAULT NULL COMMENT 'Precio por el tiempo permanecido en el parqueadero',
   `iva` int(11) DEFAULT NULL COMMENT 'Impuesto del iva a cobrar en la factura',
   `total` int(11) DEFAULT NULL COMMENT 'Total detallado en la factura a cancelar',
-  `factura_idFactura` int(11) NOT NULL COMMENT 'Identificacion de numero de factura a cancelar por el servicio de parqueo al vehiculo',
-  PRIMARY KEY (`factura_idFactura`),
-  KEY `fk_Detalle_factura_Factura1_idx` (`factura_idFactura`)
+  `factura_idFactura` int(11) NOT NULL COMMENT 'Identificacion de numero de factura a cancelar por el servicio de parqueo al vehiculo'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -112,31 +103,26 @@ INSERT INTO `detallefactura` (`fechafactura`, `horaingreso`, `horasalida`, `dura
 -- Estructura de tabla para la tabla `factura`
 --
 
-DROP TABLE IF EXISTS `factura`;
-CREATE TABLE IF NOT EXISTS `factura` (
-  `idFactura` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion del numero de factura',
+CREATE TABLE `factura` (
+  `idFactura` int(11) NOT NULL COMMENT 'Identificacion del numero de factura',
   `vehiculo_cliente_cedula` int(11) NOT NULL COMMENT 'Cedula de la tabla cliente',
   `usuario_cedula` int(11) NOT NULL COMMENT 'Cedula de la tabla usuario',
   `usuario_rol_idrol` int(11) NOT NULL COMMENT 'Identificacion del rol de la tabla rol',
-  `costo_id` int(11) NOT NULL,
-  PRIMARY KEY (`idFactura`,`vehiculo_cliente_cedula`,`usuario_cedula`,`usuario_rol_idrol`,`costo_id`),
-  KEY `fk_Factura_vehiculo1_idx` (`vehiculo_cliente_cedula`),
-  KEY `fk_Factura_usuario1_idx` (`usuario_cedula`,`usuario_rol_idrol`),
-  KEY `fk_factura_costo1_idx` (`costo_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+  `costo_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `factura`
 --
 
 INSERT INTO `factura` (`idFactura`, `vehiculo_cliente_cedula`, `usuario_cedula`, `usuario_rol_idrol`, `costo_id`) VALUES
-(50, 1, 1, 1, 1),
-(55, 2, 1, 1, 2),
 (46, 3, 1, 1, 1),
 (47, 4, 1, 1, 1),
 (49, 5, 1, 1, 1),
-(57, 6, 1, 1, 1),
-(52, 7, 1, 1, 2);
+(50, 1, 1, 1, 1),
+(52, 7, 1, 1, 2),
+(55, 2, 1, 1, 2),
+(57, 6, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -144,9 +130,8 @@ INSERT INTO `factura` (`idFactura`, `vehiculo_cliente_cedula`, `usuario_cedula`,
 -- Estructura de tabla para la tabla `historicofacturado`
 --
 
-DROP TABLE IF EXISTS `historicofacturado`;
-CREATE TABLE IF NOT EXISTS `historicofacturado` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `historicofacturado` (
+  `id` int(11) NOT NULL,
   `nomusu` varchar(45) DEFAULT NULL,
   `apeusu` varchar(45) DEFAULT NULL,
   `fechafacturado` varchar(45) DEFAULT NULL,
@@ -165,9 +150,8 @@ CREATE TABLE IF NOT EXISTS `historicofacturado` (
   `duracion` varchar(45) DEFAULT NULL,
   `precio` varchar(45) DEFAULT NULL,
   `iva` varchar(45) DEFAULT NULL,
-  `total` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+  `total` varchar(45) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `historicofacturado`
@@ -196,11 +180,9 @@ INSERT INTO `historicofacturado` (`id`, `nomusu`, `apeusu`, `fechafacturado`, `c
 -- Estructura de tabla para la tabla `rol`
 --
 
-DROP TABLE IF EXISTS `rol`;
-CREATE TABLE IF NOT EXISTS `rol` (
+CREATE TABLE `rol` (
   `idrol` int(11) NOT NULL COMMENT 'Identificacion del cargo desempeñado en el parqueadero',
-  `descripcion` varchar(45) NOT NULL COMMENT 'Descripcion del cargo que desempeña en el parqueadero\n',
-  PRIMARY KEY (`idrol`)
+  `descripcion` varchar(45) NOT NULL COMMENT 'Descripcion del cargo que desempeña en el parqueadero\n'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -217,17 +199,14 @@ INSERT INTO `rol` (`idrol`, `descripcion`) VALUES
 -- Estructura de tabla para la tabla `tipo`
 --
 
-DROP TABLE IF EXISTS `tipo`;
-CREATE TABLE IF NOT EXISTS `tipo` (
-  `idtipo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Numero de identificacion de la tabla tipo',
+CREATE TABLE `tipo` (
+  `idtipo` int(11) NOT NULL COMMENT 'Numero de identificacion de la tabla tipo',
   `tipo` varchar(45) NOT NULL COMMENT 'Tipo de vehiculo',
   `descripcion` varchar(45) NOT NULL COMMENT 'Descripcion del vehiculo',
   `marca` varchar(45) NOT NULL COMMENT 'Marca del vehiculo',
   `modelo` varchar(45) NOT NULL COMMENT 'Modelo del vehiculo',
-  `vehiculo_cliente_cedula` int(11) NOT NULL COMMENT 'Cedula de la tabla cliente',
-  PRIMARY KEY (`idtipo`,`vehiculo_cliente_cedula`),
-  KEY `fk_tipo_vehiculo1_idx` (`vehiculo_cliente_cedula`)
-) ENGINE=InnoDB AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
+  `vehiculo_cliente_cedula` int(11) NOT NULL COMMENT 'Cedula de la tabla cliente'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Volcado de datos para la tabla `tipo`
@@ -248,15 +227,12 @@ INSERT INTO `tipo` (`idtipo`, `tipo`, `descripcion`, `marca`, `modelo`, `vehicul
 -- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
-CREATE TABLE IF NOT EXISTS `usuario` (
+CREATE TABLE `usuario` (
   `cedula` int(11) NOT NULL COMMENT 'Numero de cedula del dueño de vehiculo',
   `nombre` varchar(45) NOT NULL COMMENT 'Nombre del usuario del vehiculo',
   `apellido` varchar(45) NOT NULL COMMENT 'Apellido del usuario del vehiculo',
   `contrasena` varchar(255) NOT NULL COMMENT 'Contraseña del usuario del vehiculo',
-  `rol_idrol` int(11) NOT NULL COMMENT 'Identificacion de la tabla rol que se encuentra en la tabla usuario',
-  PRIMARY KEY (`cedula`,`rol_idrol`),
-  KEY `fk_usuario_rol1_idx` (`rol_idrol`)
+  `rol_idrol` int(11) NOT NULL COMMENT 'Identificacion de la tabla rol que se encuentra en la tabla usuario'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -265,7 +241,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 
 INSERT INTO `usuario` (`cedula`, `nombre`, `apellido`, `contrasena`, `rol_idrol`) VALUES
 (1, 'administrador', 'parqueadero', 'adcd7048512e64b48da55b027577886ee5a36350', 1),
-(2, 'usuario', 'parqueadero', 'adcd7048512e64b48da55b027577886ee5a36350', 2);
+(2, 'usuario', 'parqueadero', 'adcd7048512e64b48da55b027577886ee5a36350', 2),
+(50, 'Noratos', 'Parking', '06b78bd46c4b272ed9a11d5f96b208646339e478', 1);
 
 -- --------------------------------------------------------
 
@@ -273,13 +250,11 @@ INSERT INTO `usuario` (`cedula`, `nombre`, `apellido`, `contrasena`, `rol_idrol`
 -- Estructura de tabla para la tabla `vehiculo`
 --
 
-DROP TABLE IF EXISTS `vehiculo`;
-CREATE TABLE IF NOT EXISTS `vehiculo` (
+CREATE TABLE `vehiculo` (
   `matricula` varchar(45) NOT NULL COMMENT 'Matricula o identificacion del vehiculo',
   `marca` varchar(45) NOT NULL COMMENT 'Marca del vehiculo',
   `modelo` varchar(45) NOT NULL COMMENT 'Modelo del vehiculo',
-  `cliente_cedula` int(11) NOT NULL COMMENT 'Cedula de la tabla cliente',
-  PRIMARY KEY (`cliente_cedula`)
+  `cliente_cedula` int(11) NOT NULL COMMENT 'Cedula de la tabla cliente'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -295,6 +270,89 @@ INSERT INTO `vehiculo` (`matricula`, `marca`, `modelo`, `cliente_cedula`) VALUES
 ('dsfg', 'dfsg', 'dfsg', 6),
 ('dfsg', 'dfg', 'dfsg', 7);
 
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `cliente`
+--
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`cedula`);
+
+--
+-- Indices de la tabla `costo`
+--
+ALTER TABLE `costo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `detallefactura`
+--
+ALTER TABLE `detallefactura`
+  ADD PRIMARY KEY (`factura_idFactura`),
+  ADD KEY `fk_Detalle_factura_Factura1_idx` (`factura_idFactura`);
+
+--
+-- Indices de la tabla `factura`
+--
+ALTER TABLE `factura`
+  ADD PRIMARY KEY (`idFactura`,`vehiculo_cliente_cedula`,`usuario_cedula`,`usuario_rol_idrol`,`costo_id`),
+  ADD KEY `fk_Factura_vehiculo1_idx` (`vehiculo_cliente_cedula`),
+  ADD KEY `fk_Factura_usuario1_idx` (`usuario_cedula`,`usuario_rol_idrol`),
+  ADD KEY `fk_factura_costo1_idx` (`costo_id`);
+
+--
+-- Indices de la tabla `historicofacturado`
+--
+ALTER TABLE `historicofacturado`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `rol`
+--
+ALTER TABLE `rol`
+  ADD PRIMARY KEY (`idrol`);
+
+--
+-- Indices de la tabla `tipo`
+--
+ALTER TABLE `tipo`
+  ADD PRIMARY KEY (`idtipo`,`vehiculo_cliente_cedula`),
+  ADD KEY `fk_tipo_vehiculo1_idx` (`vehiculo_cliente_cedula`);
+
+--
+-- Indices de la tabla `usuario`
+--
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`cedula`,`rol_idrol`),
+  ADD KEY `fk_usuario_rol1_idx` (`rol_idrol`);
+
+--
+-- Indices de la tabla `vehiculo`
+--
+ALTER TABLE `vehiculo`
+  ADD PRIMARY KEY (`cliente_cedula`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `factura`
+--
+ALTER TABLE `factura`
+  MODIFY `idFactura` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificacion del numero de factura', AUTO_INCREMENT=58;
+--
+-- AUTO_INCREMENT de la tabla `historicofacturado`
+--
+ALTER TABLE `historicofacturado`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+--
+-- AUTO_INCREMENT de la tabla `tipo`
+--
+ALTER TABLE `tipo`
+  MODIFY `idtipo` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Numero de identificacion de la tabla tipo', AUTO_INCREMENT=61;
 --
 -- Restricciones para tablas volcadas
 --
@@ -330,7 +388,6 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `vehiculo`
   ADD CONSTRAINT `fk_vehiculo_cliente1` FOREIGN KEY (`cliente_cedula`) REFERENCES `cliente` (`cedula`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

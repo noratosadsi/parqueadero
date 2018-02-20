@@ -61,7 +61,8 @@ $consulta=$mysql->query("select cliente.*, vehiculo.matricula, vehiculo.marca,
   on factura.idFactura=detallefactura.factura_idFactura
   inner join usuario
   on factura.usuario_rol_idrol=usuario.rol_idrol
-  where cliente.cedula=$_REQUEST[cedularecibo];")
+  where cliente.cedula=$_REQUEST[cedularecibo] and
+  usuario.nombre='$_SESSION[login]' and usuario.apellido='$_SESSION[nombre]';")
 	or die ($mysql->error);
 	$con=$consulta->fetch_array();
 	
