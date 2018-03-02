@@ -1,5 +1,5 @@
 <?php 
-include '../controlador/control.php'; 
+/*include '../controlador/control.php'; */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -110,7 +110,7 @@ else
 <tr><td align="right">Descripcion</td>
 <td><input type="text" name="descripcion" value="<?php echo $con['descripcion']; ?>"required><br></td></tr>
 <tr><td align="right">Fecha_Ingreso</td>
-<td><input type="datetime" disabled="enabled" value="<?php date_default_timezone_set("America/Bogota"); echo date("Y-m-d") . " " . date("h:i:sa");  ?>" name="fecha_hora" ><br></td>
+<td><input type="datetime" disabled="enabled" value="<?php date_default_timezone_set("America/Bogota"); echo date("d-m-Y") . " " . date("h:i:sa");  ?>" name="fecha_hora" ><br></td>
 </tr>
 <tr><td colspan="12" align="center"><input type="submit" value="REGISTRAR VEHICULO"><br>
 </td></tr>

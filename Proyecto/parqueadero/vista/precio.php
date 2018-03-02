@@ -8,7 +8,7 @@
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body><em><strong>
+<body background="imagenes/tecnol.jpg"><em><strong>
 <div class="container">
 <header>
 <?php include_once 'header.php'; ?>
@@ -45,7 +45,8 @@ include "../modelo/cambiarprecio.php";
 </tr>
 <tr>
 <td align="center">
-<input type="submit" value="CAMBIAR PRECIO"><br>
+<br>
+<input type="submit" value="CAMBIAR PRECIO"  class="btn btn-info"><br>
 </td>
 </tr>
 </table>

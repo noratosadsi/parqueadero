@@ -25,28 +25,21 @@
 <div class="row alert-success"> <!-- Color fondo general--> 
 <div class="col-sm-12 col-md-12"> 
 
-<form method="post" action="form1.php">
+<form method="post" action="adsi.php" >
 <div class="panel-heading"> 
         
-<table border="0" align="center">
-<tr>
-<?php if(isset($_REQUEST['dato1'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-info'>"."REGISTRADO CORRECTAMENTE"."</div>";} 
-if(isset($_REQUEST['dato'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";
-}?>
-</td></tr>
- 
+<table border="0" align="center">  
 <tr> 
 
-<td align="center" style="width:70%" bgcolor="white">
+<td align="center" style="width:60%">
 <h2 align="center">NORATO'S PARKING</h2> 
 </td>
 
-<td align="center" bgcolor="white" valign="center" style="width:10%; font-size:20px">
-FECHA Y HORA</td>
+<td align="center" bgcolor="#33FF99">
+<h3>FECHA Y HORA</h3>
+</td>
 
-<td align="center" bgcolor="white">
+<td bgcolor="#33FFFF" align="center" style="width:20%">
 <script type="text/javascript">
 function startTime(){
 today=new Date();
@@ -55,14 +48,14 @@ m=today.getMinutes();
 s=today.getSeconds();
 m=checkTime(m);
 s=checkTime(s);
-document.getElementById('reloj').innerHTML=h+":"+m+":"+s+"<br>"+fecha;
+document.getElementById('reloj').innerHTML=h+":"+m+":"+s;
 t=setTimeout('startTime()',500);}
 function checkTime(i)
 {if (i<10) {i="0" + i;}return i;}
 window.onload=function(){startTime();}
 </script>
 
-<div id="reloj" style="font-size:20px"></div>
+<div id="reloj" style="font-size:30px;"></div>
 <script type="text/javascript">
 //<![CDATA[
 var date = new Date();
@@ -72,7 +65,7 @@ var m = date.getMonth() + 1;
 var month = (m < 10) ? '0' + m : m;
 var yy = date.getYear();
 var year = (yy < 1000) ? yy + 1900 : yy;
-var fecha=(day + "/" + month + "/" + year);
+document.write(day + "/" + month + "/" + year);
 //]]>
 </script>
 </td>
@@ -80,64 +73,55 @@ var fecha=(day + "/" + month + "/" + year);
 </table>
 </div>
 
-<table border="0" width="95%" class="alert alert-success" align="center" Style="font-family: Arial; font-size: 10pt;"> 
+<table border="0" width="90%" class="alert alert-success" align="center" Style="font-family: Arial; font-size: 10pt;"> 
 <tr align="center">
 <td>Cedula</td>
-<td>&nbsp;&nbsp;<input title="Se necesita un nombre" type="text" name="cedulaactualizar" required >&nbsp;&nbsp;</td>
-<td rowspan="2" valign="center">
-<button type="submit" class="btn btn-primary btn-sm">
-<span class="glyphicon glyphicon-refresh"></span>&nbsp;Validar</button></td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Placa o Matricula</td>
-<td>&nbsp;&nbsp;<input type="text" name="matricula" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Fecha y hora de ingreso</td>
-<td>&nbsp;&nbsp;<input disabled type="datetime" value="<?php date_default_timezone_set("America/Bogota"); echo date("d-m-Y") . " " . date("h:i:sa"); ?>">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Nombres</td>
-<td>&nbsp;&nbsp;<input type="text" name="nombre" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Marca</td>
-<td>&nbsp;&nbsp;<input type="text" name="marca" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Fecha y hora de salida</td>
-<td>&nbsp;&nbsp;<input disabled type="datetime" value="" name="fecha_hora">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Apellidos</td>
-<td>&nbsp;&nbsp;<input type="text" name="apellido" disabled>&nbsp;&nbsp;</td>
-<td></td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Modelo</td>
-<td>&nbsp;&nbsp;<input type="text" name="modelo" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Tiempo de permanencia</td>
 <td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Telefono 1</td>
-<td>&nbsp;&nbsp;<input type="text" name="telefono1" disabled>&nbsp;&nbsp;</td>
-<td></td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Tipo</td>
-<td>&nbsp;&nbsp;<select name="tipo" disabled>
-<option value="moto">Moto</option>
-<option value="bicicleta">Bicicleta</option>
-</select>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Precio</td>
 <td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Telefono 2</td>
-<td>&nbsp;&nbsp;<input type="text" name="telefono2" disabled>&nbsp;&nbsp;</td>
-<td></td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>Descripcion / Observacion</td>
-<td>&nbsp;&nbsp;<input type="text" name="descripcion" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text">&nbsp;&nbsp;</td>
 <td>IVA</td>
 <td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
 
-<table border="0" align="center" class="alert alert-default"> 
+<table border="0" align="center" class="alert alert-success"> 
 	<script>
 		var color1="";
 		var color2="";
@@ -169,7 +153,6 @@ var fecha=(day + "/" + month + "/" + year);
 </tr>
 <tr>
 <td colspan="5">
-<br>
 <?php
 		$n=80;//Cantidad de parqueaderos disponibles
 		
@@ -235,21 +218,21 @@ var fecha=(day + "/" + month + "/" + year);
 <td><input type="radio" name="radio" checked="checked" /></td>
 <td></td>
 <td>Capacidad</td>
-<td><input type="text" name="capacidadmotos" size="10"disabled></td>
-<td><input type="text" name="capacidadbici"size="10"disabled></td>
+<td><input type="text" name="capacidadmotos"/></td>
+<td><input type="text" name="capacidadbici"/></td>
 <td>Costo segun tarifario</td>
-<td><input type="text" name="costotarif" disabled></td>
+<td><input type="text" name="costotarif"/></td>
 </tr>
 
 <tr>
 <td>Horas</td>
 <td><input type="radio" name="radio" /></td>
 <td></td>
-<td>Ocupados</td>
-<td><input type="text" name="ocupadosmotos"size="10"disabled></td>
-<td><input type="text" name="ocupadosbici"size="10"disabled></td>
+<td>Oocupados</td>
+<td><input type="text" name="ocupadosmotos"/></td>
+<td><input type="text" name="ocupadosbici"/></td>
 <td>Valor a pagar</td>
-<td><input type="text" name="apagar" disabled></td>
+<td><input type="text" name="apagar"/></td>
 </tr>
 
 <tr>
@@ -257,8 +240,8 @@ var fecha=(day + "/" + month + "/" + year);
 <td><input type="radio" name="radio" /></td>
 <td></td>
 <td>Disponible</td>
-<td><input type="text" name="disponiblemotos"size="10" disabled></td>
-<td><input type="text" name="disponiblebici"size="10"disabled></td>
+<td><input type="text" name="disponiblemotos"/></td>
+<td><input type="text" name="disponiblebici"/></td>
 <td>Efectivo</td>
 <td><input type="text" name="efectivo"/></td>
 </tr>
@@ -270,28 +253,28 @@ var fecha=(day + "/" + month + "/" + year);
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td colspan="3"></td>
 <td>Cambio</td>
-<td><input type="text" name="cambio" disabled></td>
+<td><input type="text" name="cambio"/></td>
 </tr>
 </table>
 
 <br>
-</form> 
+
 <table border="0" width="60%" align="center">
 <tr> 
 <td align="center">
-<button onclick="window.location.href='modelo/bd.php'" button class="btn btn-info btn-md"  disabled>
+<button onclick="window.location.href='vista/actualizar.php'" width="500" style="color:#000000" button class="btn btn-primary btn-md">
 INGRESAR</td> 
 
 <td align="center"> 
-<button onclick="window.location.href='vista/actualizar.php'" button class="btn btn-info btn-md" disabled>
+<button onclick="window.location.href='vista/actualizar.php'" width="500" style="color:#000000" button class="btn btn-primary btn-md">
 REGISTRAR SALIDA</td> 
 
 <td align="center">
-<button onclick="window.location.href='vista/listado.php'" button class="btn btn-info btn-md">
+<button onclick="window.location.href='vista/actualizar.php'" width="500" style="color:#000000" button class="btn btn-primary btn-md">
 PARQUEADOS</td>
 
 <td align="center">
-<button onclick="window.location.href='vista/listadocobrados.php'" button class="btn btn-info btn-md">
+<button onclick="window.location.href='vista/actualizar.php'" width="500" style="color:#000000" button class="btn btn-primary btn-md" >
 COBRADOS</td> 
 </tr>
 <br>
@@ -300,11 +283,9 @@ COBRADOS</td>
 </td>
 </tr>
 <br>
-
-
 </table> 
      
- 
+</form>  
 
 </div> 
 </div> 

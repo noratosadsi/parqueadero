@@ -13,8 +13,6 @@
 <header>
 <?php include_once 'header.php'; ?>
 
-
-
 <div class="col-sm-12 col-md-12"> 
 <div class="panel panel-default"> 
 <!-- contenedor del titulo--> 
@@ -32,21 +30,23 @@
 <!--nuevo-->
  <?php
 include "../modelo/config.php";
-   
+
+$cedula = $_GET['cedulacliente'];
+
     $salida=$mysql->query("select factura.*, costo.* from factura
 	inner join costo on factura.costo_id=costo.id
 	inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
-	where vehiculo_cliente_cedula=$_REQUEST[cedulasalida] and detallefactura.horasalida is null");
+	where vehiculo_cliente_cedula=$cedula and detallefactura.horasalida is null");
 	if ($mysql->error)
-	die (header ("Location: salidavehiculo.php?error=Ingreso no válido"));   
+	die ("Ingreso no válido");   
 	$sal=$salida->fetch_array();
 	
     $verificar=$mysql->query("select factura.*, costo.* from factura
 	inner join costo on factura.costo_id=costo.id
 	inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
-	where vehiculo_cliente_cedula=$_REQUEST[cedulasalida] and detallefactura.horasalida is not null");
+	where vehiculo_cliente_cedula=$cedula");
 	if ($mysql->error)
-	die (header ("Location: salidavehiculo.php?error=Ingreso no válido"));  
+	die ("Ingreso no válido");  
 	$ver=$verificar->fetch_array();
 	
 	if (is_numeric($ver["vehiculo_cliente_cedula"]))
@@ -57,6 +57,7 @@ include "../modelo/config.php";
 	{
 		$error="Número de cédula no se encuentra registrado";
 	}
+	
 	
 	$precio=$sal['precio']/60;
 	
@@ -71,8 +72,10 @@ include "../modelo/config.php";
     total=precio+iva
     where idFactura=$sal[idFactura] and horasalida is null;");
 	if ($mysql->error)
-	die (header ("Location: salidavehiculo.php?error=$error"));
-
+	die ("$error");
+    echo "fue actualizado";
+ 
+	
 function corregir($mysql)
 {
 	$mysql->query("update detallefactura
@@ -90,9 +93,9 @@ function corregir($mysql)
     $confirmar=$mysql->query("select factura.*, costo.* from factura
 	inner join costo on factura.costo_id=costo.id
 	inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
-	where vehiculo_cliente_cedula=$_REQUEST[cedulasalida] and detallefactura.horasalida is not null");
+	where vehiculo_cliente_cedula=$cedula and detallefactura.horasalida is not null");
 	if ($mysql->error)
-	die (header ("Location: salidavehiculo.php?error=Ingreso no válido"));  
+	die (header ("Location: salidavehiculo.php?error=Ingreso no válido 2"));  
 	$con=$confirmar->fetch_array();
 
 
@@ -102,6 +105,9 @@ class mostrarrecibo {
 	
 public function recibo($mysql)
 {
+	
+  $cedula = $_GET['cedulacliente'];
+  
   $consulta=$mysql->query("select cliente.*, vehiculo.matricula, vehiculo.marca,
   vehiculo.modelo, tipo.tipo, tipo.descripcion, 
   detallefactura.*, usuario.nombre as nom, usuario.apellido as ape from vehiculo
@@ -115,7 +121,7 @@ public function recibo($mysql)
   on factura.idFactura=detallefactura.factura_idFactura
   inner join usuario
   on factura.usuario_rol_idrol=usuario.rol_idrol
-  where cliente.cedula=$_REQUEST[cedulasalida]
+  where cliente.cedula=$cedula
   and usuario.nombre='$_SESSION[login]' and usuario.apellido='$_SESSION[nombre]';")
 	or die ($mysql->error);
 echo '<form name="areat" action="modelo/procesa_login.php" method="post">';

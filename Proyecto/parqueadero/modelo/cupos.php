@@ -8,7 +8,7 @@
 <link href="../vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../vista/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body background="../vista/imagenes/tecnologia.jpg"><em><strong>
+<body background="../vista/imagenes/tecnol.jpg"><em><strong>
 <div class="container">
 <header>
 <?php include_once '../vista/header.php'; ?>

@@ -25,7 +25,7 @@
 <div class="row alert-success"> <!-- Color fondo general--> 
 <div class="col-sm-12 col-md-12"> 
 
-<form method="post" action="form1.php">
+<form method="post" action="modelo/bd.php" >
 <div class="panel-heading"> 
         
 <table border="0" align="center">
@@ -33,8 +33,8 @@
 <?php if(isset($_REQUEST['dato1'])){ echo "<td colspan='6' align='center'>
 <div class='alert alert-info'>"."REGISTRADO CORRECTAMENTE"."</div>";} 
 if(isset($_REQUEST['dato'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";
-}?>
+<div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";}
+?>
 </td></tr>
  
 <tr> 
@@ -80,46 +80,87 @@ var fecha=(day + "/" + month + "/" + year);
 </table>
 </div>
 
+
+<?php
+$cedula = $_REQUEST['cedulaactualizar'];
+include 'modelo/config.php';
+
+$consulta=$mysql->query("select cliente.*, vehiculo.matricula, vehiculo.marca,
+      vehiculo.modelo, tipo.tipo, tipo.descripcion, 
+      detallefactura.*, usuario.nombre as nom, usuario.apellido as ape from vehiculo
+      inner join cliente
+      on vehiculo.cliente_cedula=cliente.cedula
+      inner join tipo
+      on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
+      inner join factura
+      on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
+      inner join detallefactura
+      on factura.idFactura=detallefactura.factura_idFactura
+      inner join usuario
+      on factura.usuario_rol_idrol=usuario.rol_idrol
+      where cliente.cedula=$cedula")
+	  or die ($mysql->error);
+	  $con=$consulta->fetch_array();
+	  
+?>
+
 <table border="0" width="95%" class="alert alert-success" align="center" Style="font-family: Arial; font-size: 10pt;"> 
 <tr align="center">
 <td>Cedula</td>
-<td>&nbsp;&nbsp;<input title="Se necesita un nombre" type="text" name="cedulaactualizar" required >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="cedulacliente" value="<?php echo $cedula; ?>">&nbsp;&nbsp;</td>
 <td rowspan="2" valign="center">
-<button type="submit" class="btn btn-primary btn-sm">
+<button onclick="window.location.href='index.php'" type="button" class="btn btn-primary btn-sm">
 <span class="glyphicon glyphicon-refresh"></span>&nbsp;Validar</button></td>
 <td>Placa o Matricula</td>
-<td>&nbsp;&nbsp;<input type="text" name="matricula" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="matricula" value="<?php echo $con['matricula']; ?>">&nbsp;&nbsp;</td>
 <td>Fecha y hora de ingreso</td>
-<td>&nbsp;&nbsp;<input disabled type="datetime" value="<?php date_default_timezone_set("America/Bogota"); echo date("d-m-Y") . " " . date("h:i:sa"); ?>">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" disabled value="<?php date_default_timezone_set("America/Bogota"); echo date("d-m-Y") . " " . date("h:i:sa"); ?>">&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Nombres</td>
-<td>&nbsp;&nbsp;<input type="text" name="nombre" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="nombre" value="<?php echo $con['nombre']; ?>">&nbsp;&nbsp;</td>
 <td>Marca</td>
-<td>&nbsp;&nbsp;<input type="text" name="marca" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="marca" value="<?php echo $con['marca']; ?>">&nbsp;&nbsp;</td>
 <td>Fecha y hora de salida</td>
 <td>&nbsp;&nbsp;<input disabled type="datetime" value="" name="fecha_hora">&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Apellidos</td>
-<td>&nbsp;&nbsp;<input type="text" name="apellido" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="apellido" value="<?php echo $con['apellido']; ?>">&nbsp;&nbsp;</td>
 <td></td>
 <td>Modelo</td>
-<td>&nbsp;&nbsp;<input type="text" name="modelo" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="modelo" value="<?php echo $con['modelo']; ?>">&nbsp;&nbsp;</td>
 <td>Tiempo de permanencia</td>
 <td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Telefono 1</td>
-<td>&nbsp;&nbsp;<input type="text" name="telefono1" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="telefono1" value="<?php echo $con['telefono1']; ?>">&nbsp;&nbsp;</td>
 <td></td>
 <td>Tipo</td>
-<td>&nbsp;&nbsp;<select name="tipo" disabled>
-<option value="moto">Moto</option>
-<option value="bicicleta">Bicicleta</option>
+<td>&nbsp;&nbsp;<select name="tipo">
+<!--<option value="moto">Moto</option>
+<option value="bicicleta">Bicicleta</option>-->
+<?php
+if ($con['tipo']=="moto")
+{
+	echo "<option value=\"moto\">moto</option>";
+	echo "<option value=\"bicicleta\">bicicleta</option>";
+}
+elseif ($con['tipo']=="bicicleta")
+{
+	echo "<option value=\"bicicleta\">bicicleta</option>";
+	echo "<option value=\"moto\">moto</option>";
+}
+else
+{
+	echo "<option value=\"moto\">moto</option>";
+	echo "<option value=\"bicicleta\">bicicleta</option>";
+}
+?>
 </select>&nbsp;&nbsp;</td>
 <td>Precio</td>
 <td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
@@ -127,17 +168,17 @@ var fecha=(day + "/" + month + "/" + year);
 
 <tr align="center">
 <td>Telefono 2</td>
-<td>&nbsp;&nbsp;<input type="text" name="telefono2" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="telefono2" value="<?php echo $con['telefono2']; ?>">&nbsp;&nbsp;</td>
 <td></td>
 <td>Descripcion / Observacion</td>
-<td>&nbsp;&nbsp;<input type="text" name="descripcion" disabled>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="descripcion" value="<?php echo $con['descripcion']; ?>">&nbsp;&nbsp;</td>
 <td>IVA</td>
 <td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
 </tr>
 </table>
 
 
-<table border="0" align="center" class="alert alert-default"> 
+<table border="0" align="center" class="alert alert-success"> 
 	<script>
 		var color1="";
 		var color2="";
@@ -235,10 +276,10 @@ var fecha=(day + "/" + month + "/" + year);
 <td><input type="radio" name="radio" checked="checked" /></td>
 <td></td>
 <td>Capacidad</td>
-<td><input type="text" name="capacidadmotos" size="10"disabled></td>
-<td><input type="text" name="capacidadbici"size="10"disabled></td>
+<td><input type="text" name="capacidadmotos" size="10"></td>
+<td><input type="text" name="capacidadbici"size="10"></td>
 <td>Costo segun tarifario</td>
-<td><input type="text" name="costotarif" disabled></td>
+<td><input type="text" name="costotarif"/></td>
 </tr>
 
 <tr>
@@ -246,10 +287,10 @@ var fecha=(day + "/" + month + "/" + year);
 <td><input type="radio" name="radio" /></td>
 <td></td>
 <td>Ocupados</td>
-<td><input type="text" name="ocupadosmotos"size="10"disabled></td>
-<td><input type="text" name="ocupadosbici"size="10"disabled></td>
+<td><input type="text" name="ocupadosmotos"size="10"></td>
+<td><input type="text" name="ocupadosbici"size="10"></td>
 <td>Valor a pagar</td>
-<td><input type="text" name="apagar" disabled></td>
+<td><input type="text" name="apagar"/></td>
 </tr>
 
 <tr>
@@ -258,7 +299,7 @@ var fecha=(day + "/" + month + "/" + year);
 <td></td>
 <td>Disponible</td>
 <td><input type="text" name="disponiblemotos"size="10" disabled></td>
-<td><input type="text" name="disponiblebici"size="10"disabled></td>
+<td><input type="text" name="disponiblebici"size="10"></td>
 <td>Efectivo</td>
 <td><input type="text" name="efectivo"/></td>
 </tr>
@@ -270,25 +311,30 @@ var fecha=(day + "/" + month + "/" + year);
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td colspan="3"></td>
 <td>Cambio</td>
-<td><input type="text" name="cambio" disabled></td>
+<td><input type="text" name="cambio"/></td>
 </tr>
 </table>
 
 <br>
-</form> 
+
 <table border="0" width="60%" align="center">
 <tr> 
 <td align="center">
-<button onclick="window.location.href='modelo/bd.php'" button class="btn btn-info btn-md"  disabled>
-INGRESAR</td> 
+<!--<button onclick="window.location.href='modelo/bd.php'" button class="btn btn-info btn-md">
+INGRESAR-->
+<input type="submit" class="btn btn-info btn-md" value="INGRESAR" name="ingresar">
+</td> 
 
 <td align="center"> 
-<button onclick="window.location.href='vista/actualizar.php'" button class="btn btn-info btn-md" disabled>
-REGISTRAR SALIDA</td> 
+<input type="submit" class="btn btn-info btn-md" value="REGISTRAR SALIDA" name="registrarsalida">
+</td>
+
+</form>
 
 <td align="center">
 <button onclick="window.location.href='vista/listado.php'" button class="btn btn-info btn-md">
-PARQUEADOS</td>
+PARQUEADOS
+</td>
 
 <td align="center">
 <button onclick="window.location.href='vista/listadocobrados.php'" button class="btn btn-info btn-md">
@@ -304,7 +350,7 @@ COBRADOS</td>
 
 </table> 
      
- 
+
 
 </div> 
 </div> 

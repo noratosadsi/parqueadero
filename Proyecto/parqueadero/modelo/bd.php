@@ -23,8 +23,6 @@ $cambiarprecio->precio($mysql);
 <h2 align="center">VEHICULO REGISTRADO</h2> 
 </div> 
 <div class="panel-body"> 
-
-
 <!-- Contenedor ejercicio--> 
 <div class="alert alert-success"> 
 <div class="row"> 
@@ -33,23 +31,60 @@ $cambiarprecio->precio($mysql);
 <!--nuevo-->
 <?php
  // include "config.php";
-  
+ 
+error_reporting(5);	
+
+ $actualizar=$mysql->query("select count(*) as actualizar from vehiculo
+      inner join cliente
+      on vehiculo.cliente_cedula=cliente.cedula
+      inner join tipo
+      on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
+      inner join factura
+      on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
+      inner join detallefactura
+      on factura.idFactura=detallefactura.factura_idFactura
+      inner join usuario
+      on factura.usuario_rol_idrol=usuario.rol_idrol
+      where cliente.cedula=$_REQUEST[cedulacliente] and horasalida is not null
+	  and usuario.nombre='$_SESSION[login]' and usuario.apellido='$_SESSION[nombre]'")
+  or die ($mysql->error);
+  $act=$actualizar->fetch_array();
+
+if ($_POST["ingresar"])
+{
+	if ($act["actualizar"]==1)
+	{
+		borrar($mysql);
+        registrardatos($mysql);
+    }
+    else
+    {
+	    registrardatos($mysql);  
+    }
+}
+if ($_POST["registrarsalida"])
+{
+	$cedula=$_REQUEST["cedulacliente"];
+	header ("Location: ../vista/registrarsalida.php?cedulacliente=$cedula");
+
+}
+
   function registrardatos($mysql)
   {
 	  
-	  if (is_numeric($_REQUEST["cedulacliente"]))
+	  /*if (is_numeric($_REQUEST["cedulacliente"]))
 	  {
 		  $error="Número de cédula ya se encuentra registrado";
-	  }
+		  	  }
 	  else
 	  {
 		  $error="Ingreso no válido";
-	  }
+	  }*/
 	  
   $mysql->query("insert into cliente(cedula,nombre,apellido,telefono1,telefono2) values 
 	  ($_REQUEST[cedulacliente],'$_REQUEST[nombre]','$_REQUEST[apellido]','$_REQUEST[telefono1]','$_REQUEST[telefono2]')");
       if($mysql->error)
-	  die(header("Location: ../vista/formulario.php?error=$error"));
+	  die(header("Location: ../index.php?dato=si"));
 		
 	  
 	  $mysql->query("insert into vehiculo (matricula,marca,modelo,cliente_cedula)
@@ -96,8 +131,8 @@ $cambiarprecio->precio($mysql);
 	  
 	  $mysql->close();
 	  
-      echo 'Vehiculo registrado';	
-  }
+header("location: ../index.php?dato1=si");
+        }
   
   function borrar($mysql)
   {
@@ -129,7 +164,7 @@ $cambiarprecio->precio($mysql);
 	or die($mysql->error);
   }
   
-   
+  /*
   $actualizar=$mysql->query("select count(*) as actualizar from vehiculo
       inner join cliente
       on vehiculo.cliente_cedula=cliente.cedula
@@ -151,11 +186,11 @@ if ($act["actualizar"]==1)
 {
 	borrar($mysql);
     registrardatos($mysql);   		  
-}
-else
+}*/
+/*else
 {
 	registrardatos($mysql);  
-}
+}*/
 
   /*
   $regmoto=$mysql->query("select count(*) as regmotos from cliente 
@@ -198,7 +233,8 @@ else
 			  //borrar($mysql);
 		      registrardatos($mysql);
       }*/
-?> 
+?>
+
 </div> 
 </div> 
 </div> 

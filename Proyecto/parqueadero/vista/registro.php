@@ -10,22 +10,26 @@ if (empty($_SESSION["validar"]))
 <html lang="en">
 <meta charset='utf-8'>
 <head>
+<em><strong>
 <title>Norato´s parking</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="parqueadero/vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="parqueadero/vista/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body background="imagenes/tecnologia.jpg">
+<body background="imagenes/tecnol.jpg">
 <div class="container">
 <header>
-<?php include 'header.php'; ?>
+<?php include_once 'header.php'; ?>
 <div class="col-sm-12 col-md-12">
 <div class="panel panel-default">
 <div class="panel-heading">
 <h3 class="panel-title" align="center">BIENVENIDO A NORATOS PARKING</h3> </div>
 <div class="panel-body"> 
 <form name="user_form" action="../modelo/crea_usuarios.php" method="POST">
+<div class="alert alert-success"> 
+<div class="row"> 
+<div class="col-sm-12 col-md-12"> 
 <table class="" style="" align="center" width="400"> 
 <tr><td align="center" style="font-family:Tahoma, Geneva, sans-serif; color:#000">Cédula</td><td> 
 <input class="form-control input-sm" type="text" name="Cedula" class="form-control" placeholder="Nombre" required></td></tr> 
@@ -59,7 +63,8 @@ if ($_SESSION["validar"]!="true")
 }
 ?> 
 <tr><td style="padding:4px"></td></tr>
-<tr><td align="center" colspan="2" style="color:#000"><input type="submit" name="crear" style="width:400px" value="Crear Usuario"></td></tr> 
+<br>
+<tr><td align="center" colspan="2" style="color:#000"><input type="submit" name="crear" style="width:400px" value="Crear Usuario"  class="btn btn-info"></td></tr> 
 <tr><td style="padding:4px"></td></tr> 
 </table>
 </form>
@@ -73,6 +78,7 @@ if ($_SESSION["validar"]!="true")
 </div>
 </div>
 </div>
+</strong></em>
 </header>
 </div>
 </body>

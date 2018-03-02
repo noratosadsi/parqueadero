@@ -60,8 +60,8 @@ if(isset($_SESSION["login"])){ echo $_SESSION["login"]." ".$_SESSION["nombre"];}
 </ul>
 </div>
 </nav>
-<h3 align="center" style="color:#FFF"><?php echo "SISTEMA DE CONTROL DE PARQUEADERO"; ?></h3>
-<p align="center" style="color:#FFF">MOCKUP PROYECTO</p> 
+<!--<h3 align="center" style="color:#FFF"><?php echo "SISTEMA DE CONTROL DE PARQUEADERO"; ?></h3>
+<p align="center" style="color:#FFF">MOCKUP PROYECTO</p> -->
 </div>
 </body>
 </html> 

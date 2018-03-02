@@ -8,7 +8,7 @@
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body><em><strong>
+<body background="imagenes/tecnol.jpg"><em><strong>
 <div class="container">
 <header>
 <?php include_once 'header.php'; ?>
@@ -18,7 +18,7 @@
 <div class="panel panel-default"> 
 <!-- contenedor del titulo--> 
 <div class="panel-heading"> 
-<h2 align="center">BORRAR REGISTRO DEL VEHICULO</h2> 
+<h2 align="center" >BORRAR REGISTRO DEL VEHICULO</h2> 
 </div> 
 <div class="panel-body"> 
 
@@ -33,7 +33,7 @@
 <table class="table"> 
 <tr><td align="right">Ingrese Numero de cédula</td>
 <td><input type="text" name="cedulaborrar" required><br></td></tr>
-<tr><td colspan="12" align="center"><input type="submit" value="BORRAR REGISTRO DE VEHICULO"><br></td></tr>
+<tr><td colspan="12" align="center"><input type="submit" value="BORRAR REGISTRO DE VEHICULO"  class="btn btn-info"><br></td></tr>
 </table>
 </form>
 <p name="error" align="center">
