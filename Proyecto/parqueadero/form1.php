@@ -7,6 +7,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="vista/bootstrap/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+
+.inputcentrado {
+   text-align: center;
+   font-size: 18px;
+   }
+</style>
+
 </head>
 <em><strong>
 <body background="vista/imagenes/tecnologia.jpg">
@@ -25,7 +34,7 @@
 <div class="row alert-success"> <!-- Color fondo general--> 
 <div class="col-sm-12 col-md-12"> 
 
-<form method="post" action="modelo/bd.php" >
+<form action="" method="post">
 <div class="panel-heading"> 
         
 <table border="0" align="center">
@@ -33,8 +42,8 @@
 <?php if(isset($_REQUEST['dato1'])){ echo "<td colspan='6' align='center'>
 <div class='alert alert-info'>"."REGISTRADO CORRECTAMENTE"."</div>";} 
 if(isset($_REQUEST['dato'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";}
-?>
+<div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";
+}?>
 </td></tr>
  
 <tr> 
@@ -83,6 +92,7 @@ var fecha=(day + "/" + month + "/" + year);
 
 <?php
 $cedula = $_REQUEST['cedulaactualizar'];
+
 include 'modelo/config.php';
 
 $consulta=$mysql->query("select cliente.*, vehiculo.matricula, vehiculo.marca,
@@ -198,7 +208,16 @@ else
 				elemento.style.backgroundColor=color2="yellow";
 			}
 		}
-	</script>
+		
+function sub(a){
+ a=a-1;
+  seleccion = document.getElementsByName("posicion")[a].value;
+  document.getElementsByName("lugar")[0].value = seleccion;
+/*  alert(+seleccion);*/
+
+};
+
+</script>
 
 <tr>
 <td colspan="10" align="center" class="panel panel-default">ESTACIONAMIENTOS</td>
@@ -211,18 +230,23 @@ else
 <tr>
 <td colspan="5">
 <br>
+
+
 <?php
 		$n=80;//Cantidad de parqueaderos disponibles
 		
 		$x=0;
 		echo "<table border='0' Style='font-family: Arial; font-size: 9pt; color:black'>";
 		echo "<tr align='center'>";
+		
+		
+		
 		for ($i = 1; $i <= $n; $i++) 
 		{
 		$x=$x+1;				
 			
 			echo "<td align='center' style='width:30px'>";
-			echo "<input type='button' onclick='change(this);' style='width:30px' value='$i'></td>";
+			echo "<input type='button' name='posicion' onclick='sub($i);change(this);' style='width:30px' value='$i'></td>";
 		
 		if ($x==15) {
 			echo "</tr>";
@@ -234,6 +258,7 @@ else
 		echo "</table>";
 		?>
        </td>
+
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
 <?php
@@ -247,8 +272,7 @@ else
 		$x=$x+1;				
 			
 			echo "<td style='width:30px'>";
-			echo "<input type='button' onclick='change(this);' style='width:30px' value='$i'><!--$i--></td>";
-		
+			echo "<input type='button' name='posicion' onclick='sub($i);change(this);' style='width:30px' value='$i'><!--$i--></td>";
 		if ($x==15) {
 			echo "</tr>";
 		echo "<tr align='center'>";
@@ -260,6 +284,12 @@ else
 		?>
        </td>
 </tr>
+<tr>
+<td colspan="12" align="center" class="alert alert-info">
+ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' size='5' disabled>
+</td>
+</tr>
+
 </table>
 
 
@@ -322,23 +352,39 @@ else
 <td align="center">
 <!--<button onclick="window.location.href='modelo/bd.php'" button class="btn btn-info btn-md">
 INGRESAR-->
-<input type="submit" class="btn btn-info btn-md" value="INGRESAR" name="ingresar">
+<!--
+<script>
+/*
+funcion1()
+{
+alert("funcion1");
+document.getElementsByid("form1").action = "nombre_pagina1";
+document.getElementsByid("form1").submit();
+}
+
+funcion2()
+{
+alert("funcion1");*/
+//document.getElementsByid("form1").action = "nombre_pagina2";
+//document.getElementsByid("form1").submit();
+//}
+</script>-->
+<input type="submit" class="btn btn-info btn-md" value="INGRESAR" name="ingresar" onclick="this.form.action='modelo/bd.php'">
 </td> 
 
 <td align="center"> 
-<input type="submit" class="btn btn-info btn-md" value="REGISTRAR SALIDA" name="registrarsalida">
+<input type="submit" class="btn btn-info btn-md" value="REGISTRAR SALIDA" onclick="this.form.action='vista/salida.php'">
 </td>
 
-</form>
+
 
 <td align="center">
-<button onclick="window.location.href='vista/listado.php'" button class="btn btn-info btn-md">
-PARQUEADOS
+<input type="submit" value="PARQUEADOS" onclick="this.form.action='vista/listado.php'" button class="btn btn-info btn-md">
 </td>
 
 <td align="center">
-<button onclick="window.location.href='vista/listadocobrados.php'" button class="btn btn-info btn-md">
-COBRADOS</td> 
+<input type="submit" value="COBRADOS" onclick="this.form.action='vista/listadocobrados.php'" button class="btn btn-info btn-md">
+</td> 
 </tr>
 <br>
 </table> 
@@ -350,7 +396,7 @@ COBRADOS</td>
 
 </table> 
      
-
+</form>
 
 </div> 
 </div> 

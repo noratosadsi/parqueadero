@@ -62,12 +62,16 @@ if ($_POST["ingresar"])
 	    registrardatos($mysql);  
     }
 }
+/*
 if ($_POST["registrarsalida"])
 {
-	$cedula=$_REQUEST["cedulacliente"];
-	header ("Location: ../vista/registrarsalida.php?cedulacliente=$cedula");
+	$cedula=$_POST["cedulacliente"];
+	$matricula =$_POST['matricula'];
+	echo $cedula;
+	echo $matricula;
+	header ("Location: ../vista/salida.php");
 
-}
+}*/
 
   function registrardatos($mysql)
   {
@@ -113,11 +117,19 @@ if ($_POST["registrarsalida"])
 	  {
 		  $preciovehiculo=2;
 	  }
+	  
+	  $mysql->query("insert into estacionamiento (numero) values (2)")
+	  or die ($mysql->error." error al ingresar numero estacionamiento");
+	  
+	  $estacionamiento=$mysql->query("select * from estacionamiento where numero=2")
+	  or die ($mysql->error);
+	  $est=$estacionamiento->fetch_array();
+	 
 	
 	  $mysql->query("insert into factura (vehiculo_cliente_cedula,usuario_cedula,
-	  usuario_rol_idrol, costo_id) values ($_REQUEST[cedulacliente], $_SESSION[id_usuario],
-	  $_SESSION[nivel],$preciovehiculo)")
-      or die ($mysql->error);
+	  usuario_rol_idrol, costo_id, estacionamiento_id) values ($_REQUEST[cedulacliente], $_SESSION[id_usuario],
+	  $_SESSION[nivel],$preciovehiculo, $est[id])")
+      or die ($mysql->error."error al ingresar estacionamiento en factura");
 	
 	  $factura=$mysql->query("select * from factura where 
 	  vehiculo_cliente_cedula=$_REQUEST[cedulacliente]")

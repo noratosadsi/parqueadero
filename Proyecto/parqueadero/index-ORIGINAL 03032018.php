@@ -7,15 +7,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="vista/bootstrap/js/bootstrap.min.js"></script>
-
-<style type="text/css">
-
-.inputcentrado {
-   text-align: center;
-   font-size: 18px;
-   }
-</style>
-
 </head>
 <em><strong>
 <body background="vista/imagenes/tecnologia.jpg">
@@ -34,7 +25,7 @@
 <div class="row alert-success"> <!-- Color fondo general--> 
 <div class="col-sm-12 col-md-12"> 
 
-<form name="form1" method="post" action="form1.php">
+<form method="post" action="form1.php">
 <div class="panel-heading"> 
         
 <table border="0" align="center">
@@ -42,12 +33,8 @@
 <?php if(isset($_REQUEST['dato1'])){ echo "<td colspan='6' align='center'>
 <div class='alert alert-info'>"."REGISTRADO CORRECTAMENTE"."</div>";} 
 if(isset($_REQUEST['dato'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";}
-if(isset($_REQUEST['error'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger' name='error'> $_REQUEST[error] </div>";}
-if(isset($_REQUEST['error2'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger' name='error'> Ingreso no válido </div>";}
-?>
+<div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";
+}?>
 </td></tr>
  
 <tr> 
@@ -170,15 +157,6 @@ var fecha=(day + "/" + month + "/" + year);
 				elemento.style.backgroundColor=color2="yellow";
 			}
 		}
-		
-function sub(a){
- a=a-1;
-  seleccion = document.getElementsByName("posicion")[a].value;
-  document.getElementsByName("lugar")[0].value = seleccion;
-/*  alert(+seleccion);*/
-
-};
-
 	</script>
 
 <tr>
@@ -192,23 +170,18 @@ function sub(a){
 <tr>
 <td colspan="5">
 <br>
-
-
 <?php
 		$n=80;//Cantidad de parqueaderos disponibles
 		
 		$x=0;
 		echo "<table border='0' Style='font-family: Arial; font-size: 9pt; color:black'>";
 		echo "<tr align='center'>";
-		
-		
-		
 		for ($i = 1; $i <= $n; $i++) 
 		{
 		$x=$x+1;				
 			
 			echo "<td align='center' style='width:30px'>";
-			echo "<input type='button' name='posicion' onclick='sub($i);change(this);' style='width:30px' value='$i'></td>";
+			echo "<input type='button' onclick='change(this);' style='width:30px' value='$i'></td>";
 		
 		if ($x==15) {
 			echo "</tr>";
@@ -220,7 +193,6 @@ function sub(a){
 		echo "</table>";
 		?>
        </td>
-
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
 <?php
@@ -234,7 +206,8 @@ function sub(a){
 		$x=$x+1;				
 			
 			echo "<td style='width:30px'>";
-			echo "<input type='button' name='posicion' onclick='sub($i);change(this);' style='width:30px' value='$i'><!--$i--></td>";
+			echo "<input type='button' onclick='change(this);' style='width:30px' value='$i'><!--$i--></td>";
+		
 		if ($x==15) {
 			echo "</tr>";
 		echo "<tr align='center'>";
@@ -246,12 +219,6 @@ function sub(a){
 		?>
        </td>
 </tr>
-<tr>
-<td colspan="12" align="center" class="alert alert-info">
-ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' size='5' disabled>
-</td>
-</tr>
-
 </table>
 
 
@@ -308,18 +275,17 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 </table>
 
 <br>
-
-
+</form> 
 <table border="0" width="60%" align="center">
 <tr> 
 <td align="center">
-<button  button class="btn btn-info btn-md"  disabled>
+<button onclick="window.location.href='modelo/bd.php'" button class="btn btn-info btn-md"  disabled>
 INGRESAR</td> 
 
 <td align="center"> 
-<button  button class="btn btn-info btn-md" disabled>
+<button onclick="window.location.href='vista/actualizar.php'" button class="btn btn-info btn-md" disabled>
 REGISTRAR SALIDA</td> 
-</form>
+
 <td align="center">
 <button onclick="window.location.href='vista/listado.php'" button class="btn btn-info btn-md">
 PARQUEADOS</td>

@@ -21,6 +21,7 @@
 </div> 
 <div class="panel-body"> 
 
+
 <!-- Contenedor ejercicio--> 
 <div class="alert"> 
 <div class="row"> 
@@ -34,7 +35,7 @@ include "../modelo/config.php";
 	or die ($mysql->error);
 	
 
-echo '<table class="table table-hover table-bordered" cellspacing=2>';
+echo '<table class="table table-condensed table-bordered">';
 	echo '<tr class="active"><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Telefono 1</th><th>Telefono 2</th><th>Matricula</th><th>Marca</th><th>Modelo</th>
 	<th>Tipo</th><th>Descripcion</th><th>Hora Ingreso</th>
 	<th>Hora Salida</th><th>Duracion</th><th>Precio</th><th>Iva</th>
@@ -103,8 +104,7 @@ echo '<table class="table table-hover table-bordered" cellspacing=2>';
 </div> 
 </div>
 </div>
-</div>
-</div>
 </header>
+
 </strong></em></body>
 </html>

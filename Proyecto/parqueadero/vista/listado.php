@@ -45,8 +45,8 @@ include "../modelo/config.php";
   where detallefactura.horasalida is null;")
 	or die ($mysql->error);
 	
-	echo '<table class="table table-success" Border=2>';
-	echo '<tr><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Telefono 1</th><th>Telefono 2</th><th>Matricula</th><th>Marca</th><th>Modelo</th>
+	echo '<table class="table table-condensed table-bordered">';
+	echo '<tr class="active"><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Telefono 1</th><th>Telefono 2</th><th>Matricula</th><th>Marca</th><th>Modelo</th>
 	<th>Tipo</th><th>Descripcion</th><th>Hora Ingreso</th></tr>';
 	while ($mos=$mostrar->fetch_array())
 	{
