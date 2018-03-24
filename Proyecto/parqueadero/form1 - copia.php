@@ -102,7 +102,7 @@ $consulta=$mysql->query("select * from parqueados
       where cedulaclie=$cedula")
 	  or die ($mysql->error);
 	$reg=$consulta->fetch_array();
-	
+
 	  
 	if ($reg>0)
 	{
@@ -123,8 +123,6 @@ $consulta=$mysql->query("select * from parqueados
 		"no parqueado";
 	echo $horasalida;
 	}
-	
-
 
 //cupos
 	
@@ -134,14 +132,6 @@ echo $cosminb;*/
 $costo =$cosminb;
 /*else
 	$costo = $coshorab;*/
-
-//estacionamientos
-
-/*$estacionamientos=$mysql->query("select count(*) as estacionamiento from parqueados where cedulaclie=$cedula")
-	  or die ($mysql->error);
-	$est=$consulta->fetch_array();*/
-
-
 ?>
 
 <table border="0" width="95%" class="alert alert-success" align="center" Style="font-family: Arial; font-size: 10pt;"> 
@@ -247,7 +237,7 @@ else
 		var color1="";
 		var color2="";
 		function change (elemento) {
-			if(color1=="gray")
+			if(color1=="yellow")
 			{
 				elemento.style.backgroundColor=color1="#fff";
 			}else{
@@ -285,13 +275,6 @@ document.getElementsByName("lugar")[0].value = seleccion;
 <td colspan="5">
 
 <?php
-
-//consulta si está estacionado
-
-
-	 $estacionado=$mysql->query("select * from parqueados where cedulaclie=$cedula")
-	 or die ($mysql->error);
-
 		$m=$cup["motos"];//Cantidad de parqueaderos disponibles
 		
 		$x=0;
@@ -302,29 +285,11 @@ document.getElementsByName("lugar")[0].value = seleccion;
 		
 		for ($i = 1; $i <= $m; $i++) 
 		{
-			$x=$x+1;
+		$x=$x+1;				
 			
-			if ($verificar=$estacionado->num_rows)
-			{
-				$usar="";
-			}	
-			else
-			{
-				$usar="onclick='sub($i);change(this);'";
-			}			
-			
-			if (in_array($i, $estmoto))
-			{
-				echo "<td align='center' style='width:30px' bgcolor='gray' name='posicion'>";
-			    echo "$i </td>";
-			}
-			else
-			{
-				echo "<td align='center' style='width:30px'>";
-			    echo "<input type='button' name='posicion' $usar style='width:30px' value='$i'></td>";	
-			}
-			
-			
+			echo "<td align='center' style='width:30px'>";
+			echo "<input type='button' name='posicion' onclick='sub($i);change(this);' style='width:30px' value='$i'></td>";
+		
 		if ($x==15) {
 			echo "</tr>";
 		echo "<tr align='center'>";
@@ -346,29 +311,10 @@ document.getElementsByName("lugar")[0].value = seleccion;
 		echo "<tr align='center'>";
 		for ($i = 1; $i <= $b; $i++) 
 		{
-			$x=$x+1;
+		$x=$x+1;				
 			
-			if ($verificar=$estacionado->num_rows)
-			{
-				$usar="";
-			}	
-			else
-			{
-				$usar="onclick='sub($i);change(this);'";
-			}
-			
-			
-			if (in_array($i, $estbicicleta))
-			{
-				echo "<td style='width:30px' bgcolor='gray' name='posicion'>";
-			    echo "$i</td>";
-			}
-			else
-			{
-				echo "<td style='width:30px'>";
-			    echo "<input type='button' name='posicion' $usar style='width:30px' value='$i'><!--$i--></td>";
-			}
-		
+			echo "<td style='width:30px'>";
+			echo "<input type='button' name='posicion' onclick='sub($i);change(this);' style='width:30px' value='$i'><!--$i--></td>";
 		if ($x==15) {
 			echo "</tr>";
 		echo "<tr align='center'>";
@@ -383,7 +329,7 @@ document.getElementsByName("lugar")[0].value = seleccion;
 <tr>
 <td colspan="12" align="center" class="alert alert-info">
 ESTACIONAMIENTO ASIGNADO
-<input type='text' name='lugar' class='inputcentrado' size='5' value="<?php if (isset ($con['estacionamiento'])){ echo ($con['estacionamiento']);}?>" id="id" required onkeypress="return false;"/>
+<input type='text' name='lugar' class='inputcentrado' size='5' value="<?php if (isset ($_POST['lugar'])){ echo ($_POST['lugar']);}?>" readonly>
 
 
 

@@ -31,7 +31,7 @@
 
 <!-- Contenedor ejercicio--> 
 <div class="panel panel-body"> 
-<div class="row alert-success"> <!-- Color fondo general--> 
+<div class="row alert-primary"> <!-- Color fondo general--> 
 <div class="col-sm-12 col-md-12"> 
 
 <form name="form1" method="post" action="form1.php">
@@ -47,6 +47,8 @@ if(isset($_REQUEST['error'])){ echo "<td colspan='6' align='center'>
 <div class='alert alert-danger' name='error'> $_REQUEST[error] </div>";}
 if(isset($_REQUEST['error2'])){ echo "<td colspan='6' align='center'>
 <div class='alert alert-danger' name='error'> Ingreso no válido </div>";}
+if(isset($_REQUEST['error3'])){ echo "<td colspan='6' align='center'>
+<div class='alert alert-danger' name='error'> Ingreso no válido para borrar</div>";}
 ?>
 </td></tr>
  
@@ -93,7 +95,11 @@ var fecha=(day + "/" + month + "/" + year);
 </table>
 </div>
 
-<table border="0" width="95%" class="alert alert-success" align="center" Style="font-family: Arial; font-size: 10pt;"> 
+<?php include 'modelo/config.php';?>
+<?php include "modelo/cupos.php";?>
+
+
+<table border="0" width="95%" class="alert alert-primary" align="center" Style="font-family: Arial; font-size: 10pt;"> 
 <tr align="center">
 <td>Cedula</td>
 <td>&nbsp;&nbsp;<input title="Se necesita un nombre" type="text" name="cedulaactualizar" required >&nbsp;&nbsp;</td>
@@ -103,7 +109,7 @@ var fecha=(day + "/" + month + "/" + year);
 <td>Placa o Matricula</td>
 <td>&nbsp;&nbsp;<input type="text" name="matricula" disabled>&nbsp;&nbsp;</td>
 <td>Fecha y hora de ingreso</td>
-<td>&nbsp;&nbsp;<input disabled type="datetime" value="<?php date_default_timezone_set("America/Bogota"); echo date("d-m-Y") . " " . date("h:i:sa"); ?>">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input disabled type="datetime" value="">&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
@@ -175,6 +181,9 @@ function sub(a){
  a=a-1;
   seleccion = document.getElementsByName("posicion")[a].value;
   document.getElementsByName("lugar")[0].value = seleccion;
+   seleccion = document.getElementsByName("posicion")[a].value;
+  document.getElementsByName("lugar2")[0].value = seleccion;
+
 /*  alert(+seleccion);*/
 
 };
@@ -191,11 +200,13 @@ function sub(a){
 </tr>
 <tr>
 <td colspan="5">
-<br>
+
 
 
 <?php
-		$n=80;//Cantidad de parqueaderos disponibles
+
+
+		$n=$cup["motos"];//Cantidad de parqueaderos disponibles
 		
 		$x=0;
 		echo "<table border='0' Style='font-family: Arial; font-size: 9pt; color:black'>";
@@ -205,10 +216,19 @@ function sub(a){
 		
 		for ($i = 1; $i <= $n; $i++) 
 		{
-		$x=$x+1;				
 			
-			echo "<td align='center' style='width:30px'>";
-			echo "<input type='button' name='posicion' onclick='sub($i);change(this);' style='width:30px' value='$i'></td>";
+			$x=$x+1;
+			
+			if (in_array($i, $estmoto))
+			{
+				echo "<td align='center' style='width:30px' bgcolor='gray'>";
+				echo "$i</td>";
+			}
+			else
+			{
+				echo "<td align='center' style='width:30px'>";
+				echo "<input type='button' name='posicion' style='width:30px' value='$i'></td>";
+			}	
 		
 		if ($x==15) {
 			echo "</tr>";
@@ -224,17 +244,26 @@ function sub(a){
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
 <?php
-		$n=60;//Cantidad de parqueaderos disponibles
+		$n=$cup["bicicletas"];//Cantidad de parqueaderos disponibles
 		
 		$x=0;
-		echo "<table border='1'  Style='font-family: Arial; font-size: 9pt; color:black'>";
+		echo "<table border='0'  Style='font-family: Arial; font-size: 9pt; color:black'>";
 		echo "<tr align='center'>";
 		for ($i = 1; $i <= $n; $i++) 
 		{
-		$x=$x+1;				
+			$x=$x+1;
 			
-			echo "<td style='width:30px'>";
-			echo "<input type='button' name='posicion' onclick='sub($i);change(this);' style='width:30px' value='$i'><!--$i--></td>";
+			if (in_array($i, $estbicicleta))
+			{
+				echo "<td style='width:30px' bgcolor='gray'>";
+			    echo "$i</td>";
+			}
+			else
+			{
+				echo "<td style='width:30px'>";
+			    echo "<input type='button' name='posicion' style='width:30px' value='$i'><!--$i--></td>";
+			}
+			
 		if ($x==15) {
 			echo "</tr>";
 		echo "<tr align='center'>";
@@ -248,14 +277,15 @@ function sub(a){
 </tr>
 <tr>
 <td colspan="12" align="center" class="alert alert-info">
-ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' size='5' disabled>
+ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' size='5' readonly>
+
 </td>
 </tr>
 
 </table>
 
 
-<table border="0" width="90%" class="alert alert-success" align="center" Style="font-family: Arial; font-size: 10pt;"> 
+<table border="0" width="90%" class="alert alert-primary" align="center" Style="font-family: Arial; font-size: 10pt;"> 
 <tr>
 <td colspan="2" align="center">TARIFAS</td>
 <td></td>
@@ -268,8 +298,8 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 <td><input type="radio" name="radio" checked="checked" /></td>
 <td></td>
 <td>Capacidad</td>
-<td><input type="text" name="capacidadmotos" size="10"disabled></td>
-<td><input type="text" name="capacidadbici"size="10"disabled></td>
+<td><input type="text" name="capacidadmotos" size="10"disabled value="<?php echo $cup["motos"];?>" style="text-align:center"></td>
+<td><input type="text" name="capacidadbici"size="10"disabled value="<?php echo $cup["bicicletas"]?>" style="text-align:center"></td>
 <td>Costo segun tarifario</td>
 <td><input type="text" name="costotarif" disabled></td>
 </tr>
@@ -279,8 +309,8 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 <td><input type="radio" name="radio" /></td>
 <td></td>
 <td>Ocupados</td>
-<td><input type="text" name="ocupadosmotos"size="10"disabled></td>
-<td><input type="text" name="ocupadosbici"size="10"disabled></td>
+<td><input type="text" name="ocupadosmotos"size="10"disabled value="<?php echo $mot["motos"];?>" style="text-align:center"></td>
+<td><input type="text" name="ocupadosbici"size="10" disabled value="<?php echo $bic["bicicletas"];?>" style="text-align:center"></td>
 <td>Valor a pagar</td>
 <td><input type="text" name="apagar" disabled></td>
 </tr>
@@ -290,10 +320,10 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 <td><input type="radio" name="radio" /></td>
 <td></td>
 <td>Disponible</td>
-<td><input type="text" name="disponiblemotos"size="10" disabled></td>
-<td><input type="text" name="disponiblebici"size="10"disabled></td>
+<td><input type="text" name="disponiblemotos"size="10" disabled value="<?php echo $mdisp;?>" style="text-align:center"></td>
+<td><input type="text" name="disponiblebici"size="10"disabled value="<?php echo $bdisp;?>" style="text-align:center"></td>
 <td>Efectivo</td>
-<td><input type="text" name="efectivo"/></td>
+<td><input type="text" name="efectivo" disabled></td>
 </tr>
 </tr>
 
@@ -319,7 +349,7 @@ INGRESAR</td>
 <td align="center"> 
 <button  button class="btn btn-info btn-md" disabled>
 REGISTRAR SALIDA</td> 
-</form>
+
 <td align="center">
 <button onclick="window.location.href='vista/listado.php'" button class="btn btn-info btn-md">
 PARQUEADOS</td>
@@ -330,15 +360,11 @@ COBRADOS</td>
 </tr>
 <br>
 </table> 
-
 </td>
 </tr>
 <br>
-
-
 </table> 
-     
- 
+</form> 
 
 </div> 
 </div> 

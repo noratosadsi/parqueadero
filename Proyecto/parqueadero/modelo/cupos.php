@@ -1,38 +1,15 @@
-<?php include "../controlador/control.php";?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Mi Proyecto</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="../vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<script src="../vista/bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body background="../vista/imagenes/tecnol.jpg"><em><strong>
-<div class="container">
-<header>
-<?php include_once '../vista/header.php'; ?>
-
-
-<div class="col-sm-12 col-md-12"> 
-<div class="panel panel-default"> 
-<!-- contenedor del titulo--> 
-<div class="panel-heading"> 
-<h2 align="center">ESTACIONAMIENTOS DISPONIBLES</h2> 
-</div> 
-<div class="panel-body"> 
-
-
-<!-- Contenedor ejercicio--> 
-<div class="alert alert-success"> 
-<div class="row"> 
-<div class="col-sm-12 col-md-12">  
-
-<!--nuevo-->
+<?php //include "../controlador/control.php";?>
 <?php
-include "config.php";
 
-  $consulta=$mysql->query("select count(*) as motos from cliente 
+//include "config.php";
+
+//parqueaderos ocupados y disponibles
+
+$cupos=$mysql->query("select * from cupos")
+or die ($mysql->error);
+$cup=$cupos->fetch_array();
+		
+$consulta=$mysql->query("select count(*) as motos from cliente 
 inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
 inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
 inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
@@ -41,7 +18,7 @@ where horasalida is null and tipo='moto';")
 	or die ($mysql->error);
 $mot=$consulta->fetch_array();
 	
-  $consulta2=$mysql->query("select count(*) as bicicletas from cliente 
+$consulta2=$mysql->query("select count(*) as bicicletas from cliente 
 inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
 inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
 inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
@@ -50,58 +27,63 @@ where horasalida is null and tipo='bicicleta';")
 	or die ($mysql->error);
 	
 $bic=$consulta2->fetch_array();
+	
+$mdisp=$cup['motos']-$mot['motos'];
+$bdisp=$cup['bicicletas']-$bic['bicicletas'];
 
 
-$moto=20-$mot['motos'];
-$bicicleta=60-$bic['bicicletas'];
-
-if($moto==0)
+if($mdisp==0)
 {
-	$moto="sin cupo";
+	$mdisp="sin cupo";
 }
 
-if ($bicicleta==0)
+if ($bdisp==0)
 {
-    $bicicleta="sin cupo";
+    $bdisp="sin cupo";
 }
 
-    $mysql->close();	
+//ver el número del parqueadero 
+$moto=$mysql->query("select estacionamiento from parqueados where tipo='moto'")
+	or die ($mysql->error);
+
+	while ($estmot=$moto->fetch_array())
+	{
+		$estmoto[]=$estmot["estacionamiento"];
+	}
+	
+$bicicleta=$mysql->query("select estacionamiento from parqueados where tipo='bicicleta'")
+	or die ($mysql->error);
+
+	while ($estbic=$bicicleta->fetch_array())
+	{
+		$estbicicleta[]=$estbic["estacionamiento"];
+	}
+
+
+
+
+
+/*CALCULO COSTOS bicicleta*/
+$costo=$mysql->query("select * from costo where vehiculo='bicicleta'")
+or die ($mysql->error);
+$cosb=$costo->fetch_array();
+
+
+echo $cosminb= $cosb["pmin"].'<br>';
+echo $coshorasb= $cosb["phoras"].'<br>';
+echo $cosdiasb= $cosb["pdias"].'<br>';
+echo $cosmensualb= $cosb["pmensual"].'<br>'.'<br>';
+
+/*CALCULO COSTOS motos*/
+$costo=$mysql->query("select * from costo where vehiculo='moto'")
+or die ($mysql->error);
+$cosm=$costo->fetch_array();
+
+
+echo $cosminm= $cosm["pmin"].'<br>';
+echo $coshorasm= $cosm["phoras"].'<br>';
+echo $cosdiasm= $cosm["pdias"].'<br>';
+echo $cosmensualm= $cosm["pmensual"].'<br>';
+
+//$mysql->close();	
 ?>
-<table border="2" align="center">
-<tr>
-<td colspan="2">Estacionamientos ocupados</td>
-<td colspan="2">Estacionamientos disponibles</td>
-</tr>
-<tr>
-<td align="center">Motos</td>
-<td align="center">Bicicletas</td>
-<td align="center">Motos</td>
-<td align="center">Bicicletas</td>
-</tr>
-<tr>
-<td align="center">
-<?php echo $mot['motos'];?>
-</td>
-<td align="center">
-<?php echo $bic['bicicletas'];?>
-</td>
-<td align="center">
-<?php echo $moto;?>
-</td>
-<td align="center">
-<?php echo $bicicleta;?>
-</td>
-</tr>
-</table>
-</div> 
-</div> 
-</div> 
-</div> 
-</div>
-</div>
-
-</header>
-
-</div>
-</strong></em></body>
-</html>

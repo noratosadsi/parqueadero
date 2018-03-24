@@ -1,7 +1,7 @@
 <?php include '../controlador/control.php';
-include 'cambiarprecio.php';
+/*include 'cambiarprecio.php';
 $cambiarprecio->ajustar(); 
-$cambiarprecio->precio($mysql); 
+$cambiarprecio->precio($mysql); */
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +30,8 @@ $cambiarprecio->precio($mysql);
 
 <!--nuevo-->
 <?php
- // include "config.php";
- 
+include "config.php";
+
 error_reporting(5);	
 
  $actualizar=$mysql->query("select count(*) as actualizar from vehiculo
@@ -54,36 +54,35 @@ if ($_POST["ingresar"])
 {
 	if ($act["actualizar"]==1)
 	{
+		parqueados($mysql);
 		borrar($mysql);
         registrardatos($mysql);
     }
     else
     {
+		parqueados($mysql);
 	    registrardatos($mysql);  
     }
 }
-/*
-if ($_POST["registrarsalida"])
-{
-	$cedula=$_POST["cedulacliente"];
-	$matricula =$_POST['matricula'];
-	echo $cedula;
-	echo $matricula;
-	header ("Location: ../vista/salida.php");
 
-}*/
+function parqueados($mysql)
+{
+	$factura=$mysql->query("select * from factura where 
+	  vehiculo_cliente_cedula=$_REQUEST[cedulacliente]")
+      or die ($mysql->error." error seleccionando factura");
+	  $fac=$factura->fetch_array();
+	  
+	  $detalle=$mysql->query("select * from detallefactura where 'factura_idFactura'='$fac[idFactura]'")
+      or die ($mysql->error. " error seleccionando detallefactura");
+	  $det=$detalle->fetch_array(); 
+	
+	 $mysql->query("insert into parqueados (nomusu, apeusu, fechafacturado, cedulaclie,nomclie, apeclie, telclie1, telclie2, matricula, marca, modelo, tipo, descripcion, horaingreso, estacionamiento) values ('$_SESSION[login]','$_SESSION[nombre]',now(),$_POST[cedulacliente],'$_POST[nombre]','$_POST[apellido]','$_POST[telefono1]','$_POST[telefono2]','$_POST[matricula]','$_POST[marca]','$_POST[modelo]','$_POST[tipo]','$_POST[descripcion]',now(),'$_POST[lugar]')")
+    or die ($mysql->error." error al ingresar el historico");
+}
+
 
   function registrardatos($mysql)
   {
-	  
-	  /*if (is_numeric($_REQUEST["cedulacliente"]))
-	  {
-		  $error="Número de cédula ya se encuentra registrado";
-		  	  }
-	  else
-	  {
-		  $error="Ingreso no válido";
-	  }*/
 	  
   $mysql->query("insert into cliente(cedula,nombre,apellido,telefono1,telefono2) values 
 	  ($_REQUEST[cedulacliente],'$_REQUEST[nombre]','$_REQUEST[apellido]','$_REQUEST[telefono1]','$_REQUEST[telefono2]')");
@@ -118,10 +117,10 @@ if ($_POST["registrarsalida"])
 		  $preciovehiculo=2;
 	  }
 	  
-	  $mysql->query("insert into estacionamiento (numero) values (2)")
+	  $mysql->query("insert into estacionamiento (numero) values ($_REQUEST[lugar])")
 	  or die ($mysql->error." error al ingresar numero estacionamiento");
 	  
-	  $estacionamiento=$mysql->query("select * from estacionamiento where numero=2")
+	  $estacionamiento=$mysql->query("select * from estacionamiento where numero=$_REQUEST[lugar]")
 	  or die ($mysql->error);
 	  $est=$estacionamiento->fetch_array();
 	 
@@ -153,7 +152,7 @@ header("location: ../index.php?dato1=si");
 	on factura.idFactura=detallefactura.factura_idFactura
 	where vehiculo_cliente_cedula=$_REQUEST[cedulacliente]");
     if ($mysql->error)
-	die (header ("Location: ../vista/borrarvehiculo.php?error=Ingreso no válido"));
+	die (header ("Location: ../index.php?error3=si"));
 	$bor=$borrar->fetch_array();
 	
 	$idFactura=$bor["idFactura"];
@@ -165,6 +164,9 @@ header("location: ../index.php?dato1=si");
 	$mysql->query("delete from factura
     where vehiculo_cliente_cedula=$_REQUEST[cedulacliente];")
 	or die($mysql->error);
+	$mysql->query("delete from estacionamiento
+    where id=$bor[estacionamiento_id];")
+	or die($mysql->error);
 	$mysql->query("delete from tipo
     where vehiculo_cliente_cedula=$_REQUEST[cedulacliente];")
 	or die($mysql->error);
@@ -174,77 +176,8 @@ header("location: ../index.php?dato1=si");
 	$mysql->query("delete from cliente
     where cedula=$_REQUEST[cedulacliente];")
 	or die($mysql->error);
+    
   }
-  
-  /*
-  $actualizar=$mysql->query("select count(*) as actualizar from vehiculo
-      inner join cliente
-      on vehiculo.cliente_cedula=cliente.cedula
-      inner join tipo
-      on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
-      inner join factura
-      on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
-      inner join detallefactura
-      on factura.idFactura=detallefactura.factura_idFactura
-      inner join usuario
-      on factura.usuario_rol_idrol=usuario.rol_idrol
-      where cliente.cedula=$_REQUEST[cedulacliente] and horasalida is not null
-	  and usuario.nombre='$_SESSION[login]' and usuario.apellido='$_SESSION[nombre]'")
-  or die ($mysql->error);
-  $act=$actualizar->fetch_array();
- 
-
-if ($act["actualizar"]==1)
-{
-	borrar($mysql);
-    registrardatos($mysql);   		  
-}*/
-/*else
-{
-	registrardatos($mysql);  
-}*/
-
-  /*
-  $regmoto=$mysql->query("select count(*) as regmotos from cliente 
-  inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
-  inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
-  inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
-  inner join tipo on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
-  where horasalida is null and tipo='moto';") 
-  or die ($mysql->error);
-  
-  $regm=$regmoto->fetch_array(); 
-   
-  $regbici=$mysql->query("select count(*) as regbicis from cliente 
-  inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
-  inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
-  inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
-  inner join tipo on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
-  where horasalida is null and tipo='bicicleta';") 
-  or die ($mysql->error);
-  
-  $regb=$regbici->fetch_array();
-  
-	  if ($regm['regmotos']>=1 and $_REQUEST['tipo']=="moto")
-      {
-		  $errormoto="No hay estacionamientos disponibles para motos";
-	      header("location:../vista/formulario.php?error=$errormoto");
-      }
-      elseif ($regm['regmotos']<1 and $_REQUEST['tipo']=="moto")
-	  {
-			  //borrar($mysql);
-		      registrardatos($mysql); 
-	  }  
-      if ($regb['regbicis']>=60 and $_REQUEST['tipo']=="bicicleta")
-      {
-		  $errorbici="No hay estacionamientos disponibles para bicicletas";
-		  header("location:../vista/formulario.php?error=$errorbici");
-      }
-      elseif ($regb['regbicis']<60 and $_REQUEST['tipo']=="bicicleta")
-      {
-			  //borrar($mysql);
-		      registrardatos($mysql);
-      }*/
 ?>
 
 </div> 

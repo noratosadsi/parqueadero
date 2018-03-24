@@ -34,7 +34,7 @@
 <div class="row alert-success"> <!-- Color fondo general--> 
 <div class="col-sm-12 col-md-12"> 
 
-<form method="post" action="../controlador/registrarsalida.php" >
+<form method="post" action="" >
 <div class="panel-heading"> 
         
 <table border="0" align="center">
@@ -94,6 +94,7 @@ var fecha=(day + "/" + month + "/" + year);
 $cedula = $_POST['cedulacliente'];
 
 include '../modelo/config.php';
+include "../modelo/cupos.php";
 
  $salida=$mysql->query("select factura.*, costo.* from factura
 	inner join costo on factura.costo_id=costo.id
@@ -120,7 +121,7 @@ include '../modelo/config.php';
 		$error="Número de cédula no se encuentra registrado";
 	}
 	
-	$precio=$sal['precio']/60;
+	$precio=$sal['pmin']/60;
 	
     $mysql->query("update detallefactura
     inner join factura
@@ -159,6 +160,10 @@ $con=$consulta->fetch_array();
 $mysql->query("insert into historicofacturado (nomusu, apeusu, fechafacturado, cedulaclie,nomclie, apeclie, telclie1, telclie2, matricula, marca, modelo, tipo, descripcion, horaingreso, horasalida, duracion, precio, iva, total) values ('$con[nom]','$con[ape]','$con[fechafactura]','$con[cedula]','$con[nombre]','$con[apellido]','$con[telefono1]','$con[telefono2]','$con[matricula]','$con[marca]','$con[modelo]','$con[tipo]','$con[descripcion]','$con[horaingreso]','$con[horasalida]','$con[duracion]','$con[precio]','$con[iva]','$con[total]')")
     or die ($mysql->error);
 	
+//eliminar el vehiculo actualmente parqueado
+
+$mysql->query("delete from parqueados where cedulaclie=$cedula")
+or die ($mysql->error);
 	  
 ?>
 
@@ -260,11 +265,10 @@ function sub(a){
 </tr>
 <tr>
 <td colspan="5">
-<br>
 
 
 <?php
-		$n=80;//Cantidad de parqueaderos disponibles
+		$n=$cup["motos"]; //Cantidad de parqueaderos disponibles
 		
 		$x=0;
 		echo "<table border='0' Style='font-family: Arial; font-size: 9pt; color:black'>";
@@ -293,10 +297,10 @@ function sub(a){
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
 <?php
-		$n=60;//Cantidad de parqueaderos disponibles
+		$n=$cup["bicicletas"];//Cantidad de parqueaderos disponibles
 		
 		$x=0;
-		echo "<table border='1'  Style='font-family: Arial; font-size: 9pt; color:black'>";
+		echo "<table border='0'  Style='font-family: Arial; font-size: 9pt; color:black'>";
 		echo "<tr align='center'>";
 		for ($i = 1; $i <= $n; $i++) 
 		{
@@ -381,25 +385,24 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 <table border="0" width="60%" align="center">
 <tr> 
 <td align="center">
-<!--<button onclick="window.location.href='modelo/bd.php'" button class="btn btn-info btn-md">
-INGRESAR-->
-<input type="submit" class="btn btn-info btn-md" value="INGRESAR" name="ingresar">
+<button disabled button class="btn btn-info btn-md">
+INGRESAR
 </td> 
 
 <td align="center"> 
-<input type="submit" class="btn btn-info btn-md" value="REGISTRAR SALIDA" name="registrarsalida">
+<button disabled button class="btn btn-info btn-md">
+REGISTRAR SALIDA
 </td>
 
-</form>
+
 
 <td align="center">
-<button onclick="window.location.href='vista/listado.php'" button class="btn btn-info btn-md">
-PARQUEADOS
+<input type="submit" value="PARQUEADOS" onclick="this.form.action='listado.php'" button class="btn btn-info btn-md">
 </td>
 
 <td align="center">
-<button onclick="window.location.href='vista/listadocobrados.php'" button class="btn btn-info btn-md">
-COBRADOS</td> 
+<input type="submit" value="COBRADOS" onclick="this.form.action='listadocobrados.php'" button class="btn btn-info btn-md">
+</td> 
 </tr>
 <br>
 </table> 
@@ -411,7 +414,7 @@ COBRADOS</td>
 
 </table> 
      
-
+</form>
 
 </div> 
 </div> 
