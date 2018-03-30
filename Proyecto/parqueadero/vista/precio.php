@@ -27,28 +27,47 @@
 <form action="precio.php" method="post">
 <table align="center" width="900"> 
 <tr>
-<td  rowspan="2" valign="middle">
-Seleccione vehículo
-<select name="tipo">
-<option value="moto">Moto</option>
-<option value="bicicleta">Bicicleta</option>
-</select>
-</td>
-<td align="center" width="400">	Ingrese precio por minuto
-<input type="text" name="precio" required>
 </td>
 <td rowspan="2" align="center" valign="middle" name="prueba" width="270">	
 <?php
-include "../modelo/cambiarprecio.php";
+include "../modelo/config.php";
+
+
+$result1=$mysql->query("select * from costo where vehiculo='moto'")
+	or die($mysql->error." error seleccionando costo");
+	$res1=$result1->fetch_array();
+	
+	$result2=$mysql->query("select * from costo where vehiculo='bicicleta'")
+	or die($mysql->error." error seleccionando costo");
+	$res2=$result2->fetch_array();
 ?>
-</td>
-</tr>
-<tr>
-<td align="center">
+<table border="2" align="center" cellspacing="1">
+<tr><td align="center" colspan="2">Costo actual por minuto</td>
+<td align="center" colspan="2">Costo actual por hora</td>
+<td align="center" colspan="2">Costo actual por dia</td>
+<td align="center" colspan="2">Costo actual al mes</td></tr>
+
+<tr><td align="center">Moto</td><td align="center">Bicicleta</td>
+<td align="center">Moto</td><td align="center">Bicicleta</td>
+<td align="center">Moto</td><td align="center">Bicicleta</td>
+<td align="center">Moto</td><td align="center">Bicicleta</td></tr></tr>
+<tr></td>
+<td align="center"><input type="text" style="text-align:center" name="motos" size="10" value="<?php echo $res1['pmin'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="bicicletas" size="10" value="<?php echo $res2['pmin'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="motos" size="10" value="<?php echo $res1['phoras'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="bicicletas" size="10" value="<?php echo $res2['phoras'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="motos" size="10" value="<?php echo $res1['pdias'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="bicicletas" size="10" value="<?php echo $res2['pdias'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="motos" size="10" value="<?php echo $res1['pmensual'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="bicicletas" size="10" value="<?php echo $res2['pmensual'];?>"></td>
+<tr></tr>
+</table>
+<tr><br></tr>
 <br>
-<input type="submit" value="CAMBIAR PRECIO"  class="btn btn-info"><br>
-</td>
-</tr>
+</table>
+<br>
+<table align="center">
+<tr><td><br><input type="submit" value="ACTUALIZAR"  class="btn btn-info" align="center"></br></td></tr>
 </table>
 </form>
 <p name="error" align="center">

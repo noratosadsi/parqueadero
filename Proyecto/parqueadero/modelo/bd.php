@@ -76,7 +76,7 @@ function parqueados($mysql)
       or die ($mysql->error. " error seleccionando detallefactura");
 	  $det=$detalle->fetch_array(); 
 	
-	 $mysql->query("insert into parqueados (nomusu, apeusu, fechafacturado, cedulaclie,nomclie, apeclie, telclie1, telclie2, matricula, marca, modelo, tipo, descripcion, horaingreso, estacionamiento) values ('$_SESSION[login]','$_SESSION[nombre]',now(),$_POST[cedulacliente],'$_POST[nombre]','$_POST[apellido]','$_POST[telefono1]','$_POST[telefono2]','$_POST[matricula]','$_POST[marca]','$_POST[modelo]','$_POST[tipo]','$_POST[descripcion]',now(),'$_POST[lugar]')")
+	 $mysql->query("insert into parqueados (nomusu, apeusu, fechafacturado, cedulaclie,nomclie, apeclie, telclie1, telclie2, matricula, marca, modelo, tipo, descripcion, horaingreso, estacionamiento, precio) values ('$_SESSION[login]','$_SESSION[nombre]',now(),$_POST[cedulacliente],'$_POST[nombre]','$_POST[apellido]','$_POST[telefono1]','$_POST[telefono2]','$_POST[matricula]','$_POST[marca]','$_POST[modelo]','$_POST[tipo]','$_POST[descripcion]',now(),'$_POST[lugar]', '$_POST[costotarif]')")
     or die ($mysql->error." error al ingresar el historico");
 }
 

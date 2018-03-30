@@ -20,7 +20,14 @@ if(mysqli_num_rows($result)){
 	    $_SESSION["login"]= $array["nombre"];
 	    $_SESSION["nombre"]= $array["apellido"];
 	    $_SESSION["nivel"]= $array["rol_idrol"];
-	    header("location:../index.php");
+		
+		if ($_SESSION["nivel"]==1){
+			 header("location:../vista/menu administrador.php");
+		}
+		else{
+			 header("location:../index.php");
+		}
+	   
 }
 else
 {

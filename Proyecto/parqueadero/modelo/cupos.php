@@ -1,10 +1,7 @@
 <?php //include "../controlador/control.php";?>
 <?php
-
-//include "config.php";
-
-//parqueaderos ocupados y disponibles
-
+error_reporting(4);
+/*include "config.php";*/
 $cupos=$mysql->query("select * from cupos")
 or die ($mysql->error);
 $cup=$cupos->fetch_array();
@@ -45,7 +42,7 @@ if ($bdisp==0)
 //ver el número del parqueadero 
 $moto=$mysql->query("select estacionamiento from parqueados where tipo='moto'")
 	or die ($mysql->error);
-
+	
 	while ($estmot=$moto->fetch_array())
 	{
 		$estmoto[]=$estmot["estacionamiento"];
@@ -60,19 +57,16 @@ $bicicleta=$mysql->query("select estacionamiento from parqueados where tipo='bic
 	}
 
 
-
-
-
 /*CALCULO COSTOS bicicleta*/
 $costo=$mysql->query("select * from costo where vehiculo='bicicleta'")
 or die ($mysql->error);
 $cosb=$costo->fetch_array();
 
 
-echo $cosminb= $cosb["pmin"].'<br>';
-echo $coshorasb= $cosb["phoras"].'<br>';
-echo $cosdiasb= $cosb["pdias"].'<br>';
-echo $cosmensualb= $cosb["pmensual"].'<br>'.'<br>';
+$cosminb= $cosb["pmin"];
+$coshorasb= $cosb["phoras"];
+$cosdiasb= $cosb["pdias"];
+$cosmensualb= $cosb["pmensual"];
 
 /*CALCULO COSTOS motos*/
 $costo=$mysql->query("select * from costo where vehiculo='moto'")
@@ -80,10 +74,10 @@ or die ($mysql->error);
 $cosm=$costo->fetch_array();
 
 
-echo $cosminm= $cosm["pmin"].'<br>';
-echo $coshorasm= $cosm["phoras"].'<br>';
-echo $cosdiasm= $cosm["pdias"].'<br>';
-echo $cosmensualm= $cosm["pmensual"].'<br>';
+$cosminm= $cosm["pmin"];
+$coshorasm= $cosm["phoras"];
+$cosdiasm= $cosm["pdias"];
+$cosmensualm= $cosm["pmensual"];
 
 //$mysql->close();	
 ?>

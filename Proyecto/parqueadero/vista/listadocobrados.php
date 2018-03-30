@@ -39,7 +39,7 @@ echo '<table class="table table-condensed table-bordered">';
 	echo '<tr class="active"><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Telefono 1</th><th>Telefono 2</th><th>Matricula</th><th>Marca</th><th>Modelo</th>
 	<th>Tipo</th><th>Descripcion</th><th>Hora Ingreso</th>
 	<th>Hora Salida</th><th>Duracion</th><th>Precio</th><th>Iva</th>
-	<th>Total</th></tr>';
+	<th>Total</th><th>Factura</th></tr>';
 	while ($con=$consulta->fetch_array())
 	{
 	  echo '<tr>';
@@ -90,9 +90,11 @@ echo '<table class="table table-condensed table-bordered">';
       echo '</td>';
       echo '<td>';
       echo "$ ".$con['total'];
-      echo '</td>';	 	  
+      echo '</td>';	
+      echo '<td>';
+      echo "<a href=\"../modelo/recibo.php?cedularecibo=$con[cedulaclie]&horaingreso=$con[horaingreso]\" target=\"_blank\">Factura</a>";
+      echo '</td>'; 	  
       echo '</tr>';	  
-    
 	}
 	  echo '<table>';
 	

@@ -7,18 +7,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="vista/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 <style type="text/css">
 
 .inputcentrado {
    text-align: center;
    font-size: 18px;
+   background-color: #E9E9E9;
    }
 </style>
 
 </head>
 <em><strong>
-<body background="vista/imagenes/tecnologia.jpg">
+<body background="vista/imagenes/tecnol.jpg">
+
+//nuevo para alertas
+<?php echo "<div class='container'>
+<div class='alert alert-success alert-dismissible' id='myAlert'>
+<a href='' class='close'>&times;</a>
+<strong>Success!</strong> This alert box could indicate a successful or positive action.
+</div>
+</div>"
+?>
+
+<script>
+$(document).ready(function(){
+    $(".close").click(function(){
+        $("#myAlert").alert("close");
+    });
+});
+</script>
+
 <div class="container">
 <header>
 <?php include_once 'vista/header.php'; ?>
@@ -47,8 +68,6 @@ if(isset($_REQUEST['error'])){ echo "<td colspan='6' align='center'>
 <div class='alert alert-danger' name='error'> $_REQUEST[error] </div>";}
 if(isset($_REQUEST['error2'])){ echo "<td colspan='6' align='center'>
 <div class='alert alert-danger' name='error'> Ingreso no válido </div>";}
-if(isset($_REQUEST['error3'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger' name='error'> Ingreso no válido para borrar</div>";}
 ?>
 </td></tr>
  
@@ -102,7 +121,7 @@ var fecha=(day + "/" + month + "/" + year);
 <table border="0" width="95%" class="alert alert-primary" align="center" Style="font-family: Arial; font-size: 10pt;"> 
 <tr align="center">
 <td>Cedula</td>
-<td>&nbsp;&nbsp;<input title="Se necesita un nombre" type="text" name="cedulaactualizar" required >&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input title="Se necesita un nombre" type="text" name="cedulaactualizar" >&nbsp;&nbsp;</td>
 <td rowspan="2" valign="center">
 <button type="submit" class="btn btn-primary btn-sm">
 <span class="glyphicon glyphicon-refresh"></span>&nbsp;Validar</button></td>
@@ -205,31 +224,42 @@ function sub(a){
 
 <?php
 
+//consulta si está estacionado
 
-		$n=$cup["motos"];//Cantidad de parqueaderos disponibles
+
+
+		$m=$cup["motos"];//Cantidad de parqueaderos disponibles
 		
 		$x=0;
 		echo "<table border='0' Style='font-family: Arial; font-size: 9pt; color:black'>";
 		echo "<tr align='center'>";
 		
 		
-		
-		for ($i = 1; $i <= $n; $i++) 
+		for ($i = 1; $i <= $m; $i++) 
 		{
-			
 			$x=$x+1;
+			
+			if ($verificar=$estacionado->num_rows)
+			{
+				$usar="";
+			}	
+			else
+			{
+				$usar="onclick='sub($i);change(this);'";
+			}			
 			
 			if (in_array($i, $estmoto))
 			{
-				echo "<td align='center' style='width:30px' bgcolor='gray'>";
-				echo "$i</td>";
+				echo "<td align='center' style='width:30px'>";
+			    echo "<input type='submit' name='posicion' $usar style='width:30px; background-color:gray' value='$i'></td>";	
 			}
 			else
 			{
 				echo "<td align='center' style='width:30px'>";
-				echo "<input type='button' name='posicion' style='width:30px' value='$i'></td>";
-			}	
-		
+			    echo "<input type='button' name='posicion' style='width:30px' value='$i'></td>";	
+			}
+			
+			
 		if ($x==15) {
 			echo "</tr>";
 		echo "<tr align='center'>";
@@ -244,26 +274,37 @@ function sub(a){
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
 <?php
-		$n=$cup["bicicletas"];//Cantidad de parqueaderos disponibles
+		$b=$cup["bicicletas"];//Cantidad de parqueaderos disponibles
 		
 		$x=0;
 		echo "<table border='0'  Style='font-family: Arial; font-size: 9pt; color:black'>";
 		echo "<tr align='center'>";
-		for ($i = 1; $i <= $n; $i++) 
+		
+		for ($i = 1; $i <= $b; $i++) 
 		{
 			$x=$x+1;
 			
+			if ($verificar=$estacionado->num_rows)
+			{
+				$usar="";
+			}	
+			else
+			{
+				$usar="onclick='sub($i);change(this);'";
+			}
+			
+			
 			if (in_array($i, $estbicicleta))
 			{
-				echo "<td style='width:30px' bgcolor='gray'>";
-			    echo "$i</td>";
+				echo "<td align='center' style='width:30px'>";
+			    echo "<input type='submit' name='posicion' $usar style='width:30px; background-color:gray' value='$i'></td>";	
 			}
 			else
 			{
 				echo "<td style='width:30px'>";
 			    echo "<input type='button' name='posicion' style='width:30px' value='$i'><!--$i--></td>";
 			}
-			
+		
 		if ($x==15) {
 			echo "</tr>";
 		echo "<tr align='center'>";
@@ -295,7 +336,7 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 </tr>
 <tr>
 <td>Minutos</td>
-<td><input type="radio" name="radio" checked="checked" /></td>
+<td><input type="radio" name="radio" disabled></td>
 <td></td>
 <td>Capacidad</td>
 <td><input type="text" name="capacidadmotos" size="10"disabled value="<?php echo $cup["motos"];?>" style="text-align:center"></td>
@@ -306,7 +347,7 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 
 <tr>
 <td>Horas</td>
-<td><input type="radio" name="radio" /></td>
+<td><input type="radio" name="radio" disabled></td>
 <td></td>
 <td>Ocupados</td>
 <td><input type="text" name="ocupadosmotos"size="10"disabled value="<?php echo $mot["motos"];?>" style="text-align:center"></td>
@@ -317,7 +358,7 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 
 <tr>
 <td>Dias</td>
-<td><input type="radio" name="radio" /></td>
+<td><input type="radio" name="radio" disabled></td>
 <td></td>
 <td>Disponible</td>
 <td><input type="text" name="disponiblemotos"size="10" disabled value="<?php echo $mdisp;?>" style="text-align:center"></td>
@@ -329,7 +370,7 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 
 <tr>
 <td>Mensualidad</td>
-<td><input type="radio"name="radio"/></td>
+<td><input type="radio"name="radio" disabled></td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td colspan="3"></td>
 <td>Cambio</td>
@@ -339,7 +380,7 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 
 <br>
 
-
+</form>
 <table border="0" width="60%" align="center">
 <tr> 
 <td align="center">
@@ -350,13 +391,14 @@ INGRESAR</td>
 <button  button class="btn btn-info btn-md" disabled>
 REGISTRAR SALIDA</td> 
 
-<td align="center">
-<button onclick="window.location.href='vista/listado.php'" button class="btn btn-info btn-md">
-PARQUEADOS</td>
 
 <td align="center">
-<button onclick="window.location.href='vista/listadocobrados.php'" button class="btn btn-info btn-md">
-COBRADOS</td> 
+<a type="button" href="vista/listado.php" target="_blank" class="btn btn-info btn-md">PARQUEADOS</a>
+</td>
+
+<td align="center">
+<a type="button" href="vista/listadocobrados.php" target="_blank" button class="btn btn-info btn-md">COBRADOS</a>
+</td> 
 </tr>
 <br>
 </table> 
@@ -364,7 +406,7 @@ COBRADOS</td>
 </tr>
 <br>
 </table> 
-</form> 
+
 
 </div> 
 </div> 

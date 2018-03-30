@@ -8,7 +8,7 @@
 <link href="../vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../vista/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body background="../vista/imagenes/tecnologia.jpg"><em><strong>
+<body background="../vista/imagenes/tecnol.jpg"><em><strong>
 <div class="container">
 <header>
 <?php include_once '../vista/header.php'; ?>
@@ -33,77 +33,12 @@
 include "config.php";
 
   
-  $factura=$mysql->query("select * from factura
-	where vehiculo_cliente_cedula=$_REQUEST[cedularecibo]");
-	if($mysql->error)
-	die(header("Location: ../vista/vehiculofactura.php?error=Ingreso no válido"));
-	$fac=$factura->fetch_array();
+  $factura=$mysql->query("select * from historicofacturado
+	where cedulaclie=$_REQUEST[cedularecibo] and horaingreso='$_REQUEST[horaingreso]'")
+	or die($mysql->error);
+	$con=$factura->fetch_array();
 	
-    $mysql->query("update detallefactura
-    inner join factura
-    on detallefactura.factura_idFactura=factura.idFactura 
-    set fechafactura=now()
-    where idFactura=$fac[idFactura];");
-	if($mysql->error)
-	die(header("Location: ../vista/vehiculofactura.php?error=Número de cédula no se encuentra registrado"));
-	
-
-$consulta=$mysql->query("select cliente.*, vehiculo.matricula, vehiculo.marca,
-  vehiculo.modelo, tipo.tipo, tipo.descripcion, 
-  detallefactura.*, usuario.nombre as nom, usuario.apellido as ape from vehiculo
-  inner join cliente
-  on vehiculo.cliente_cedula=cliente.cedula
-  inner join tipo
-  on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
-  inner join factura
-  on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
-  inner join detallefactura
-  on factura.idFactura=detallefactura.factura_idFactura
-  inner join usuario
-  on factura.usuario_rol_idrol=usuario.rol_idrol
-  where cliente.cedula=$_REQUEST[cedularecibo] and
-  usuario.nombre='$_SESSION[login]' and usuario.apellido='$_SESSION[nombre]';")
-	or die ($mysql->error);
-	$con=$consulta->fetch_array();
-	
-	$horasalida=$con["horasalida"];
-	$duracion=$con["duracion"];
-	$precio=$con["precio"];
-	$iva=$con["iva"];
-	$total=$con["total"];
-	
-	if ($horasalida=="")
-	{
-		$horasalida="sin registrar";
-	}
-	if ($duracion=="")
-	{
-		$duracion="sin registrar";
-	}
-	if ($precio=="")
-	{
-		$precio="sin registrar";
-	}
-	else
-	{
-		$precio="$$precio";
-	}
-	if ($iva=="")
-	{
-		$iva="sin registrar";
-	}
-	else
-	{
-		$iva="$$iva";
-	}
-	if ($total=="")
-	{
-		$total="sin registrar";
-	}
-	else
-	{
-		$total="$$total";
-	}
+  
 echo '<table Border=2 align="center">';
 
 	
@@ -120,7 +55,7 @@ echo '<table Border=2 align="center">';
       echo 'Persona que factura';
       echo '</td>';
       echo '<td align="center">';
-      echo $con['nom']." ".$con['ape'];
+      echo $con['nomusu']." ".$con['apeusu'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -128,7 +63,7 @@ echo '<table Border=2 align="center">';
       echo 'Fecha factura';
       echo '</td>';
       echo '<td align="center">';
-      echo $con['fechafactura'];
+      echo $con['fechafacturado'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -136,7 +71,7 @@ echo '<table Border=2 align="center">';
       echo 'Cedula';
       echo '</td>';
       echo '<td align="center">';
-      echo $con['cedula'];
+      echo $con['cedulaclie'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -144,7 +79,7 @@ echo '<table Border=2 align="center">';
       echo 'Nombre';
       echo '</td>';
       echo '<td align="center">';
-      echo $con['nombre'];
+      echo $con['nomclie'];
       echo '</td>';
       echo '</tr>';
       echo '<tr>';
@@ -152,7 +87,7 @@ echo '<table Border=2 align="center">';
       echo 'Apellido';
       echo '</td>';	  
       echo '<td align="center">';
-      echo $con['apellido'];
+      echo $con['apeclie'];
       echo '</td>';
       echo '</tr>';
       echo '<tr>';
@@ -160,7 +95,7 @@ echo '<table Border=2 align="center">';
       echo 'Primer telefono';
       echo '</td>';	  
       echo '<td align="center">';
-      echo $con['telefono1'];
+      echo $con['telclie1'];
       echo '</td>';
       echo '</tr>';	  
       echo '<tr>';
@@ -168,7 +103,7 @@ echo '<table Border=2 align="center">';
       echo 'Segundo telefono';
       echo '</td>';	  
       echo '<td align="center">';
-      echo $con['telefono2'];
+      echo $con['telclie2'];
       echo '</td>';
       echo '</tr>';	  
       echo '<tr>';
@@ -224,7 +159,7 @@ echo '<table Border=2 align="center">';
       echo 'Hora salida';
       echo '</td>';
       echo '<td align="center">';
-      echo $horasalida;
+      echo $con['horasalida'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -232,7 +167,7 @@ echo '<table Border=2 align="center">';
       echo 'Duracion';
       echo '</td>';
       echo '<td align="center">';
-      echo $duracion;
+      echo $con['duracion'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -240,7 +175,7 @@ echo '<table Border=2 align="center">';
       echo 'Precio';
       echo '</td>';
       echo '<td align="center">';
-      echo $precio;
+      echo "$".$con['precio'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -248,7 +183,7 @@ echo '<table Border=2 align="center">';
       echo 'Iva';
       echo '</td>';
       echo '<td align="center">';
-      echo $iva;
+      echo "$".$con['iva'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -256,7 +191,7 @@ echo '<table Border=2 align="center">';
       echo 'Toral';
       echo '</td>';
       echo '<td align="center">';
-      echo $total;
+      echo "$".$con['total'];
       echo '</td>';	 	  
       echo '</tr>';	  
 	  echo '<table>';

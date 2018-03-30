@@ -8,7 +8,7 @@
 <link href="../vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 <script src="../vista/bootstrap/js/bootstrap.min.js"></script>
 </head>
-<body background="../vista/imagenes/tecnologia.jpg"><em><strong>
+<body background="../vista/imagenes/tecnol.jpg"><em><strong>
 <div class="container">
 <header>
 <?php include_once '../vista/header.php'; ?>
@@ -61,6 +61,9 @@
 	$mysql->query("delete from factura
     where vehiculo_cliente_cedula=$_REQUEST[cedulaborrar];")
 	or die($mysql->error);
+	$mysql->query("delete from estacionamiento
+    where id=$bor[estacionamiento_id];")
+	or die($mysql->error);
 	$mysql->query("delete from tipo
     where vehiculo_cliente_cedula=$_REQUEST[cedulaborrar];")
 	or die($mysql->error);
@@ -70,9 +73,14 @@
 	$mysql->query("delete from cliente
     where cedula=$_REQUEST[cedulaborrar];")
 	or die($mysql->error);
-     
+    
+	//borrar registro de la tabla historicofacturado
+	$mysql->query("delete from historicofacturado
+    where cedulaclie=$_REQUEST[cedulaborrar];")
+	or die($mysql->error);
+	
     echo 'Se ha borrado el registro del vehiculo';
-	 
+	
     $mysql->close();
 ?> 
 </div> 

@@ -39,7 +39,7 @@ if ($_SESSION["nivel"]==1)
 ?>
 </td>
 <td colspan="2" align="center"><br>
-<button onclick="window.location.href='../modelo/cupos.php'" width="500" style="color:#ffffff" class="btn btn-info">
+<button onclick="window.location.href='../modelo/cupos3.php'" width="500" style="color:#ffffff" class="btn btn-info">
 ESTACIONAMIENTOS
 </td>
 <td colspan='2' align='center'><br>
@@ -60,6 +60,10 @@ if ($_SESSION["nivel"]==1)
 }	
 ?>
 </td>
+<td colspan= "2" aling= "center"><br>
+<button onclick= "window. location. href='cupos2.php'" width="500" style="color:#ffffff" class= "btn btn-info">
+ESTACIONAMIENTOS DISPONIBLES
+
 </tr>
 </TABLE>
 </table> 
