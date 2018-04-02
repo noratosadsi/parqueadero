@@ -24,14 +24,13 @@
 <div class="row"> 
 <div class="col-sm-15 col-md-15">  
 <!--nuevo-->	
-<form action="precio.php" method="post">
+<form action="../modelo/cambiarprecio.php" method="post">
 <table align="center" width="900"> 
 <tr>
 </td>
 <td rowspan="2" align="center" valign="middle" name="prueba" width="270">	
 <?php
 include "../modelo/config.php";
-
 
 $result1=$mysql->query("select * from costo where vehiculo='moto'")
 	or die($mysql->error." error seleccionando costo");
@@ -52,14 +51,14 @@ $result1=$mysql->query("select * from costo where vehiculo='moto'")
 <td align="center">Moto</td><td align="center">Bicicleta</td>
 <td align="center">Moto</td><td align="center">Bicicleta</td></tr></tr>
 <tr></td>
-<td align="center"><input type="text" style="text-align:center" name="motos" size="10" value="<?php echo $res1['pmin'];?>"></td>
-<td align="center"><input type="text" style="text-align:center" name="bicicletas" size="10" value="<?php echo $res2['pmin'];?>"></td>
-<td align="center"><input type="text" style="text-align:center" name="motos" size="10" value="<?php echo $res1['phoras'];?>"></td>
-<td align="center"><input type="text" style="text-align:center" name="bicicletas" size="10" value="<?php echo $res2['phoras'];?>"></td>
-<td align="center"><input type="text" style="text-align:center" name="motos" size="10" value="<?php echo $res1['pdias'];?>"></td>
-<td align="center"><input type="text" style="text-align:center" name="bicicletas" size="10" value="<?php echo $res2['pdias'];?>"></td>
-<td align="center"><input type="text" style="text-align:center" name="motos" size="10" value="<?php echo $res1['pmensual'];?>"></td>
-<td align="center"><input type="text" style="text-align:center" name="bicicletas" size="10" value="<?php echo $res2['pmensual'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="motosmin" size="10" value="<?php echo $res1['pmin'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="bicicletasmin" size="10" value="<?php echo $res2['pmin'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="motoshoras" size="10" value="<?php echo $res1['phoras'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="bicicletashoras" size="10" value="<?php echo $res2['phoras'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="motosdias" size="10" value="<?php echo $res1['pdias'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="bicicletasdias" size="10" value="<?php echo $res2['pdias'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="motosmes" size="10" value="<?php echo $res1['pmensual'];?>"></td>
+<td align="center"><input type="text" style="text-align:center" name="bicicletasmes" size="10" value="<?php echo $res2['pmensual'];?>"></td>
 <tr></tr>
 </table>
 <tr><br></tr>

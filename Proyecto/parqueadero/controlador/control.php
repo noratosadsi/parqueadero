@@ -1,5 +1,6 @@
 <?php
 $menuadministrador=basename($_SERVER['PHP_SELF']);
+$ubicacion=dirname($_SERVER['PHP_SELF']);
 
 if (!isset($_SESSION))
 {
@@ -7,10 +8,25 @@ if (!isset($_SESSION))
 }
 if ($_SESSION["validar"]!="true") { 
 
-header("Location: vista/seguridad.php");
+//revisa si esta ubicado en index y form1
+if ($menuadministrador=="index.php" or $menuadministrador=="form1.php")
+{
+	header("Location: vista/seguridad.php");
+}
+//revisa si esta ubicado en la carpeta controlador o modelo
+if ($ubicacion=="/parqueadero/controlador" or $ubicacion=="/parqueadero/modelo")
+{
+	header("Location: ../vista/seguridad.php");
+}
+//revisa si esta ubicado en la carpeta vista
+if ($ubicacion=="/parqueadero/vista")
+{
+	header("Location: seguridad.php");
+}
 
 exit();
-}
+}	
+
 
 if ($_SESSION["nivel"]==2)
 {

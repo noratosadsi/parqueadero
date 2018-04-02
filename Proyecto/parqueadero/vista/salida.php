@@ -155,7 +155,7 @@ include "../modelo/cupos.php";
 	{
 		$mes=$sal['pmensual']/43800;
 		$precio=$mes/60;
-		$radiom="checked";
+		$radiomes="checked";
 	}
 
 	
@@ -168,7 +168,7 @@ include "../modelo/cupos.php";
 	horasalida=now(),
     duracion=timediff(horasalida,horaingreso),
 	precio=time_to_sec(duracion)*$precio,
-    iva=precio*0.16,
+    iva=precio*0.19,
     total=precio+iva
     where idFactura=$sal[idFactura] and horasalida is null;");
 	if ($mysql->error)
@@ -384,7 +384,7 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 </tr>
 <tr>
 <td>Mensualidad</td>
-<td><input type="radio"name="radio"<?php echo $radiom;?> disabled /></td>
+<td><input type="radio"name="radio"<?php echo $radiomes;?> disabled /></td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td colspan="3"></td>
 <td>Cambio</td>

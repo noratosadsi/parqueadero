@@ -178,7 +178,7 @@ $costo=$mysql->query("select * from costo where vehiculo='$reg[tipo]'")
     set horasalida=now(),
     duracion=timediff(horasalida,horaingreso),
 	total=time_to_sec(duracion)*$precio,
-    iva=total*0.16
+    iva=total*0.19
     where cedulaclie=$cedula;");
 	if ($mysql->error)
 	die (header ("Location: index.php?error=no se pudo actualizar la tabla parqueados"));
