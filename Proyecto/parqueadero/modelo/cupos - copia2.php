@@ -32,10 +32,6 @@
 <?php
 include "config.php";
 
-$cupos=$mysql->query("select * from cupos")
-or die ($mysql->error);
-$cup=$cupos->fetch_array();
-
   $consulta=$mysql->query("select count(*) as motos from cliente 
 inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
 inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
@@ -56,8 +52,8 @@ where horasalida is null and tipo='bicicleta';")
 $bic=$consulta2->fetch_array();
 
 
-$moto=$cup["motos"]-$mot['motos'];
-$bicicleta=$cup["bicicletas"]-$bic['bicicletas'];
+$moto=0-$mot['motos'];
+$bicicleta=0-$bic['bicicletas'];
 
 if($moto==0)
 {

@@ -13,11 +13,11 @@
 <header>
 <?php include_once 'header.php'; ?>
 
-<div class="col-sm-12 col-md-12"> 
+<div class="col-sm-14 col-md-14"> 
 <div class="panel panel-default"> 
 <!-- contenedor del titulo--> 
 <div class="panel-heading"> 
-<h2 align="center">LISTADO DE VEHICULOS PARQUEADOS</h2> 
+<h2 align="center">LISTADO DE PARQUEOS COBRADOS</h2> 
 </div> 
 <div class="panel-body"> 
 
@@ -31,68 +31,82 @@
 <?php
 include "../modelo/config.php";
   
-  $mostrar=$mysql->query("select * from vistaparqueados where numero is not null")
+  $consulta=$mysql->query("select * from historicofacturado")
 	or die ($mysql->error);
 	
-	echo '<table class="table table-condensed table-bordered">';
+
+echo '<table class="table table-condensed table-bordered">';
 	echo '<tr class="active"><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Telefono 1</th><th>Telefono 2</th><th>Matricula</th><th>Marca</th><th>Modelo</th>
-	<th>Tipo</th><th>Descripcion</th><th>Hora Ingreso</th><th>Estacionamiento</th></tr>';
-	while ($mos=$mostrar->fetch_array())
+	<th>Tipo</th><th>Descripcion</th><th>Hora Ingreso</th>
+	<th>Hora Salida</th><th>Duracion</th><th>Precio</th><th>Iva</th>
+	<th>Total</th><th>Factura</th></tr>';
+	while ($con=$consulta->fetch_array())
 	{
 	  echo '<tr>';
       echo '<td>';
-      echo $mos['cedula'];
+      echo $con['cedulaclie'];
       echo '</td>';
       echo '<td>';
-      echo $mos['nombre'];
+      echo $con['nomclie'];
       echo '</td>';	 	
       echo '<td>';
-      echo $mos['apellido'];
+      echo $con['apeclie'];
       echo '</td>';	
       echo '<td>';
-      echo $mos['telefono1'];
+      echo $con['telclie1'];
       echo '</td>';	 
       echo '<td>';
-      echo $mos['telefono2'];
-      echo '</td>';	
+      echo $con['telclie2'];
+      echo '</td>';
 	  echo '<td>';
-      echo $mos['matricula'];
+      echo $con['matricula'];
       echo '</td>';	
       echo '<td>';
-      echo $mos['marca'];
+      echo $con['marca'];
       echo '</td>';
       echo '<td>';
-      echo $mos['modelo'];
+      echo $con['modelo'];
       echo '</td>';
       echo '<td>';
-      echo $mos['tipo'];
+      echo $con['tipo'];
       echo '</td>';
       echo '<td>';
-      echo $mos['descripcion'];
+      echo $con['descripcion'];
       echo '</td>';	  
 	  echo '<td>';
-      echo $mos['horaingreso'];
+      echo $con['horaingreso'];
       echo '</td>';
       echo '<td>';
-      echo $mos['numero'];
-      echo '</td>';		 
+      echo $con['horasalida'];
+      echo '</td>';
+      echo '<td>';
+      echo $con['duracion'];
+      echo '</td>';
+      echo '<td>';
+      echo "$ ".$con['precio'];
+      echo '</td>';
+      echo '<td>';
+      echo "$ ".$con['iva'];
+      echo '</td>';
+      echo '<td>';
+      echo "$ ".$con['total'];
+      echo '</td>';	
+      echo '<td>';
+      echo "<a href=\"../modelo/recibo.php?cedularecibo=$con[cedulaclie]&horaingreso=$con[horaingreso]\" target=\"_blank\">Factura</a>";
+      echo '</td>'; 	  
       echo '</tr>';	  
-    
 	}
 	  echo '<table>';
 	
     $mysql->close();
 ?>
-
-
 </div> 
 </div> 
 </div> 
 </div> 
 </div>
-
+</div>
 </header>
 
-</div>
 </strong></em></body>
 </html>

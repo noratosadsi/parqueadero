@@ -34,9 +34,25 @@
 
 include "../modelo/config.php";
 
-$cupos=$mysql->query("select * from cupos")
+$cuposm=$mysql->query("select * from cupos where vehiculo='moto'")
       or die($mysql->error);
-	  $cup=$cupos->fetch_array();
+        $cupm=$cuposm->fetch_array();
+        
+$cuposb=$mysql->query("select * from cupos where vehiculo='bicicleta'")
+or die($mysql->error);
+$cupb=$cuposb->fetch_array();
+
+if (isset($_REQUEST["error"]))
+{
+      if ($_REQUEST["error"]=="errmoto")
+      {
+            echo "<script>alert('error al actualizar los cupos para motos');</script>";
+      }
+      if ($_REQUEST["error2"]=="errbici")
+      {
+            echo "<script>alert('error al actualizar los cupos para bicicletas');</script>";
+      }
+}
 ?>
 
 <form action="../modelo/numero de parqueaderos php.php" method="post">
@@ -44,15 +60,15 @@ $cupos=$mysql->query("select * from cupos")
 <tr>
 <td style="color:#0A0909"><u>INGRESAR NUMERO DE ESTACIONAMIENTO PARA MOTOS</u></td>
 <td width="10"><br></td>
-<td><input type="text" placeholder="colocar su numero" name="motos" value="<?php echo $cup["motos"]?>"></td>
+<td><input type="text" placeholder="colocar su numero" name="motos" value="<?php echo $cupm["cantidad"]?>"></td>
 </tr>
 <tr>
 <td style="color:#0A0909"><u>INGRESAR NUMERO DE ESTACIONAMIENTO PARA BICICLETAS</u></td>
 <td> <br></td>
-<td><input type="text" placeholder="colocar su numero" name="bicicletas" value="<?php echo $cup["bicicletas"]?>"></td>
+<td><input type="text" placeholder="colocar su numero" name="bicicletas" value="<?php echo $cupb["cantidad"]?>"></td>
 </tr>
 <tr>
-<td style="color:#000" align="center" colspan="3"><input type="submit" value="submit" class= "btn btn-info" >
+<td style="color:#000" align="center" colspan="3"><input type="submit" value="ACTUALIZAR" class= "btn btn-info" >
 </tr>
 </table>
 </form>

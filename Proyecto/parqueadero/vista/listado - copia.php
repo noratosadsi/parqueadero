@@ -31,12 +31,23 @@
 <?php
 include "../modelo/config.php";
   
-  $mostrar=$mysql->query("select * from vistaparqueados where numero is not null")
+  $mostrar=$mysql->query("select cliente.*, vehiculo.matricula, vehiculo.marca,
+  vehiculo.modelo, tipo.tipo, tipo.descripcion, 
+  detallefactura.horaingreso from vehiculo
+  inner join cliente
+  on vehiculo.cliente_cedula=cliente.cedula
+  inner join tipo
+  on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
+  inner join factura
+  on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
+  inner join detallefactura
+  on factura.idFactura=detallefactura.factura_idFactura
+  where detallefactura.horasalida is null;")
 	or die ($mysql->error);
 	
 	echo '<table class="table table-condensed table-bordered">';
 	echo '<tr class="active"><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Telefono 1</th><th>Telefono 2</th><th>Matricula</th><th>Marca</th><th>Modelo</th>
-	<th>Tipo</th><th>Descripcion</th><th>Hora Ingreso</th><th>Estacionamiento</th></tr>';
+	<th>Tipo</th><th>Descripcion</th><th>Hora Ingreso</th></tr>';
 	while ($mos=$mostrar->fetch_array())
 	{
 	  echo '<tr>';
@@ -72,10 +83,7 @@ include "../modelo/config.php";
       echo '</td>';	  
 	  echo '<td>';
       echo $mos['horaingreso'];
-      echo '</td>';
-      echo '<td>';
-      echo $mos['numero'];
-      echo '</td>';		 
+      echo '</td>';	 
       echo '</tr>';	  
     
 	}

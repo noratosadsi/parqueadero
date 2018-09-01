@@ -31,9 +31,9 @@
 <?php
 include "../modelo/config.php";
   
-  $consulta=$mysql->query("select * from historicofacturado")
+  $consulta=$mysql->query("select * from vistaparqueados where numero is null")
 	or die ($mysql->error);
-	
+
 
 echo '<table class="table table-condensed table-bordered">';
 	echo '<tr class="active"><th>Cedula</th><th>Nombre</th><th>Apellido</th><th>Telefono 1</th><th>Telefono 2</th><th>Matricula</th><th>Marca</th><th>Modelo</th>
@@ -42,21 +42,23 @@ echo '<table class="table table-condensed table-bordered">';
 	<th>Total</th><th>Factura</th></tr>';
 	while ($con=$consulta->fetch_array())
 	{
+    $total=$con["total"]+$con["iva"];
+    
 	  echo '<tr>';
       echo '<td>';
-      echo $con['cedulaclie'];
+      echo $con['cedula'];
       echo '</td>';
       echo '<td>';
-      echo $con['nomclie'];
+      echo $con['nombre'];
       echo '</td>';	 	
       echo '<td>';
-      echo $con['apeclie'];
+      echo $con['apellido'];
       echo '</td>';	
       echo '<td>';
-      echo $con['telclie1'];
+      echo $con['telefono1'];
       echo '</td>';	 
       echo '<td>';
-      echo $con['telclie2'];
+      echo $con['telefono2'];
       echo '</td>';
 	  echo '<td>';
       echo $con['matricula'];
@@ -83,16 +85,16 @@ echo '<table class="table table-condensed table-bordered">';
       echo $con['duracion'];
       echo '</td>';
       echo '<td>';
-      echo "$ ".$con['precio'];
+      echo "$ ".$con['total'];
       echo '</td>';
       echo '<td>';
       echo "$ ".$con['iva'];
       echo '</td>';
       echo '<td>';
-      echo "$ ".$con['total'];
+      echo "$ ".$total;
       echo '</td>';	
       echo '<td>';
-      echo "<a href=\"../modelo/recibo.php?cedularecibo=$con[cedulaclie]&horaingreso=$con[horaingreso]\" target=\"_blank\">Factura</a>";
+      echo "<a href=\"../modelo/recibo.php?cedularecibo=$con[cedula]&horaingreso=$con[horaingreso]\" target=\"_blank\">Factura</a>";
       echo '</td>'; 	  
       echo '</tr>';	  
 	}

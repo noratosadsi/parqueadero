@@ -98,7 +98,6 @@ var fecha=(day + "/" + month + "/" + year);
 </table>
 </div>
 
-
 <?php
 
 
@@ -108,6 +107,46 @@ $lugar= $_POST['lugar'];
 
 include 'modelo/config.php';
 
+//consulta si el vehículo está estacionado por el número de cédula
+
+function consulta($mysql)
+{
+	if(isset($_POST["lugar"]))
+	{
+		$vehiculo="moto";
+
+	};
+
+	if(isset($_POST["posicion2"]))
+	{
+		$vehiculo="bicicleta";
+	};
+	$cedula = $_POST['cedulaactualizar'];
+    $lugar= $_POST['lugar'];
+
+$consulta=$mysql->query("select * from vistaparqueados where numero is not null and cedula='$cedula' or vehiculo ='$vehiculo' and numero='$lugar';")
+	  or die ($mysql->error."sadfasdhfhasdhfh 123");
+
+
+
+ /*   $tipo="tipo.tipo";
+
+	$consulta=$mysql->query("select * from estacionamiento inner join factura
+    on estacionamiento.id=factura.estacionamiento_id inner join vehiculo
+    on factura.vehiculo_cliente_cedula=vehiculo.cliente_cedula
+    inner join tipo on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
+    inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
+    inner join cliente on vehiculo.cliente_cedula=cliente.cedula
+    where vehiculo.cliente_cedula='$cedula' and estacionamiento.vehiculo='$tipo'")
+	  or die ($mysql->error."sadfasdhfhasdhfh 123 $cedula $lugar");
+	*/
+	return $consulta;
+};
+
+$reg=consulta($mysql)->fetch_array();
+	
+/*
+
 $consulta=$mysql->query("select * from parqueados
       where cedulaclie='$cedula' or estacionamiento='$lugar'")
 	  or die ($mysql->error);
@@ -116,21 +155,44 @@ $consulta=$mysql->query("select * from parqueados
 $consulta2=$mysql->query("select * from historicofacturado
       where cedulaclie='$cedula'")
 	  or die ($mysql->error);
-	$reg1=$consulta2->fetch_array();
+	$reg1=$consulta2->fetch_array();*/
 	
+	
+//consulta el costo seleccionado 
 
 $costo=$mysql->query("select * from costo where vehiculo='$reg[tipo]'")
 	  or die ($mysql->error);
 	$cos=$costo->fetch_array();
 	
 	
-	  
+
+	//comprueba si el vehículo está estacionado para registrar su salida
+
 	if ($reg>0)
 	{
+
+		/*	$consulta=$mysql->query("select * from estacionamiento 
+inner join factura
+on estacionamiento.id=factura.estacionamiento_id
+inner join vehiculo
+on factura.vehiculo_cliente_cedula=vehiculo.cliente_cedula
+inner join tipo
+on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
+where factura.vehiculo_cliente_cedula=$cedula or estacionamiento.numero=$lugar")
+	or die ($mysql->error." aqui esta el error: Fallo al accesar al sistema  ".$mysql->errno);
+		
+		
 	$consulta=$mysql->query("select * from parqueados where cedulaclie='$cedula' or estacionamiento='$lugar'")
 	or die ($mysql->error);
-	$con=$consulta->fetch_array();		
-	$cedula=$reg["cedulaclie"];
+
+	$con=$consulta->fetch_array();*/
+
+//guarda la consulta en la variable $con para realizar la salida del vehículo
+
+
+    $con=consulta($mysql)->fetch_array();
+
+	$cedula=$reg["vehiculo_cliente_cedula"];
 	$horaing =$con['horaingreso'];
 	$horaingreso = date("d/m/Y H:i:s",strtotime($horaing));
 	$horasalida =date('d/m/Y H:i:s');
@@ -152,28 +214,30 @@ $costo=$mysql->query("select * from costo where vehiculo='$reg[tipo]'")
 	if ($con["precio"]==$cos["pmin"])
 	{
 		$precio=$cos['pmin']/60;
-	}
+	};
 	//calcular por horas
 	if ($con["precio"]==$cos["phoras"])
 	{
 		$hora=$cos['phoras']/60;
 		$precio=$hora/60;
-	}
+	};
 	//calcular por dias
 	if ($con["precio"]==$cos["pdias"])
 	{
 		$dia=$cos['pdias']/1440;
 		$precio=$dia/60;
-	}
+	};
 	//calcular po mes
 	if ($con["precio"]==$cos["pmensual"])
 	{
 		$mes=$cos['pmensual']/43800;
 		$precio=$mes/60;
-	}
+	};
 
-	//actualiza los datos
+	//actualiza los datos registrando la salida del vehículo
 	
+/*
+
 	$mysql->query("update parqueados
     set horasalida=now(),
     duracion=timediff(horasalida,horaingreso),
@@ -182,38 +246,95 @@ $costo=$mysql->query("select * from costo where vehiculo='$reg[tipo]'")
     where cedulaclie=$cedula;");
 	if ($mysql->error)
 	die (header ("Location: index.php?error=no se pudo actualizar la tabla parqueados"));
-	
+
+	*/
+
+	 $mysql->query("update detallefactura inner join factura
+    on detallefactura.factura_idFactura=factura.idFactura 
+    set fechafactura=now(),
+	horasalida=now(),
+    duracion=timediff(horasalida,horaingreso),
+	total=time_to_sec(duracion)*$precio,
+    iva=total*0.19
+    where idFactura=$con[idFactura];");
+	if ($mysql->error)
+		die ("errorrrrr  ".$con["precio"]."| no aparece el precio");
+	//die (header ("Location: index.php?error=no se pudo actualizar la tabla parqueados"));
+
+	/*
 	$actualizar=$mysql->query("select * from parqueados where cedulaclie='$cedula'")
 	or die ($mysql->error);
-	$act=$actualizar->fetch_array();
+	$act=$actualizar->fetch_array();*/
 
     //suma el precio con iva
 	
-	$total=$act["total"]+$act["iva"];	
+	//$total=$act["total"]+$act["iva"];	
 	
+/*  $actualizar=$mysql->query("select * from estacionamiento inner join factura
+    on estacionamiento.id=factura.estacionamiento_id inner join vehiculo
+    on factura.vehiculo_cliente_cedula=vehiculo.cliente_cedula
+    inner join tipo on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
+    inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
+    where vehiculo.cliente_cedula=$cedula")
+	  or die ($mysql->error."sadfasdhfhasdhfh 12345 $cedula $lugar");  */
+
+consulta($mysql);
+$act=consulta($mysql)->fetch_array();
+$total=$act["total"]+$act["iva"];	
+
+//deshabilita el botón de ingresar vehiculo al parqueadero
+$deshabilitar="disabled";
+
+   // $act=$actualizar->fetch_array();
+    
+    //$total=$act["total"];
 
 	/*echo $horasalida,"esta";*/
 	echo '<script class="color">alert("Vehiculo parqueado");</script>';
 	} 
 
 	else{
+
+		/* $consulta2=$mysql->query("select * from historicofacturado
+	  where cedulaclie='$cedula'")
+	  or die ($mysql->error); */
 		
-		if (isset($reg1["cedulaclie"])){
+	/* 	if (isset($reg1["cedulaclie"])){
 			$cedula=$reg1["cedulaclie"];
 		}
 		else {
 			$cedula=$_POST["cedulaactualizar"];
 			echo '<script language="javascript">alert("Usuario NO existe");</script>';
 		};
-		
+		 */
+
+		$consulta2=$mysql->query("select * from vistaparqueados where cedula='$cedula' and numero is null;")
+		or die ($mysql->error);
+	   $reg1=$consulta2->fetch_array();
+
+	   if (isset($reg1["cedula"])){
+		$cedula=$reg1["cedula"];
+	   }
+	   else {
+		$cedula=$_POST["cedulaactualizar"];
+		echo '<script language="javascript">alert("Usuario NO existe");</script>';
+	    };
+
+
 		//deshabilita la opcion de ingresar efectivo antes de ingresar el vehiculo
 		$disabled="disabled";
         		
-		$consulta1=$mysql->query("select * from historicofacturado where cedulaclie='$cedula'")
+		/* $consulta1=$mysql->query("select * from historicofacturado where cedulaclie='$cedula'")
+		or die ($mysql->error);
+		$con=$consulta1->fetch_array();
+		$horaingreso =date('d/m/Y H:i:s'); */
+		/*$horasalida ="NO PARQUEADO";*/
+
+		$consulta1=$mysql->query("select * from vistaparqueados where cedula='$cedula' and numero is null;")
 		or die ($mysql->error);
 		$con=$consulta1->fetch_array();
 		$horaingreso =date('d/m/Y H:i:s');
-		/*$horasalida ="NO PARQUEADO";*/
+
 		echo '<script language="javascript">alert("Vehiculo NO parqueado, por favor ingrese datos");</script>'; 
 		}
 
@@ -234,13 +355,13 @@ include "modelo/cupos.php";
 <td>&nbsp;&nbsp;<input type="text" name="matricula" value="<?php echo $con['matricula']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
 
 <td>Fecha y hora de Ingreso</td>
-<td>&nbsp;&nbsp;<input type="datetime" value="<?php echo $horaingreso;?>" readonly style="background-color: #E9E9E9">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input name="horaingreso" type="datetime" value="<?php echo $horaingreso;?>" readonly style="background-color: #E9E9E9">&nbsp;&nbsp;</td>
 
 </tr>
 
 <tr align="center">
 <td>Nombres</td>
-<td>&nbsp;&nbsp;<input type="text" name="nombre" value="<?php echo $con['nomclie']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="nombre" value="<?php echo $con['nombre']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
 <td>Marca</td>
 <td>&nbsp;&nbsp;<input type="text" name="marca" value="<?php echo $con['marca']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
 
@@ -251,17 +372,17 @@ include "modelo/cupos.php";
 
 <tr align="center">
 <td>Apellidos</td>
-<td>&nbsp;&nbsp;<input type="text" name="apellido" value="<?php echo $con['apeclie']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="apellido" value="<?php echo $con['apellido']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
 <td></td>
 <td>Modelo</td>
 <td>&nbsp;&nbsp;<input type="text" name="modelo" value="<?php echo $con['modelo']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
 <td>Tiempo de permanencia</td>
-<td>&nbsp;&nbsp;<input type="text" value="<?php echo $act["duracion"]; ?>" readonly style="background-color: #E9E9E9">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="permanencia" value="<?php echo $act["duracion"]; ?>" readonly style="background-color: #E9E9E9">&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Telefono 1</td>
-<td>&nbsp;&nbsp;<input type="text" name="telefono1" value="<?php echo $con['telclie1']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="telefono1" value="<?php echo $con['telefono1']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
 <td></td>
 <td>Tipo</td>
 <!--CAMPO TIPO VEHICULO SELECCIONADO-->
@@ -269,7 +390,10 @@ include "modelo/cupos.php";
 
 <td>&nbsp;&nbsp;<select onchange="myFunction()" id="vehiculo" name="tipo">
 <?php 
-if(!isset($con["estacionamiento"]))
+
+//muestra ambos vehículos para seleccionar en caso de que el vehículo ingrese al parqueadero
+
+if(!isset($con["numero"]))
 {
 	echo "<option value=''></option>";
 	echo "<option value=\"moto\">moto</option>";
@@ -379,17 +503,21 @@ document.getElementsByName("costotarif")[0].value = z;
  }
 
 }
+
 </script>
 
 
 <?php
-if (isset($con["estacionamiento"]))
+//muestra el vehículo parqueado sin opción de seleccionar otro vehículo
+
+
+if (isset($con["numero"]))
 {
-	if ($con['tipo']=="moto")
+	if ($con['vehiculo']=="moto")
 	{
 		echo "<option value=\"moto\">moto</option>";
     }
-	if ($con['tipo']=="bicicleta")
+	if ($con['vehiculo']=="bicicleta")
     {
 		echo "<option value=\"bicicleta\">bicicleta</option>";
     }
@@ -397,17 +525,17 @@ if (isset($con["estacionamiento"]))
 ?>
 </select>&nbsp;&nbsp;</td>
 <td>Precio</td>
-<td>&nbsp;&nbsp;<input type="text" value="<?php echo "$".$act["total"];?>" readonly style="background-color: #E9E9E9">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="precio" value="<?php echo "$".$act["total"];?>" readonly style="background-color: #E9E9E9">&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">
 <td>Telefono 2</td>
-<td>&nbsp;&nbsp;<input type="text" name="telefono2" value="<?php echo $con['telclie2']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="telefono2" value="<?php echo $con['telefono2']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
 <td></td>
 <td>Descripcion / Observacion</td>
 <td>&nbsp;&nbsp;<input type="text" name="descripcion" value="<?php echo $con['descripcion']; ?>" <?php echo $estilo, $readonly;?>>&nbsp;&nbsp;</td>
 <td>IVA</td>
-<td>&nbsp;&nbsp;<input type="text" value="<?php echo "$".$act["iva"];?>" readonly style="background-color: #E9E9E9">&nbsp;&nbsp;</td>
+<td>&nbsp;&nbsp;<input type="text" name="iva" value="<?php echo "$".$act["iva"];?>" readonly style="background-color: #E9E9E9">&nbsp;&nbsp;</td>
 </tr>
 </table>
 
@@ -433,10 +561,28 @@ if (isset($con["estacionamiento"]))
 			}
 		}
 		
+//muestra los numeros de estacionamiento de las motos
 function sub(a){
  a=a-1;
- seleccion = document.getElementsByName("posicion")[a].value;
-document.getElementsByName("lugar")[0].value = seleccion;
+ //obtiene el numero de estacionamiento para las motos
+ seleccionmoto = document.getElementsByName("posicion")[a].value;
+ //muestra el numero de estacionamiento seleccionado para motos
+document.getElementsByName("lugar")[0].value = seleccionmoto;
+
+/*  alert(+seleccion);*/
+
+};
+
+//muestra los numeros de estacionamiento de las bicicletas
+function subb(b){
+
+b=b-1;
+
+//obtiene el numero de estacionamiento apra las bicicletas
+seleccionbici = document.getElementsByName("posicionb")[b].value;
+//muestra el numero de estacionamiento seleccionado para bicicletas
+document.getElementsByName("lugar")[0].value = seleccionbici;
+
 /*  alert(+seleccion);*/
 
 };
@@ -459,11 +605,13 @@ document.getElementsByName("lugar")[0].value = seleccion;
 //consulta si está estacionado
 
 
-	 $estacionado=$mysql->query("select * from parqueados where cedulaclie=$cedula")
-	 or die ($mysql->error);
+	/*  $estacionado=$mysql->query("select * from parqueados where cedulaclie=$cedula")
+	 or die ($mysql->error); */
+
+	 $estacionado=consulta($mysql);
 
 
-		$m=$cup["motos"];//Cantidad de parqueaderos disponibles
+		$m=$cupm["cantidad"];//Cantidad de parqueaderos disponibles para motos
 		
 		$x=0;
 		echo "<table border='0' Style='font-family: Arial; font-size: 9pt; color:black'>";
@@ -509,7 +657,7 @@ document.getElementsByName("lugar")[0].value = seleccion;
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
 <?php
-		$b=$cup["bicicletas"];//Cantidad de parqueaderos disponibles
+		$b=$cupb["cantidad"];//Cantidad de parqueaderos disponibles para bicicletas
 		
 		$x=0;
 		echo "<table border='0'  Style='font-family: Arial; font-size: 9pt; color:black'>";
@@ -525,19 +673,19 @@ document.getElementsByName("lugar")[0].value = seleccion;
 			}	
 			else
 			{
-				$usar="onclick='sub($i);change(this);'";
+				$usar="onclick='subb($i);change(this);'";
 			}
 			
 			
 			if (in_array($i, $estbicicleta))
 			{
-				echo "<td style='width:30px' bgcolor='gray' name='posicion'>";
+				echo "<td style='width:30px' bgcolor='gray' name='posicionb'>";
 			    echo "$i</td>";
 			}
 			else
 			{
 				echo "<td style='width:30px'>";
-			    echo "<input type='button' name='posicion' $usar style='width:30px' value='$i'><!--$i--></td>";
+			    echo "<input type='button' name='posicionb' $usar style='width:30px' value='$i'><!--$i--></td>";
 			}
 		
 		if ($x==15) {
@@ -554,7 +702,7 @@ document.getElementsByName("lugar")[0].value = seleccion;
 <tr>
 <td colspan="12" align="center" class="alert alert-info">
 ESTACIONAMIENTO ASIGNADO
-<input type='text' name='lugar' class='inputcentrado' size='5' value="<?php if (isset ($con['estacionamiento'])){ echo ($con['estacionamiento']);}else { echo "no estacionado";}?>" id="id" onkeypress="return false;" readonly>
+<input type='text' name='lugar' class='inputcentrado' size='5' value="<?php if (isset ($con['numero'])){ echo ($con['numero']);}else { echo "no estacionado";}?>" id="id" onkeypress="return false;" readonly>
 
 </td>
 </tr>
@@ -575,11 +723,11 @@ ESTACIONAMIENTO ASIGNADO
 <!--CAMPO TARIFA SELECCIONADA-->
 <input type="hidden" id="tar" name="tarifa1" >
 <td>Minutos</td>
-<td><input type="radio" id="r1" onclick="myFunction()" name="tarifa" value="minutos" <?php if (isset($con["precio"])){if($con["precio"]==$cos["pmin"]){ echo "checked";}} ?>></td><!--checked="checked"-->
+<td><input type="radio" id="r1" onclick="myFunction()" name="tarifa" value="minutos" <?php if (isset($con["precio"])){if($con["precio"]==$cos["pmin"]){ echo "checked";}else  {echo $deshabilitar;}} ?>></td><!--checked="checked"-->
 <td></td>
 <td>Capacidad</td>
-<td><input type="text" style="text-align:center" name="capacidadmotos" size="10" value="<?php echo $cup["motos"];?>" disabled></td>
-<td><input type="text" style="text-align:center" name="capacidadbici"size="10" value="<?php echo $cup["bicicletas"];?>" disabled></td>
+<td><input type="text" style="text-align:center" name="capacidadmotos" size="10" value="<?php echo $cupm['cantidad'];?>" disabled></td>
+<td><input type="text" style="text-align:center" name="capacidadbici"size="10" value="<?php echo $cupb['cantidad'];?>" disabled></td>
 
 
 <td>Costo segun tarifario</td>
@@ -590,7 +738,7 @@ ESTACIONAMIENTO ASIGNADO
 
 <tr>
 <td>Horas</td>
-<td><input type="radio" id="r2" onclick="myFunction(this)" name="tarifa" value="horas" <?php if (isset($con["precio"])){ if($con["precio"]==$cos["phoras"]){ echo "checked";}} ?>></td>
+<td><input type="radio" id="r2" onclick="myFunction(this)" name="tarifa" value="horas" <?php if (isset($con["precio"])){ if($con["precio"]==$cos["phoras"]){ echo "checked";}else {echo $deshabilitar;}} ?>></td>
 <td></td>
 <td>Ocupados</td>
 <td><input type="text" name="ocupadosmotos"size="10" value="<?php echo $mot["motos"]?>" style="text-align:center" disabled></td>
@@ -600,7 +748,7 @@ ESTACIONAMIENTO ASIGNADO
 </tr>
 <tr>
 <td>Dias</td>
-<td><input type="radio" id="r3" onclick="myFunction()" name="tarifa" value="dias" <?php if (isset($con["precio"])){if($con["precio"]==$cos["pdias"]){ echo "checked";}} ?>></td>
+<td><input type="radio" id="r3" onclick="myFunction()" name="tarifa" value="dias" <?php if (isset($con["precio"])){if($con["precio"]==$cos["pdias"]){ echo "checked";}else {echo $deshabilitar;}} ?>></td>
 <td></td>
 <td>Disponible</td>
 <td><input type="text" name="disponiblemotos"size="10" disabled value="<?php echo $mdisp?>" style="text-align:center"></td>
@@ -612,7 +760,7 @@ ESTACIONAMIENTO ASIGNADO
 
 <tr>
 <td>Mensualidad</td>
-<td><input type="radio" id="r4" onclick="myFunction()" name="tarifa" value="mes" <?php if (isset($con["precio"])){ if($con["precio"]==$cos["pmensual"]){ echo "checked";} }?>></td>
+<td><input type="radio" id="r4" onclick="myFunction()" name="tarifa" value="mes" <?php if (isset($con["precio"])){ if($con["precio"]==$cos["pmensual"]){ echo "checked";}else {echo $deshabilitar;}}?>></td>
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td colspan="3"></td>
 <td>Cambio</td>
@@ -626,11 +774,11 @@ ESTACIONAMIENTO ASIGNADO
 <tr> 
 <td align="center">
 
-<input type="submit" class="btn btn-info btn-md" value="INGRESAR" name="ingresar" onclick="this.form.action='modelo/bd.php'">
+<input type="submit" class="btn btn-info btn-md" value="INGRESAR" name="ingresar" onclick="this.form.action='modelo/bd.php'" <?php echo $deshabilitar; ?>>
 </td> 
 
 <td align="center"> 
-<input type="submit" class="btn btn-info btn-md" value="REGISTRAR SALIDA" onclick="this.form.action='vista/salida.php'">
+<input type="submit" class="btn btn-info btn-md" value="REGISTRAR SALIDA" onclick="this.form.action='vista/salida.php'" <?php echo $disabled; ?>>
 </td>
 
 

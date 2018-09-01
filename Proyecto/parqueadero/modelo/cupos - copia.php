@@ -1,38 +1,25 @@
-<?php include "../controlador/control.php";?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<title>Mi Proyecto</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="../vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-<script src="../vista/bootstrap/js/bootstrap.min.js"></script>
-</head>
-<body background="../vista/imagenes/tecnol.jpg"><em><strong>
-<div class="container">
-<header>
-<?php include_once '../vista/header.php'; ?>
-
-
-<div class="col-sm-12 col-md-12"> 
-<div class="panel panel-default"> 
-<!-- contenedor del titulo--> 
-<div class="panel-heading"> 
-<h2 align="center">ESTACIONAMIENTOS DISPONIBLES</h2> 
-</div> 
-<div class="panel-body"> 
-
-
-<!-- Contenedor ejercicio--> 
-<div class="alert alert-success"> 
-<div class="row"> 
-<div class="col-sm-12 col-md-12">  
-
-<!--nuevo-->
+<?php //include "../controlador/control.php";?>
 <?php
-include "config.php";
+error_reporting(4);
+/*include "config.php";*/
+//consulta los cupos totales disponibles 
+/*$cupos=$mysql->query("select * from cupos")
+or die ($mysql->error);
+$cup=$cupos->fetch_array();*/
 
-  $consulta=$mysql->query("select count(*) as motos from cliente 
+//consulta los cupos totales de estacionamientos disponibles para las motos
+$cuposmoto=$mysql->query("select * from cupos where vehiculo='moto'")
+or die ($mysql->error);
+$cupm=$cuposmoto->fetch_array();
+
+//consulta los cupos totales de estacionamientos disponibles para las bicicletas 
+$cuposbici=$mysql->query("select * from cupos where vehiculo='bicicleta'")
+or die ($mysql->error);
+$cupb=$cuposbici->fetch_array();
+
+
+//consulta cuántas motos hay estacionadas
+$consulta=$mysql->query("select count(*) as motos from cliente 
 inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
 inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
 inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
@@ -40,68 +27,88 @@ inner join tipo on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
 where horasalida is null and tipo='moto';")
 	or die ($mysql->error);
 $mot=$consulta->fetch_array();
-	
- $consulta2=$mysql->query("select count(*) as bicicletas from cliente 
+
+//consulta cuántas bicicletas hay estacionadas
+$consulta2=$mysql->query("select count(*) as bicicletas from cliente 
 inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
 inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
 inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
 inner join tipo on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
 where horasalida is null and tipo='bicicleta';")
 	or die ($mysql->error);
-	
 $bic=$consulta2->fetch_array();
+	
+//muestra los estacionamientos disponibles para motos
+$mdisp=$cupm['cantidad']-$mot['motos'];
+//muestra los estacionamientos disponibles para bicicletas
+$bdisp=$cupb['cantidad']-$bic['bicicletas'];
 
 
-$moto=0-$mot['motos'];
-$bicicleta=0-$bic['bicicletas'];
-
-if($moto==0)
+if($mdisp==0)
 {
-	$moto="sin cupo";
+	$mdisp="no hay estacionamientos disponibles para motos";
 }
 
-if ($bicicleta==0)
+if ($bdisp==0)
 {
-    $bicicleta="sin cupo";
+    $bdisp="no hay estacionamientos disponibles para bicicletas";
 }
 
-    $mysql->close();	
+//ver el número del parqueadero 
+
+$moto=$mysql->query("select * from estacionamiento where vehiculo='moto'")
+	or die ($mysql->error);
+	
+	while ($estmot=$moto->fetch_array())
+	{
+		$estmoto[]=$estmot["numero"];
+	};
+
+
+/*
+$moto=$mysql->query("select estacionamiento from parqueados where tipo='moto'")
+	or die ($mysql->error);
+	
+	while ($estmot=$moto->fetch_array())
+	{
+		$estmoto[]=$estmot["estacionamiento"];
+	}
+
+
+*/	
+$bicicleta=$mysql->query("select * from estacionamiento where vehiculo='bicicleta'")
+	or die ($mysql->error);
+
+	while ($estbic=$bicicleta->fetch_array())
+	{
+		$estbicicleta[]=$estbic["numero"];
+	}
+
+
+/*CALCULO COSTOS bicicleta*/
+$costo=$mysql->query("select * from costo where vehiculo='bicicleta'")
+or die ($mysql->error);
+$cosb=$costo->fetch_array();
+
+
+$cosminb= $cosb["pmin"];
+$coshorasb= $cosb["phoras"];
+$cosdiasb= $cosb["pdias"];
+$cosmensualb= $cosb["pmensual"];
+
+/*CALCULO COSTOS motos*/
+$costo=$mysql->query("select * from costo where vehiculo='moto'")
+or die ($mysql->error);
+$cosm=$costo->fetch_array();
+
+
+$cosminm= $cosm["pmin"];
+$coshorasm= $cosm["phoras"];
+$cosdiasm= $cosm["pdias"];
+$cosmensualm= $cosm["pmensual"];
+
+//$mysql->close();	
+
+
+
 ?>
-<table border="2" align="center">
-<tr>
-<td colspan="2">Estacionamientos ocupados</td>
-<td colspan="2">Estacionamientos disponibles</td>
-</tr>
-<tr>
-<td align="center">Motos</td>
-<td align="center">Bicicletas</td>
-<td align="center">Motos</td>
-<td align="center">Bicicletas</td>
-</tr>
-<tr>
-<td align="center">
-<?php echo $mot['motos'];?>
-</td>
-<td align="center">
-<?php echo $bic['bicicletas'];?>
-</td>
-<td align="center">
-<?php echo $moto;?>
-</td>
-<td align="center">
-<?php echo $bicicleta;?>
-</td>
-</tr>
-</table>
-</div> 
-</div> 
-</div> 
-</div> 
-</div>
-</div>
-
-</header>
-
-</div>
-</strong></em></body>
-</html>

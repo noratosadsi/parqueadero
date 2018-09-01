@@ -14,7 +14,7 @@
 <?php include_once 'header.php'; ?>
 
 
-<div class="col-sm-12 col-md-12"> 
+<div class="col-sm-14 col-md-14"> 
 <div class="panel panel-default"> 
 <!-- contenedor del titulo--> 
 <div class="panel-heading"> 
@@ -29,18 +29,94 @@
 <div class="col-sm-12 col-md-12">  
 
 <!--nuevo-->
-<form action="../modelo/borrar.php" method="post">
-<table class="table"> 
-<tr><td align="right">Ingrese Numero de cédula</td>
-<td><input type="text" name="cedulaborrar" required><br></td></tr>
-<tr><td colspan="12" align="center"><input type="submit" value="BORRAR REGISTRO DE VEHICULO"  class="btn btn-info"><br></td></tr>
-</table>
-</form>
-<p name="error" align="center">
+<table class="table table-condensed table-bordered">
+	<tr class="active">
+		<th>Cedula</th>
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th>Telefono 1</th>
+		<th>Telefono 2</th>
+		<th>Matricula</th>
+		<th>Marca</th>
+		<th>Modelo</th>
+	<th>Tipo</th>
+	<th>Descripcion</th>
+	<th>Hora Ingreso</th>
+	<th>Hora Salida</th>
+	<th>Duracion</th>
+	<th>Precio</th>
+	<th>Iva</th>
+	<th>Total</th>
+	<th>Borrar</th>
+</tr>
 <?php
-if (isset($_REQUEST["error"])) { echo $_REQUEST["error"];}
+include "../modelo/borrar.php";
+
+$mostrar=mostrar($mysql);
+
+foreach ($mostrar as $mos) 
+	{
+		$total=$mos["total"]+$mos["iva"];
 ?>
-</p>
+
+<tr>
+ <td>
+    <?php  echo $mos['cedula']; ?>
+</td>
+  <td>
+    <?php  echo $mos['nombre']; ?>
+</td>
+  <td>
+    <?php  echo $mos['apellido']; ?>
+</td>
+  <td>
+    <?php  echo $mos['telefono1']; ?>
+</td>
+  <td>
+    <?php  echo $mos['telefono2']; ?>
+</td>
+  <td>
+    <?php  echo $mos['matricula']; ?>
+</td>
+  <td>
+    <?php  echo $mos['marca']; ?>
+</td>
+  <td>
+    <?php  echo $mos['modelo']; ?>
+</td>
+  <td>
+    <?php  echo $mos['tipo']; ?>
+</td>
+  <td>
+    <?php  echo $mos['descripcion']; ?>
+</td>
+  <td>
+    <?php  echo $mos['horaingreso']; ?>
+</td>
+  <td>
+    <?php  echo $mos['horasalida']; ?>
+</td>
+  <td>
+    <?php  echo $mos['duracion']; ?>
+</td>
+  <td>
+    <?php  echo "$ ".$mos['total']; ?>
+</td>
+  <td>
+    <?php  echo "$ ".$mos['iva']; ?>
+</td>
+  <td>
+    <?php  echo "$ ".$total; ?>
+</td>
+ <td>
+  <button  class="btn btn-danger btn-xs" onclick="window.location.href='../modelo/borrar.php?cedulaborrar=<?php echo $mos["cedula"]; ?>'">Borrar</button>
+ </td>  
+ </tr>
+
+<?php };
+
+?>
+</table>
 </div> 
 </div> 
 </div> 

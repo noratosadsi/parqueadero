@@ -32,12 +32,21 @@
  <?php
 include "config.php";
 
-  
-  $factura=$mysql->query("select * from historicofacturado
-	where cedulaclie=$_REQUEST[cedularecibo] and horaingreso='$_REQUEST[horaingreso]'")
+//var_dump($_SESSION["login"]);
+//var_dump($_SESSION["nombre"]);
+
+$usuario=$mysql->query("select * from usuario
+where nombre='$_SESSION[login]' and apellido='$_SESSION[nombre]'")
+or die($mysql->error);
+$usu=$usuario->fetch_array();  
+
+
+  $factura=$mysql->query("select * from vistaparqueados 
+	where cedula=$_REQUEST[cedularecibo] and horaingreso='$_REQUEST[horaingreso]'")
 	or die($mysql->error);
 	$con=$factura->fetch_array();
-	
+  
+  $total=$con["total"]+$con["iva"];
   
 echo '<table Border=2 align="center">';
 
@@ -55,7 +64,7 @@ echo '<table Border=2 align="center">';
       echo 'Persona que factura';
       echo '</td>';
       echo '<td align="center">';
-      echo $con['nomusu']." ".$con['apeusu'];
+      echo $usu['nombre']." ".$usu['apellido'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -63,7 +72,7 @@ echo '<table Border=2 align="center">';
       echo 'Fecha factura';
       echo '</td>';
       echo '<td align="center">';
-      echo $con['fechafacturado'];
+      echo $con['fechafactura'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -71,7 +80,7 @@ echo '<table Border=2 align="center">';
       echo 'Cedula';
       echo '</td>';
       echo '<td align="center">';
-      echo $con['cedulaclie'];
+      echo $con['cedula'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -79,7 +88,7 @@ echo '<table Border=2 align="center">';
       echo 'Nombre';
       echo '</td>';
       echo '<td align="center">';
-      echo $con['nomclie'];
+      echo $con['nombre'];
       echo '</td>';
       echo '</tr>';
       echo '<tr>';
@@ -87,7 +96,7 @@ echo '<table Border=2 align="center">';
       echo 'Apellido';
       echo '</td>';	  
       echo '<td align="center">';
-      echo $con['apeclie'];
+      echo $con['apellido'];
       echo '</td>';
       echo '</tr>';
       echo '<tr>';
@@ -95,7 +104,7 @@ echo '<table Border=2 align="center">';
       echo 'Primer telefono';
       echo '</td>';	  
       echo '<td align="center">';
-      echo $con['telclie1'];
+      echo $con['telefono1'];
       echo '</td>';
       echo '</tr>';	  
       echo '<tr>';
@@ -103,7 +112,7 @@ echo '<table Border=2 align="center">';
       echo 'Segundo telefono';
       echo '</td>';	  
       echo '<td align="center">';
-      echo $con['telclie2'];
+      echo $con['telefono2'];
       echo '</td>';
       echo '</tr>';	  
       echo '<tr>';
@@ -175,7 +184,7 @@ echo '<table Border=2 align="center">';
       echo 'Precio';
       echo '</td>';
       echo '<td align="center">';
-      echo "$".$con['precio'];
+      echo "$".$con['total'];
       echo '</td>';
 	  echo '</tr>';
 	  echo '<tr>';
@@ -191,10 +200,10 @@ echo '<table Border=2 align="center">';
       echo 'Toral';
       echo '</td>';
       echo '<td align="center">';
-      echo "$".$con['total'];
+      echo "$".$total;
       echo '</td>';	 	  
       echo '</tr>';	  
-	  echo '<table>';
+	  echo '</table>';
 	  
     $mysql->close();
 ?>

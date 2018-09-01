@@ -23,13 +23,7 @@
 <em><strong>
 <body background="vista/imagenes/tecnol.jpg">
 
-//nuevo para alertas
-<?php echo "<div class='container'>
-<div class='alert alert-success alert-dismissible' id='myAlert'>
-<a href='' class='close'>&times;</a>
-<strong>Success!</strong> This alert box could indicate a successful or positive action.
-</div>
-</div>"
+<?php echo "<div class='container'><div class='alert alert-success alert-dismissible' id='myAlert'><a href='' class='close'>&times;</a><strong>¡Éxito al ingresar!</strong></div></div>";
 ?>
 
 <script>
@@ -60,14 +54,10 @@ $(document).ready(function(){
         
 <table border="0" align="center">
 <tr>
-<?php if(isset($_REQUEST['dato1'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-info'>"."REGISTRADO CORRECTAMENTE"."</div>";} 
-if(isset($_REQUEST['dato'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";}
-if(isset($_REQUEST['error'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger' name='error'> $_REQUEST[error] </div>";}
-if(isset($_REQUEST['error2'])){ echo "<td colspan='6' align='center'>
-<div class='alert alert-danger' name='error'> Ingreso no válido </div>";}
+<?php if(isset($_REQUEST['dato1'])){ echo "<td colspan='6' align='center'><div class='alert alert-info'>"."REGISTRADO CORRECTAMENTE"."</div>";} 
+if(isset($_REQUEST['dato'])){ echo "<td colspan='6' align='center'><div class='alert alert-danger'>"."Número de cédula ya se encuentra registrado"."</div>";}
+if(isset($_REQUEST['error'])){ echo "<td colspan='6' align='center'><div class='alert alert-danger' name='error'> $_REQUEST[error] </div>";}
+if(isset($_REQUEST['error2'])){ echo "<td colspan='6' align='center'><div class='alert alert-danger' name='error'> Ingreso no válido </div>";}
 ?>
 </td></tr>
  
@@ -197,11 +187,21 @@ var fecha=(day + "/" + month + "/" + year);
 		}
 		
 function sub(a){
+
  a=a-1;
   seleccion = document.getElementsByName("posicion")[a].value;
   document.getElementsByName("lugar")[0].value = seleccion;
-   seleccion = document.getElementsByName("posicion")[a].value;
-  document.getElementsByName("lugar2")[0].value = seleccion;
+
+  alert(lugar+' '+seleccion);
+
+};
+
+function subb(b){
+
+ b=b-1;
+ 
+   seleccionb = document.getElementsByName("posicion2")[b].value;
+  document.getElementsByName("lugar")[0].value = seleccionb;
 
 /*  alert(+seleccion);*/
 
@@ -228,7 +228,7 @@ function sub(a){
 
 
 
-		$m=$cup["motos"];//Cantidad de parqueaderos disponibles
+		$m=$cupm["cantidad"];//Cantidad de parqueaderos disponibles
 		
 		$x=0;
 		echo "<table border='0' Style='font-family: Arial; font-size: 9pt; color:black'>";
@@ -237,6 +237,9 @@ function sub(a){
 		
 		for ($i = 1; $i <= $m; $i++) 
 		{
+
+			$lugar="lugar";
+
 			$x=$x+1;
 			
 			if ($verificar=$estacionado->num_rows)
@@ -274,7 +277,7 @@ function sub(a){
 <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
 <td>
 <?php
-		$b=$cup["bicicletas"];//Cantidad de parqueaderos disponibles
+		$b=$cupb["cantidad"];//Cantidad de parqueaderos disponibles
 		
 		$x=0;
 		echo "<table border='0'  Style='font-family: Arial; font-size: 9pt; color:black'>";
@@ -284,25 +287,27 @@ function sub(a){
 		{
 			$x=$x+1;
 			
+$lugar="lugar2";
+
 			if ($verificar=$estacionado->num_rows)
 			{
 				$usar="";
 			}	
 			else
 			{
-				$usar="onclick='sub($i);change(this);'";
+				$usar="onclick='subb($i);change(this);'";
 			}
 			
 			
 			if (in_array($i, $estbicicleta))
 			{
 				echo "<td align='center' style='width:30px'>";
-			    echo "<input type='submit' name='posicion' $usar style='width:30px; background-color:gray' value='$i'></td>";	
+			    echo "<input type='submit' name='posicion2' $usar style='width:30px; background-color:gray' value='$i'></td>";	
 			}
 			else
 			{
 				echo "<td style='width:30px'>";
-			    echo "<input type='button' name='posicion' style='width:30px' value='$i'><!--$i--></td>";
+			    echo "<input type='button' name='posicion2' style='width:30px' value='$i'><!--$i--></td>";
 			}
 		
 		if ($x==15) {
@@ -339,8 +344,8 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 <td><input type="radio" name="radio" disabled></td>
 <td></td>
 <td>Capacidad</td>
-<td><input type="text" name="capacidadmotos" size="10"disabled value="<?php echo $cup["motos"];?>" style="text-align:center"></td>
-<td><input type="text" name="capacidadbici"size="10"disabled value="<?php echo $cup["bicicletas"]?>" style="text-align:center"></td>
+<td><input type="text" name="capacidadmotos" size="10" disabled value="<?php echo $cupm['cantidad'];?>" style="text-align:center"></td>
+<td><input type="text" name="capacidadbici"size="10" disabled value="<?php echo $cupb['cantidad'];?>" style="text-align:center"></td>
 <td>Costo segun tarifario</td>
 <td><input type="text" name="costotarif" disabled></td>
 </tr>
@@ -360,7 +365,7 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 <td>Dias</td>
 <td><input type="radio" name="radio" disabled></td>
 <td></td>
-<td>Disponible</td>
+<td>Disponibles</td>
 <td><input type="text" name="disponiblemotos"size="10" disabled value="<?php echo $mdisp;?>" style="text-align:center"></td>
 <td><input type="text" name="disponiblebici"size="10"disabled value="<?php echo $bdisp;?>" style="text-align:center"></td>
 <td>Efectivo</td>

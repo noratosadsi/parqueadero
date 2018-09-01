@@ -50,36 +50,21 @@ error_reporting(5);
   or die ($mysql->error);
   $act=$actualizar->fetch_array();
 
+
+//valida si el vehiculo está estacionado
+  
 if ($_POST["ingresar"])
 {
 	if ($act["actualizar"]==1)
 	{
-		parqueados($mysql);
 		borrar($mysql);
         registrardatos($mysql);
     }
     else
     {
-		parqueados($mysql);
 	    registrardatos($mysql);  
     }
 }
-
-function parqueados($mysql)
-{
-	$factura=$mysql->query("select * from factura where 
-	  vehiculo_cliente_cedula=$_REQUEST[cedulacliente]")
-      or die ($mysql->error." error seleccionando factura");
-	  $fac=$factura->fetch_array();
-	  
-	  $detalle=$mysql->query("select * from detallefactura where 'factura_idFactura'='$fac[idFactura]'")
-      or die ($mysql->error. " error seleccionando detallefactura");
-	  $det=$detalle->fetch_array(); 
-	
-	 $mysql->query("insert into parqueados (nomusu, apeusu, fechafacturado, cedulaclie,nomclie, apeclie, telclie1, telclie2, matricula, marca, modelo, tipo, descripcion, horaingreso, estacionamiento, precio) values ('$_SESSION[login]','$_SESSION[nombre]',now(),$_POST[cedulacliente],'$_POST[nombre]','$_POST[apellido]','$_POST[telefono1]','$_POST[telefono2]','$_POST[matricula]','$_POST[marca]','$_POST[modelo]','$_POST[tipo]','$_POST[descripcion]',now(),'$_POST[lugar]', '$_POST[costotarif]')")
-    or die ($mysql->error." error al ingresar el historico");
-}
-
 
   function registrardatos($mysql)
   {
@@ -95,9 +80,8 @@ function parqueados($mysql)
 	  $_REQUEST[cedulacliente])") 
       or die ($mysql->error);	
     
-      $mysql->query("insert into tipo(tipo,descripcion,marca,modelo,vehiculo_cliente_cedula)
-	  values ('$_REQUEST[tipo]','$_REQUEST[descripcion]','$_REQUEST[marca]',
-	  '$_REQUEST[modelo]',$_REQUEST[cedulacliente])") 
+      $mysql->query("insert into tipo(tipo,descripcion,vehiculo_cliente_cedula)
+	  values ('$_REQUEST[tipo]','$_REQUEST[descripcion]',$_REQUEST[cedulacliente])") 
       or die ($mysql->error);
 	
 	  $registros=$mysql->query("select * from usuario")
@@ -117,27 +101,30 @@ function parqueados($mysql)
 		  $preciovehiculo=2;
 	  }
 	  
-	  $mysql->query("insert into estacionamiento (numero) values ($_REQUEST[lugar])")
-	  or die ($mysql->error." error al ingresar numero estacionamiento");
-	  
-	  $estacionamiento=$mysql->query("select * from estacionamiento where numero=$_REQUEST[lugar]")
-	  or die ($mysql->error);
-	  $est=$estacionamiento->fetch_array();
-	 
-	
+      //inserta los datos del estacionamiento
+      $mysql->query("insert into estacionamiento (numero, cupos_id) values ($_REQUEST[lugar], $preciovehiculo)")
+      or die ($mysql->error." error al ingresar numero estacionamiento");
+  
+      $estacionamiento=$mysql->query("select * from estacionamiento where numero=$_REQUEST[lugar] and cupos_id=$preciovehiculo")
+      or die ($mysql->error);
+      $est=$estacionamiento->fetch_array();
+
+      //inserta los datos de la factura
 	  $mysql->query("insert into factura (vehiculo_cliente_cedula,usuario_cedula,
 	  usuario_rol_idrol, costo_id, estacionamiento_id) values ($_REQUEST[cedulacliente], $_SESSION[id_usuario],
 	  $_SESSION[nivel],$preciovehiculo, $est[id])")
       or die ($mysql->error."error al ingresar estacionamiento en factura");
 	
+
+
 	  $factura=$mysql->query("select * from factura where 
 	  vehiculo_cliente_cedula=$_REQUEST[cedulacliente]")
       or die ($mysql->error);
 	  $fac=$factura->fetch_array();
 	
 	  $mysql->query("insert into detallefactura 
-      (fechafactura, horaingreso, factura_idFactura) 
-      values (now(),now(), $fac[idFactura])")
+      (fechafactura, horaingreso, factura_idFactura, precio) 
+      values (now(),now(), $fac[idFactura], '$_POST[costotarif]')")
       or die ($mysql->error);    
 	  
 	  $mysql->close();

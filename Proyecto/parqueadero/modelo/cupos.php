@@ -2,58 +2,67 @@
 <?php
 error_reporting(4);
 /*include "config.php";*/
-$cupos=$mysql->query("select * from cupos")
+//consulta los cupos totales disponibles 
+/*$cupos=$mysql->query("select * from cupos")
 or die ($mysql->error);
-$cup=$cupos->fetch_array();
-		
-$consulta=$mysql->query("select count(*) as motos from cliente 
-inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
-inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
-inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
-inner join tipo on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
-where horasalida is null and tipo='moto';")
+$cup=$cupos->fetch_array();*/
+
+//consulta los cupos totales de estacionamientos disponibles para las motos
+$cuposmoto=$mysql->query("select * from cupos where vehiculo='moto'")
+or die ($mysql->error);
+$cupm=$cuposmoto->fetch_array();
+
+//consulta los cupos totales de estacionamientos disponibles para las bicicletas 
+$cuposbici=$mysql->query("select * from cupos where vehiculo='bicicleta'")
+or die ($mysql->error);
+$cupb=$cuposbici->fetch_array();
+
+
+//consulta cuántas motos hay estacionadas
+$consulta=$mysql->query("select count(*) as motos from vistaparqueados where numero is not null and tipo='moto';")
 	or die ($mysql->error);
 $mot=$consulta->fetch_array();
-	
-$consulta2=$mysql->query("select count(*) as bicicletas from cliente 
-inner join vehiculo on cliente.cedula=vehiculo.cliente_cedula
-inner join factura on vehiculo.cliente_cedula=factura.vehiculo_cliente_cedula
-inner join detallefactura on factura.idFactura=detallefactura.factura_idFactura
-inner join tipo on vehiculo.cliente_cedula=tipo.vehiculo_cliente_cedula
-where horasalida is null and tipo='bicicleta';")
+
+//consulta cuántas bicicletas hay estacionadas
+$consulta2=$mysql->query("select count(*) as bicicletas from vistaparqueados where numero is not null and tipo='bicicleta';")
 	or die ($mysql->error);
-	
 $bic=$consulta2->fetch_array();
 	
-$mdisp=$cup['motos']-$mot['motos'];
-$bdisp=$cup['bicicletas']-$bic['bicicletas'];
+//muestra los estacionamientos disponibles para motos
+$mdisp=$cupm['cantidad']-$mot['motos'];
+//muestra los estacionamientos disponibles para bicicletas
+$bdisp=$cupb['cantidad']-$bic['bicicletas'];
 
 
 if($mdisp==0)
 {
-	$mdisp="sin cupo";
+	$mdisp="no hay estacionamientos disponibles para motos";
 }
 
 if ($bdisp==0)
 {
-    $bdisp="sin cupo";
+    $bdisp="no hay estacionamientos disponibles para bicicletas";
 }
 
 //ver el número del parqueadero 
-$moto=$mysql->query("select estacionamiento from parqueados where tipo='moto'")
+
+$moto=$mysql->query("select * from estacionamiento inner join cupos 
+on estacionamiento.cupos_id=cupos.id where cupos.vehiculo='moto'")
 	or die ($mysql->error);
 	
 	while ($estmot=$moto->fetch_array())
 	{
-		$estmoto[]=$estmot["estacionamiento"];
-	}
-	
-$bicicleta=$mysql->query("select estacionamiento from parqueados where tipo='bicicleta'")
+		$estmoto[]=$estmot["numero"];
+	};
+
+
+$bicicleta=$mysql->query("select * from estacionamiento inner join cupos 
+on estacionamiento.cupos_id=cupos.id where cupos.vehiculo='bicicleta'")
 	or die ($mysql->error);
 
 	while ($estbic=$bicicleta->fetch_array())
 	{
-		$estbicicleta[]=$estbic["estacionamiento"];
+		$estbicicleta[]=$estbic["numero"];
 	}
 
 
@@ -80,4 +89,7 @@ $cosdiasm= $cosm["pdias"];
 $cosmensualm= $cosm["pmensual"];
 
 //$mysql->close();	
+
+
+
 ?>

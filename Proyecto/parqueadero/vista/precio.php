@@ -39,6 +39,7 @@ $result1=$mysql->query("select * from costo where vehiculo='moto'")
 	$result2=$mysql->query("select * from costo where vehiculo='bicicleta'")
 	or die($mysql->error." error seleccionando costo");
 	$res2=$result2->fetch_array();
+
 ?>
 <table border="2" align="center" cellspacing="1">
 <tr><td align="center" colspan="2">Costo actual por minuto</td>
@@ -66,12 +67,15 @@ $result1=$mysql->query("select * from costo where vehiculo='moto'")
 </table>
 <br>
 <table align="center">
-<tr><td><br><input type="submit" value="ACTUALIZAR"  class="btn btn-info" align="center"></br></td></tr>
+<tr><td><br><input type="submit" value="ACTUALIZAR"  class="btn btn-info" align="center" name="actualizar"></br></td></tr>
 </table>
 </form>
 <p name="error" align="center">
+
 <?php
-if (isset($_REQUEST["error"])){ echo $_REQUEST["error"];}
+if (isset($_REQUEST["error"])){ echo "<script>alert('error actualizando costo');</script>";};
+
+if (isset($_REQUEST["actualizado"])){ echo "<script>alert('se ha actualizado el precio');</script>";};
 ?>
 </p>
 </div> 

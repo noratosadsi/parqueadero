@@ -9,15 +9,26 @@ include "config.php";
 
 
 if($_POST['motos']){
-	$mysql->query("update cupos set motos='$_REQUEST[motos]'")
-      or die($mysql->error);
-	  header("location: ../vista/menu administrador.php");
+	$mysql->query("update cupos set cantidad='$_REQUEST[motos]' where vehiculo='moto'");
+	  if ($mysql->error)
+	  {
+		  $errorm="errmoto";
+	  }
 }if ($_POST['bicicletas']){
-	$mysql->query("update cupos set bicicletas='$_REQUEST[bicicletas]'")
-      or die($mysql->error);
-	  header("location: ../vista/menu administrador.php");
-}else{
-	echo "No se pudo actualizar los datos";
+	$mysql->query("update cupos set cantidad='$_REQUEST[bicicletas]' where vehiculo='bicicleta'");
+	  if ($mysql->error)
+	  {
+		  $errorb="errbici";
+		  //header("location: ../vista/cupos2.php?error");
+	  }	  
+}
+
+if(isset($errorm) or isset($errorb))
+{
+	header("location: ../vista/cupos2.php?error=$errorm&error2=$errorb");
+}
+else 
+{
 	header("location: ../vista/menu administrador.php");
 }
 ?>
