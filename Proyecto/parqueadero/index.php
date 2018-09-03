@@ -23,7 +23,7 @@
 <em><strong>
 <body background="vista/imagenes/tecnol.jpg">
 
-<?php echo "<div class='container'><div class='alert alert-success alert-dismissible' id='myAlert'><a href='' class='close'>&times;</a><strong>¡Éxito al ingresar!</strong></div></div>";
+<?php /*echo "<div class='container'><div class='alert alert-success alert-dismissible' id='myAlert'><a href='' class='close'>&times;</a><strong>¡Éxito al ingresar!</strong></div></div>";*/
 ?>
 
 <script>
@@ -107,8 +107,124 @@ var fecha=(day + "/" + month + "/" + year);
 <?php include 'modelo/config.php';?>
 <?php include "modelo/cupos.php";?>
 
+<!--NUEVO-->
 
-<table border="0" width="95%" class="alert alert-primary" align="center" Style="font-family: Arial; font-size: 10pt;"> 
+<div class="col-sm-12">
+<div class="col-sm-4">
+
+<table border="0" align="center" Style="font-family: Arial; font-size: 10pt;"> 
+
+<tr align="center"  style="height: 40px;">
+<td>Cedula</td>
+<td><input  title="Se requiere un numero de cedula" type="text" name="cedulaactualizar" minlength="7" autofocus>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center">
+<td></td>
+<td align="center">
+<button type="submit" class="btn btn-info btn-sm">
+<span class="glyphicon glyphicon-refresh"></span>&nbsp;Validar</button>
+</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Nombres</td>
+<td>&nbsp;&nbsp;<input type="text" name="nombre" value="" disabled/>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Apellidos</td>
+<td>&nbsp;&nbsp;<input type="text" name="apellido" value="" disabled/>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Telefono 1</td>
+<td>&nbsp;&nbsp;<input type="text" name="telefono1" value="" disabled/>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Telefono 2</td>
+<td>&nbsp;&nbsp;<input type="text" name="telefono2" value="" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+</table>
+</div>
+
+
+<div class="col-sm-4">
+
+<table border="0"> 
+
+<tr align="center"  style="height: 40px;">
+<td>Placa o Matricula</td>
+<td>&nbsp;&nbsp;<input type="text" name="matricula" value="" disabled/>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Marca</td>
+<td>&nbsp;&nbsp;<input type="text" name="marca" value="" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Modelo</td>
+<td>&nbsp;&nbsp;<input type="text" name="modelo" value="" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Descripcion /<br> Observacion</td>
+<td>&nbsp;&nbsp;<input type="text" name="descripcion" value="" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Tipo</td>
+<!--CAMPO TIPO VEHICULO SELECCIONADO-->
+<input type="hidden" id="veh" name="vehiculo1" >
+
+<td>&nbsp;&nbsp;<select onchange="myFunction();moto();" id="vehiculo" name="tipo">
+<option value=''>Moto o Bicicleta</option>
+</select>&nbsp;&nbsp;</td>
+</tr>
+
+</table>
+</div>
+
+<div class="col-sm-4">
+
+<table border="0"> 
+
+<tr align="center"  style="height: 50px;">
+<td>Fecha y hora <br>de Ingreso</td>
+<td>&nbsp;&nbsp;<input name="horaingreso" type="datetime" value="" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 50px;">
+<td>Fecha y hora <br>de salida</td>
+<td>&nbsp;&nbsp;<input type="datetime" value="" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 50px;">
+<td>Tiempo de <br>permanencia</td>
+<td>&nbsp;&nbsp;<input type="text" name="permanencia" value="" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>Precio</td>
+<td>&nbsp;&nbsp;<input type="text" name="precio" value="$" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+<tr align="center"  style="height: 40px;">
+<td>IVA</td>
+<td>&nbsp;&nbsp;<input type="text" name="iva" value="$" disabled>&nbsp;&nbsp;</td>
+</tr>
+
+</table>
+</div>
+
+</div>
+
+<!--NUEVO-->
+
+<!--<table border="0" width="95%" class="alert alert-primary" align="center" Style="font-family: Arial; font-size: 10pt;"> 
 <tr align="center">
 <td>Cedula</td>
 <td>&nbsp;&nbsp;<input title="Se necesita un nombre" type="text" name="cedulaactualizar" >&nbsp;&nbsp;</td>
@@ -162,7 +278,7 @@ var fecha=(day + "/" + month + "/" + year);
 <td>IVA</td>
 <td>&nbsp;&nbsp;<input type="text" disabled>&nbsp;&nbsp;</td>
 </tr>
-</table>
+</table>-->
 
 
 <table border="0" align="center" class="alert alert-default"> 

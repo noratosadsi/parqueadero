@@ -11,7 +11,7 @@ if (empty($_SESSION["validar"]))
 <meta charset='utf-8'>
 <head>
 <em><strong>
-<title>Norato´s parking</title>
+<title>NORATOS PARKING</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href="parqueadero/vista/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">

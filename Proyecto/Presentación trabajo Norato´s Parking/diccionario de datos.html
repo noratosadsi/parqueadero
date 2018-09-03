@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,7 +53,7 @@
 <div id="title-sect">
 <h1>parqueadero<br> Data Dictionay</h1>
 <p>
-<em>2018-03-25</em>
+<em>2018-09-02</em>
 </p>
 <p class="proj-desc">
 <em></em>
@@ -68,8 +67,6 @@
 <li><a href='#detallefactura'>detallefactura</a></li>
 <li><a href='#estacionamiento'>estacionamiento</a></li>
 <li><a href='#factura'>factura</a></li>
-<li><a href='#historicofacturado'>historicofacturado</a></li>
-<li><a href='#parqueados'>parqueados</a></li>
 <li><a href='#rol'>rol</a></li>
 <li><a href='#tipo'>tipo</a></li>
 <li><a href='#usuario'>usuario</a></li>
@@ -102,45 +99,45 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Identificacion dueño del vehiculo</td>
+    <td>Identificación del dueño del vehiculo</td>
 </tr>
 <tr>
     <td>nombre</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Nombre dueño vehiculo a ingresar</td>
+    <td>NULL</td>
+    <td>Nombre del dueño del vehiculo a ingresar</td>
 </tr>
 <tr>
     <td>apellido</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Apellido dueño del vehiculo a ingresar</td>
+    <td>NULL</td>
+    <td>Apellido del dueño del vehiculo a ingresar</td>
 </tr>
 <tr>
     <td>telefono1</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td>Primer numero de telefono del cliente</td>
 </tr>
 <tr>
@@ -183,71 +180,72 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>id del costo</td>
+    <td>Id del costo</td>
 </tr>
 <tr>
     <td>vehiculo</td>
-    <td>VARCHAR(11)</td>
+    <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>tipo de vehiculo </td>
+    <td>NULL</td>
+    <td>tipo de vehiculo</td>
 </tr>
 <tr>
     <td>pmin</td>
     <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td>'60'</td>
+    <td>NULL</td>
     <td>costo por minutos estacionamiento</td>
 </tr>
 <tr>
     <td>phoras</td>
-    <td>INT(15)</td>
+    <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>costo por horas estacionamiento</td>
+    <td>NULL</td>
+    <td>costo por horas estacionamiento
+</td>
 </tr>
 <tr>
     <td>pdias</td>
-    <td>INT(15)</td>
+    <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td>costo por dias estacionamiento</td>
 </tr>
 <tr>
     <td>pmensual</td>
-    <td>INT(15)</td>
+    <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td>costo mensual estacionamiento</td>
 </tr>
 <table id='cupos'>
@@ -275,35 +273,35 @@
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td class='attr'>&nbsp;</td>
     <td></td>
     <td>id de la tabla cupos</td>
 </tr>
 <tr>
-    <td>motos</td>
+    <td>vehiculo</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>cupos estacionamientos para motos</td>
+    <td>NULL</td>
+    <td>Cupos del vehiculo que ingresa</td>
 </tr>
 <tr>
-    <td>bicicletas</td>
-    <td>VARCHAR(45)</td>
+    <td>cantidad</td>
+    <td>INT(11)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>cupos estacionamientos para bicicletas</td>
+    <td>NULL</td>
+    <td>Numero disponible de parqueaderos para vehiculos</td>
 </tr>
 <table id='detallefactura'>
 <caption>detallefactura</caption>
@@ -325,14 +323,15 @@
     <td>fechafactura</td>
     <td>DATETIME</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Fecha y hora de  ingreso  del vehiculo </td>
+    <td>NULL</td>
+    <td>Fecha y hora de ingreso del vehiculo
+</td>
 </tr>
 <tr>
     <td>horaingreso</td>
@@ -345,7 +344,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td>Hora ingreso del vehiculo</td>
+    <td>Hora ingreso del vehiculo
+</td>
 </tr>
 <tr>
     <td>horasalida</td>
@@ -358,7 +358,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td>Fecha y hora de salida del vehiculo</td>
+    <td>Hora de salida del vehiculo
+</td>
 </tr>
 <tr>
     <td>duracion</td>
@@ -371,7 +372,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td>Permanencia del vehiculo en el parqueadero</td>
+    <td>Permanencia del vehiculo en el parqueadero
+</td>
 </tr>
 <tr>
     <td>precio</td>
@@ -384,7 +386,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td>Precio por el tiempo permanecido en el parqueadero</td>
+    <td>Precio por el tiempo permanecido en el parqueadero
+</td>
 </tr>
 <tr>
     <td>iva</td>
@@ -397,7 +400,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td>Impuesto del iva a cobrar en la factura</td>
+    <td>Impuesto del iva a cobrar en la factura
+</td>
 </tr>
 <tr>
     <td>total</td>
@@ -410,7 +414,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td>Total detallado en la factura a cancelar</td>
+    <td>Total detallado en la factura a cancelar
+</td>
 </tr>
 <tr>
     <td>factura_idFactura</td>
@@ -452,7 +457,8 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td>id de la tabla estacionamiento</td>
+    <td>id de la tabla estacionamiento
+</td>
 </tr>
 <tr>
     <td>numero</td>
@@ -465,7 +471,21 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td>NULL</td>
-    <td>numero de estacionamiento</td>
+    <td>numero de estacionamiento
+</td>
+</tr>
+<tr>
+    <td>cupos_id</td>
+    <td>INT(11)</td>
+    <td>&#10004;</td>
+    <td>&#10004;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td class='attr'>&nbsp;</td>
+    <td></td>
+    <td>Cantidad disponible de estacionamientos en le parqueadero</td>
 </tr>
 <table id='factura'>
 <caption>factura</caption>
@@ -494,7 +514,8 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td>Identificacion del numero de factura</td>
+    <td>Identificacion del numero de factura
+</td>
 </tr>
 <tr>
     <td>vehiculo_cliente_cedula</td>
@@ -507,7 +528,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Cedula de la tabla cliente</td>
+    <td>Cedula de la tabla cliente
+</td>
 </tr>
 <tr>
     <td>usuario_cedula</td>
@@ -520,7 +542,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Cedula de la tabla usuario</td>
+    <td>Cedula de la tabla usuario
+</td>
 </tr>
 <tr>
     <td>usuario_rol_idrol</td>
@@ -533,7 +556,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Identificacion del rol de la tabla rol</td>
+    <td>Identificacion del rol de la tabla rol
+</td>
 </tr>
 <tr>
     <td>costo_id</td>
@@ -546,7 +570,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>id de la tabla costo</td>
+    <td>id de la tabla costo
+</td>
 </tr>
 <tr>
     <td>estacionamiento_id</td>
@@ -559,572 +584,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>id de la tabla estacionamiento</td>
-</tr>
-<table id='historicofacturado'>
-<caption>historicofacturado</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td>id de la tabla historicofacturado</td>
-</tr>
-<tr>
-    <td>nomusu</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>nombre del usuario que registra el ingreso</td>
-</tr>
-<tr>
-    <td>apeusu</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>apellido del usuario que registra el ingreso</td>
-</tr>
-<tr>
-    <td>fechafacturado</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>fecha de la factura</td>
-</tr>
-<tr>
-    <td>cedulaclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>cedula del cliente</td>
-</tr>
-<tr>
-    <td>nomclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>nombre del cliente</td>
-</tr>
-<tr>
-    <td>apeclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>apellido del cliente</td>
-</tr>
-<tr>
-    <td>telclie1</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>telefono del cliente</td>
-</tr>
-<tr>
-    <td>telclie2</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>segundo telefono del cliente</td>
-</tr>
-<tr>
-    <td>matricula</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>matricula del vehiculo</td>
-</tr>
-<tr>
-    <td>marca</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>marca del vehiculo</td>
-</tr>
-<tr>
-    <td>modelo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>modelo del vehiculo</td>
-</tr>
-<tr>
-    <td>tipo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>tipo del vehiculo</td>
-</tr>
-<tr>
-    <td>descripcion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>descripcion del vehiculo</td>
-</tr>
-<tr>
-    <td>horaingreso</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>hora ingreso del vechiulo</td>
-</tr>
-<tr>
-    <td>horasalida</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>hora salida del vehiculo</td>
-</tr>
-<tr>
-    <td>duracion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>tiempo de duracion entre la entreada y salida del vehiculo</td>
-</tr>
-<tr>
-    <td>precio</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>precio por el tiempo estacionado</td>
-</tr>
-<tr>
-    <td>iva</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>iva del precio</td>
-</tr>
-<tr>
-    <td>total</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>total del precio por pagar</td>
-</tr>
-<table id='parqueados'>
-<caption>parqueados</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td>id de la tabla parqueados</td>
-</tr>
-<tr>
-    <td>nomusu</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>nombre del usuario que registra el ingreso</td>
-</tr>
-<tr>
-    <td>apeusu</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>apellido del usuario que registra el ingreso </td>
-</tr>
-<tr>
-    <td>fechafacturado</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>fecha de la factura </td>
-</tr>
-<tr>
-    <td>cedulaclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>cedula del cliente</td>
-</tr>
-<tr>
-    <td>nomclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>nombre del cliente</td>
-</tr>
-<tr>
-    <td>apeclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>apellido del cliente</td>
-</tr>
-<tr>
-    <td>telclie1</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>telefono del cliente</td>
-</tr>
-<tr>
-    <td>telclie2</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>segundo telefono del cliente</td>
-</tr>
-<tr>
-    <td>matricula</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>matricula del vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>marca</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>marca del vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>modelo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>modelo del vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>tipo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>tipo de vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>descripcion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>descripcion del vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>horaingreso</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>hora del ingreso del vehiculo</td>
-</tr>
-<tr>
-    <td>horasalida</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>hora de la salida del vehiculo </td>
-</tr>
-<tr>
-    <td>duracion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>tiempo de duracion entre la entrada y la salida del vehiculo</td>
-</tr>
-<tr>
-    <td>precio</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>precio por el tiempo estacionado</td>
-</tr>
-<tr>
-    <td>iva</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>iva del precio</td>
-</tr>
-<tr>
-    <td>total</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>total del precio por pagar </td>
-</tr>
-<tr>
-    <td>estacionamiento</td>
-    <td>INT(11)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>numero de estacionamiento asignado</td>
+    <td>id de la tabla estacionamiento
+</td>
 </tr>
 <table id='rol'>
 <caption>rol</caption>
@@ -1153,19 +614,20 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Identificacion del cargo desempeñado en el parqueadero</td>
+    <td>Identificacion del cargo desempeñado en el parqueadero
+</td>
 </tr>
 <tr>
     <td>descripcion</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
+    <td>NULL</td>
     <td>Descripcion del cargo que desempeña en el parqueadero
 </td>
 </tr>
@@ -1196,1475 +658,36 @@
     <td>&nbsp;</td>
     <td>&#10004;</td>
     <td></td>
-    <td>Numero de identificacion de la tabla tipo</td>
-</tr>
-<tr>
-    <td>tipo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Tipo de vehiculo</td>
-</tr>
-<tr>
-    <td>descripcion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Descripcion del vehiculo</td>
-</tr>
-<tr>
-    <td>marca</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Marca del vehiculo</td>
-</tr>
-<tr>
-    <td>modelo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Modelo del vehiculo</td>
-</tr>
-<tr>
-    <td>vehiculo_cliente_cedula</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Cedula de la tabla cliente</td>
-</tr>
-<table id='usuario'>
-<caption>usuario</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>cedula</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Numero de cedula del dueño de vehiculo</td>
-</tr>
-<tr>
-    <td>nombre</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Nombre del usuario del vehiculo</td>
-</tr>
-<tr>
-    <td>apellido</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Apellido del usuario del vehiculo</td>
-</tr>
-<tr>
-    <td>contrasena</td>
-    <td>VARCHAR(255)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Contraseña del usuario del vehiculo</td>
-</tr>
-<tr>
-    <td>rol_idrol</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Identificacion de la tabla rol que se encuentra en la tabla usuario</td>
-</tr>
-<table id='vehiculo'>
-<caption>vehiculo</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>matricula</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Matricula o identificacion del vehiculo</td>
-</tr>
-<tr>
-    <td>marca</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Marca del vehiculo</td>
-</tr>
-<tr>
-    <td>modelo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Modelo del vehiculo</td>
-</tr>
-<tr>
-    <td>cliente_cedula</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Cedula de la tabla cliente</td>
-</tr>
-</table>
-</body>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="author" content="WB DataDic" />
-    <meta name="description" content="parqueadero Data Dictionary." />
-    <title>parqueadero Data Dictionary</title>
-    <style type="text/css">
-    table{
-        width: 100%;
-        margin-bottom: 30px;
-    }
-    abbr{
-        cursor: help;
-    }
-    table, td, th{
-        border-style: solid;
-        border-width: 1px;
-    }
-    table caption{
-        font-size: 120%;
-        font-weight: bold;
-    }
-    caption{
-        color: black;
-    }
-    td, th{
-        border-color: silver;
-    }
-    tr:hover{
-        color: #333;
-        background-color: #F2F2F2;
-    }
-    th{
-        background-color: silver;
-    }
-    td{
-        color: gray;
-    }
-    ul{
-        font-style: italic;
-    }
-    #title-sect{
-        color: gray;
-        text-align: right;
-    }
-    .proj-desc{
-        text-align: right;
-    }
-    </style>
-</head>
-<body>
-<div id="title-sect">
-<h1>parqueadero<br> Data Dictionay</h1>
-<p>
-<em>2018-03-25</em>
-</p>
-<p class="proj-desc">
-<em></em>
-</p>
-</div>
-<h2>Alphabetic Index</h2>
-<ul>
-<li><a href='#cliente'>cliente</a></li>
-<li><a href='#costo'>costo</a></li>
-<li><a href='#cupos'>cupos</a></li>
-<li><a href='#detallefactura'>detallefactura</a></li>
-<li><a href='#estacionamiento'>estacionamiento</a></li>
-<li><a href='#factura'>factura</a></li>
-<li><a href='#historicofacturado'>historicofacturado</a></li>
-<li><a href='#parqueados'>parqueados</a></li>
-<li><a href='#rol'>rol</a></li>
-<li><a href='#tipo'>tipo</a></li>
-<li><a href='#usuario'>usuario</a></li>
-<li><a href='#vehiculo'>vehiculo</a></li>
-</ul>
-<table id='cliente'>
-<caption>cliente</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>cedula</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Identificacion dueño del vehiculo</td>
-</tr>
-<tr>
-    <td>nombre</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Nombre dueño vehiculo a ingresar</td>
-</tr>
-<tr>
-    <td>apellido</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Apellido dueño del vehiculo a ingresar</td>
-</tr>
-<tr>
-    <td>telefono1</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Primer numero de telefono del cliente</td>
-</tr>
-<tr>
-    <td>telefono2</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>Segundo numero de telefono del cliente</td>
-</tr>
-<table id='costo'>
-<caption>costo</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>id del costo</td>
-</tr>
-<tr>
-    <td>vehiculo</td>
-    <td>VARCHAR(11)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>tipo de vehiculo </td>
-</tr>
-<tr>
-    <td>pmin</td>
-    <td>INT(11)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>'60'</td>
-    <td>costo por minutos estacionamiento</td>
-</tr>
-<tr>
-    <td>phoras</td>
-    <td>INT(15)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>costo por horas estacionamiento</td>
-</tr>
-<tr>
-    <td>pdias</td>
-    <td>INT(15)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>costo por dias estacionamiento</td>
-</tr>
-<tr>
-    <td>pmensual</td>
-    <td>INT(15)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>costo mensual estacionamiento</td>
-</tr>
-<table id='cupos'>
-<caption>cupos</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td>id de la tabla cupos</td>
-</tr>
-<tr>
-    <td>motos</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>cupos estacionamientos para motos</td>
-</tr>
-<tr>
-    <td>bicicletas</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>cupos estacionamientos para bicicletas</td>
-</tr>
-<table id='detallefactura'>
-<caption>detallefactura</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>fechafactura</td>
-    <td>DATETIME</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Fecha y hora de  ingreso  del vehiculo </td>
-</tr>
-<tr>
-    <td>horaingreso</td>
-    <td>DATETIME</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>Hora ingreso del vehiculo</td>
-</tr>
-<tr>
-    <td>horasalida</td>
-    <td>DATETIME</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>Fecha y hora de salida del vehiculo</td>
-</tr>
-<tr>
-    <td>duracion</td>
-    <td>TIME</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>Permanencia del vehiculo en el parqueadero</td>
-</tr>
-<tr>
-    <td>precio</td>
-    <td>INT(11)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>Precio por el tiempo permanecido en el parqueadero</td>
-</tr>
-<tr>
-    <td>iva</td>
-    <td>INT(11)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>Impuesto del iva a cobrar en la factura</td>
-</tr>
-<tr>
-    <td>total</td>
-    <td>INT(11)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>Total detallado en la factura a cancelar</td>
-</tr>
-<tr>
-    <td>factura_idFactura</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Identificacion de numero de factura a cancelar por el servicio de parqueo al vehiculo</td>
-</tr>
-<table id='estacionamiento'>
-<caption>estacionamiento</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td>id de la tabla estacionamiento</td>
-</tr>
-<tr>
-    <td>numero</td>
-    <td>INT(11)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>numero de estacionamiento</td>
-</tr>
-<table id='factura'>
-<caption>factura</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>idFactura</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td>Identificacion del numero de factura</td>
-</tr>
-<tr>
-    <td>vehiculo_cliente_cedula</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Cedula de la tabla cliente</td>
-</tr>
-<tr>
-    <td>usuario_cedula</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Cedula de la tabla usuario</td>
-</tr>
-<tr>
-    <td>usuario_rol_idrol</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Identificacion del rol de la tabla rol</td>
-</tr>
-<tr>
-    <td>costo_id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>id de la tabla costo</td>
-</tr>
-<tr>
-    <td>estacionamiento_id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>id de la tabla estacionamiento</td>
-</tr>
-<table id='historicofacturado'>
-<caption>historicofacturado</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td>id de la tabla historicofacturado</td>
-</tr>
-<tr>
-    <td>nomusu</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>nombre del usuario que registra el ingreso</td>
-</tr>
-<tr>
-    <td>apeusu</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>apellido del usuario que registra el ingreso</td>
-</tr>
-<tr>
-    <td>fechafacturado</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>fecha de la factura</td>
-</tr>
-<tr>
-    <td>cedulaclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>cedula del cliente</td>
-</tr>
-<tr>
-    <td>nomclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>nombre del cliente</td>
-</tr>
-<tr>
-    <td>apeclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>apellido del cliente</td>
-</tr>
-<tr>
-    <td>telclie1</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>telefono del cliente</td>
-</tr>
-<tr>
-    <td>telclie2</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>segundo telefono del cliente</td>
-</tr>
-<tr>
-    <td>matricula</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>matricula del vehiculo</td>
-</tr>
-<tr>
-    <td>marca</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>marca del vehiculo</td>
-</tr>
-<tr>
-    <td>modelo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>modelo del vehiculo</td>
-</tr>
-<tr>
-    <td>tipo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>tipo del vehiculo</td>
-</tr>
-<tr>
-    <td>descripcion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>descripcion del vehiculo</td>
-</tr>
-<tr>
-    <td>horaingreso</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>hora ingreso del vechiulo</td>
-</tr>
-<tr>
-    <td>horasalida</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>hora salida del vehiculo</td>
-</tr>
-<tr>
-    <td>duracion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>tiempo de duracion entre la entreada y salida del vehiculo</td>
-</tr>
-<tr>
-    <td>precio</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>precio por el tiempo estacionado</td>
-</tr>
-<tr>
-    <td>iva</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>iva del precio</td>
-</tr>
-<tr>
-    <td>total</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>total del precio por pagar</td>
-</tr>
-<table id='parqueados'>
-<caption>parqueados</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>id</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td>id de la tabla parqueados</td>
-</tr>
-<tr>
-    <td>nomusu</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>nombre del usuario que registra el ingreso</td>
-</tr>
-<tr>
-    <td>apeusu</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>apellido del usuario que registra el ingreso </td>
-</tr>
-<tr>
-    <td>fechafacturado</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>fecha de la factura </td>
-</tr>
-<tr>
-    <td>cedulaclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>cedula del cliente</td>
-</tr>
-<tr>
-    <td>nomclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>nombre del cliente</td>
-</tr>
-<tr>
-    <td>apeclie</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>apellido del cliente</td>
-</tr>
-<tr>
-    <td>telclie1</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>telefono del cliente</td>
-</tr>
-<tr>
-    <td>telclie2</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>segundo telefono del cliente</td>
-</tr>
-<tr>
-    <td>matricula</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>matricula del vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>marca</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>marca del vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>modelo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>modelo del vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>tipo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>tipo de vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>descripcion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>descripcion del vehiculo del cliente</td>
-</tr>
-<tr>
-    <td>horaingreso</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>hora del ingreso del vehiculo</td>
-</tr>
-<tr>
-    <td>horasalida</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>hora de la salida del vehiculo </td>
-</tr>
-<tr>
-    <td>duracion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>tiempo de duracion entre la entrada y la salida del vehiculo</td>
-</tr>
-<tr>
-    <td>precio</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>precio por el tiempo estacionado</td>
-</tr>
-<tr>
-    <td>iva</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>iva del precio</td>
-</tr>
-<tr>
-    <td>total</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>total del precio por pagar </td>
-</tr>
-<tr>
-    <td>estacionamiento</td>
-    <td>INT(11)</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td>NULL</td>
-    <td>numero de estacionamiento asignado</td>
-</tr>
-<table id='rol'>
-<caption>rol</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>idrol</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Identificacion del cargo desempeñado en el parqueadero</td>
-</tr>
-<tr>
-    <td>descripcion</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Descripcion del cargo que desempeña en el parqueadero
+    <td>Numero de identificacion de la tabla tipo
 </td>
 </tr>
-<table id='tipo'>
-<caption>tipo</caption>
-<tr><td colspan='11'></td></tr>
-<tr>
-    <th>Column name</th>
-    <th>DataType</th>
-    <th><abbr title='Primary Key'>PK</abbr></th>
-    <th><abbr title='Not Null'>NN</abbr></th>
-    <th><abbr title='Unique'>UQ</abbr></th>
-    <th><abbr title='Binary'>BIN</abbr></th>
-    <th><abbr title='Unsigned'>UN</abbr></th>
-    <th><abbr title='Zero Fill'>ZF</abbr></th>
-    <th><abbr title='Auto Increment'>AI</abbr></th>
-    <th>Default</th>
-    <th>Comment</th>
-</tr>
-<tr>
-    <td>idtipo</td>
-    <td>INT(11)</td>
-    <td>&#10004;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td></td>
-    <td>Numero de identificacion de la tabla tipo</td>
-</tr>
 <tr>
     <td>tipo</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Tipo de vehiculo</td>
+    <td>NULL</td>
+    <td>Tipo de vehiculo
+</td>
 </tr>
 <tr>
     <td>descripcion</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
     <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Descripcion del vehiculo</td>
-</tr>
-<tr>
-    <td>marca</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Marca del vehiculo</td>
-</tr>
-<tr>
-    <td>modelo</td>
-    <td>VARCHAR(45)</td>
-    <td>&nbsp;</td>
-    <td>&#10004;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Modelo del vehiculo</td>
+    <td>NULL</td>
+    <td>Descripcion del vehiculo
+</td>
 </tr>
 <tr>
     <td>vehiculo_cliente_cedula</td>
@@ -2677,7 +700,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Cedula de la tabla cliente</td>
+    <td>Cedula de la tabla cliente
+</td>
 </tr>
 <table id='usuario'>
 <caption>usuario</caption>
@@ -2706,46 +730,50 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Numero de cedula del dueño de vehiculo</td>
+    <td>Numero de cedula del dueño de vehiculo
+</td>
 </tr>
 <tr>
     <td>nombre</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Nombre del usuario del vehiculo</td>
+    <td>NULL</td>
+    <td>Nombre del usuario del vehiculo
+</td>
 </tr>
 <tr>
     <td>apellido</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Apellido del usuario del vehiculo</td>
+    <td>NULL</td>
+    <td>Apellido del usuario del vehiculo
+</td>
 </tr>
 <tr>
     <td>contrasena</td>
     <td>VARCHAR(255)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Contraseña del usuario del vehiculo</td>
+    <td>NULL</td>
+    <td>Contraseña del usuario del vehiculo
+</td>
 </tr>
 <tr>
     <td>rol_idrol</td>
@@ -2758,7 +786,8 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Identificacion de la tabla rol que se encuentra en la tabla usuario</td>
+    <td>Identificacion de la tabla rol que se encuentra en la tabla usuario
+</td>
 </tr>
 <table id='vehiculo'>
 <caption>vehiculo</caption>
@@ -2780,40 +809,43 @@
     <td>matricula</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Matricula o identificacion del vehiculo</td>
+    <td>NULL</td>
+    <td>Matricula o identificacion del vehiculo
+</td>
 </tr>
 <tr>
     <td>marca</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Marca del vehiculo</td>
+    <td>NULL</td>
+    <td>Marca del vehiculo
+</td>
 </tr>
 <tr>
     <td>modelo</td>
     <td>VARCHAR(45)</td>
     <td>&nbsp;</td>
-    <td>&#10004;</td>
+    <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
-    <td></td>
-    <td>Modelo del vehiculo</td>
+    <td>NULL</td>
+    <td>Modelo del vehiculo
+</td>
 </tr>
 <tr>
     <td>cliente_cedula</td>
@@ -2826,9 +858,9 @@
     <td>&nbsp;</td>
     <td class='attr'>&nbsp;</td>
     <td></td>
-    <td>Cedula de la tabla cliente</td>
+    <td>Cedula de la tabla cliente
+</td>
 </tr>
 </table>
 </body>
->>>>>>> a45892a60354c8896c448519356086e063dd00e0
 </html>

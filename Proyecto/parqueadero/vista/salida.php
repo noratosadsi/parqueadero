@@ -31,7 +31,7 @@
 
 <!-- Contenedor ejercicio--> 
 <div class="panel panel-body"> 
-<div class="row alert-success"> <!-- Color fondo general--> 
+<div class="row alert-"> <!-- Color fondo general--> 
 <div class="col-sm-12 col-md-12"> 
 
 <form method="post" action="" >
@@ -143,7 +143,7 @@ include "../modelo/cupos.php";
 
 ?>
 
-<table border="0" width="95%" class="alert alert-success" align="center" Style="font-family: Arial; font-size: 10pt;"> 
+<table border="0" width="95%" class="alert alert-" align="center" Style="font-family: Arial; font-size: 10pt;"> 
 <tr align="center">
 <td>Cedula</td>
 <td>&nbsp;&nbsp;<input type="text" name="cedulacliente" value="<?php echo $_POST["cedulacliente"]; ?>" disabled>&nbsp;&nbsp;</td>
@@ -199,7 +199,7 @@ echo "<option value='$_POST[tipo]'> $_POST[tipo] </option>";
 <td>&nbsp;&nbsp;<input type="text" disabled value="<?php echo $_POST['iva']?>">&nbsp;&nbsp;</td>
 </tr>
 </table>
-<table border="0" align="center" class="alert alert-success"> 
+<table border="0" align="center" class="alert alert-"> 
 <tr>
 <td colspan="10" align="center" class="panel panel-default">ESTACIONAMIENTOS</td>
 </tr>
@@ -291,7 +291,7 @@ ESTACIONAMIENTO ASIGNADO <input type='text' name='lugar' class='inputcentrado' s
 </table>
 
 
-<table border="0" width="90%" class="alert alert-success" align="center" Style="font-family: Arial; font-size: 10pt;"> 
+<table border="0" width="90%" class="alert alert-" align="center" Style="font-family: Arial; font-size: 10pt;"> 
 <tr>
 <td colspan="2" align="center">TARIFAS</td>
 <td></td>

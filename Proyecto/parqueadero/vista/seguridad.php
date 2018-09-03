@@ -6,7 +6,7 @@
 
 <head>
 
-<title>Norato´s parking</title>
+<title>NORATOS PARKING</title>
 
 <meta charset="utf-8">
 
@@ -70,7 +70,10 @@
 
 <tr><td style="padding:4px"></td></tr>
 
-<tr><td align="center"><input type="submit" name="enviar" class="" width="300px"></td></td>
+<tr><td align="center"><button type="submit" class="btn btn-info btn-">
+Ingresar&nbsp;
+<span class="glyphicon glyphicon-ok-sign"></span>
+</button></td></td>
 
 <tr><td style="padding:4px"></td></tr>
 
