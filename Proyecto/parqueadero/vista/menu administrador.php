@@ -55,7 +55,7 @@ if ($_SESSION["nivel"]==1)
 <?php
 if ($_SESSION["nivel"]==1)
 {
-	echo "<button onclick=\"window.location.href='registro.php'\" width=\"500\" style=\"color:#ffffff\" class=\"btn btn-info\">";
+	echo "<button onclick=\"window.location.href='usuarios.php'\" width=\"500\" style=\"color:#ffffff\" class=\"btn btn-info\">";
 	echo "REGISTRAR USUARIOS";
 }	
 ?>

@@ -27,7 +27,7 @@
 <div class="alert alert-success"> 
 <div class="row"> 
 <div class="col-sm-12 col-md-12">  
-
+<form action="../vista/recibopdf.php" method="post" target="blanko" onsubmit="window.open('', 'blanko', 'toolbar=no,menubar=no,scrollbars=notop=10px,left=40px,width=300px,height=380px')">
 <!--nuevo-->
  <?php
 include "config.php";
@@ -72,6 +72,7 @@ echo '<table Border=2 align="center">';
       echo 'Fecha factura';
       echo '</td>';
       echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"fechafactura\" value=\"$con[fechafactura]\">";
       echo $con['fechafactura'];
       echo '</td>';
 	  echo '</tr>';
@@ -80,6 +81,7 @@ echo '<table Border=2 align="center">';
       echo 'Cedula';
       echo '</td>';
       echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"cedula\" value=\"$con[cedula]\">";
       echo $con['cedula'];
       echo '</td>';
 	  echo '</tr>';
@@ -88,6 +90,7 @@ echo '<table Border=2 align="center">';
       echo 'Nombre';
       echo '</td>';
       echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"nombre\" value=\"$con[nombre]\">";
       echo $con['nombre'];
       echo '</td>';
       echo '</tr>';
@@ -96,6 +99,7 @@ echo '<table Border=2 align="center">';
       echo 'Apellido';
       echo '</td>';	  
       echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"apellido\" value=\"$con[apellido]\">";
       echo $con['apellido'];
       echo '</td>';
       echo '</tr>';
@@ -119,7 +123,8 @@ echo '<table Border=2 align="center">';
       echo '<td align="center">';
       echo 'Matricula';
       echo '</td>';	  
-	  echo '<td align="center">';
+	echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"matricula\" value=\"$con[matricula]\">";
       echo $con['matricula'];
       echo '</td>';
       echo '</tr>';	  
@@ -159,7 +164,8 @@ echo '<table Border=2 align="center">';
       echo '<td align="center">';
       echo 'Hora ingreso';
       echo '</td>';	  
-	  echo '<td align="center">';
+	echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"horaingreso\" value=\"$con[horaingreso]\">";
       echo $con['horaingreso'];
       echo '</td>';
 	  echo '</tr>';
@@ -168,6 +174,7 @@ echo '<table Border=2 align="center">';
       echo 'Hora salida';
       echo '</td>';
       echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"horasalida\" value=\"$con[horasalida]\">";
       echo $con['horasalida'];
       echo '</td>';
 	  echo '</tr>';
@@ -176,6 +183,7 @@ echo '<table Border=2 align="center">';
       echo 'Duracion';
       echo '</td>';
       echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"duracion\" value=\"$con[duracion]\">";
       echo $con['duracion'];
       echo '</td>';
 	  echo '</tr>';
@@ -200,6 +208,7 @@ echo '<table Border=2 align="center">';
       echo 'Toral';
       echo '</td>';
       echo '<td align="center">';
+      echo "<input type=\"hidden\" name=\"total\" value=\"$total\">";
       echo "$".$total;
       echo '</td>';	 	  
       echo '</tr>';	  
@@ -207,9 +216,10 @@ echo '<table Border=2 align="center">';
 	  
     $mysql->close();
 ?>
-
+<input type="submit" value="imprimir" class="btn btn-info btn-responsive btninter"> 
+</form>
 </div> 
-</div> 
+</div>
 </div> 
 </div> 
 </div>
