@@ -562,8 +562,8 @@ document.getElementsByName("lugar")[0].value = seleccionbici;
 			
 			if (in_array($i, $estmoto))
 			{
-				echo "<td align='center' style='width:30px' bgcolor='gray'>";
-			    echo "$i </td>";
+				echo "<td align='center' style='width:30px' bgcolor='gray' name='posicion'>";
+			    echo "$i </td>";	
 			}
 			else
 			{
@@ -678,10 +678,9 @@ y++;
 				$usar="onclick='subb($i);change(this);'";
 			}
 			
-			
 			if (in_array($i, $estbicicleta))
 			{
-				echo "<td style='width:30px' bgcolor='gray'>";
+				echo "<td style='width:30px' bgcolor='gray' name='posicionb'>";
 			    echo "$i</td>";
 			}
 			else
@@ -704,8 +703,7 @@ y++;
 <tr>
 <td colspan="12" align="center" class="alert alert-info">
 ESTACIONAMIENTO ASIGNADO
-<input type='text' name='lugar' class='inputcentrado' size='5' value="<?php if (isset ($con['numero'])){ echo ($con['numero']);}else { echo "";}?>" id="id" onkeypress="return false;" 
-class="readonly" required/>
+<input type='text' name='lugar' class='inputcentrado' size='5' value="<?php if (isset ($con['numero'])){ echo ($con['numero']);}else { echo "";}?>" id="id" onkeypress="return false;" class="readonly" required/>
 
 </td>
 </tr>

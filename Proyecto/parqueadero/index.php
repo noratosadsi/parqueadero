@@ -98,6 +98,14 @@ var yy = date.getYear();
 var year = (yy < 1000) ? yy + 1900 : yy;
 var fecha=(day + "/" + month + "/" + year);
 //]]>
+
+
+//limitar el numero de digitos con javascript
+var input=  document.getElementById('numero');
+input.addEventListener('input',function(){
+  if (this.value.length > 9) 
+     this.value = this.value.slice(0,9); 
+})
 </script>
 </td>
 </tr>
@@ -116,7 +124,7 @@ var fecha=(day + "/" + month + "/" + year);
 
 <tr align="center"  style="height: 40px;">
 <td>Cedula</td>
-<td><input  title="Se requiere un numero de cedula" type="text" name="cedulaactualizar" minlength="7" autofocus>&nbsp;&nbsp;</td>
+<td><input  title="Se requiere un numero de cedula" type="number" name="cedulaactualizar" id="numero" min="999999" max="9999999999"autofocus>&nbsp;&nbsp;</td>
 </tr>
 
 <tr align="center">

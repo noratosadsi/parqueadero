@@ -71,8 +71,13 @@ if ($_POST["ingresar"])
 	  
   $mysql->query("insert into cliente(cedula,nombre,apellido,telefono1,telefono2) values 
 	  ($_REQUEST[cedulacliente],'$_REQUEST[nombre]','$_REQUEST[apellido]','$_REQUEST[telefono1]','$_REQUEST[telefono2]')");
-      if($mysql->error)
-	  die(header("Location: ../index.php?dato=si"));
+     if($mysql->error)
+     {
+     	echo "<script>alert('sdalfjsaldkfj');</script>";
+     	echo $mysql->error;
+     	//header("Location: ../indexx.php?dato=si");
+     }
+	 // die(header("Location: ../index.php?dato=si"));
 		
 	  
 	  $mysql->query("insert into vehiculo (matricula,marca,modelo,cliente_cedula)

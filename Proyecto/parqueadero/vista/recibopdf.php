@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php ob_start();?>
-<html>
-<meta charset="utf-8">
-<table>
+<html><meta charset="utf-8"><table>
+	<tr>
+	<th colspan="2">RECIBO DE PAGO</th>
+	</tr>
 	<tr>
 		<td>Parqueadero</td>
 		<td>Norato's Parking</td>
@@ -43,8 +44,7 @@
 		<td>Total</td>
 		<td>$<?php echo $_POST["total"]?></td>
 	</tr>
-</table>
-</html>
+</table></html>
 <?php
 require_once("dompdf/dompdf_config.inc.php");
 $dompdf=new DOMPDF();
