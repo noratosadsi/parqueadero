@@ -215,10 +215,12 @@ echo '<table Border=2 align="center">';
 	  echo '</table>';
 	  
     $mysql->close();
+
+    echo "<input type=\"submit\" value=\"imprimir\" class=\"btn btn-info btn-responsive btninter\">";
 	
 	//verifica la version de php, para imprimir la factura sólo hasta php 7.1
 	if (version_compare(PHP_VERSION, '7.2.0') <= 0):
-    echo "<input type=\"submit\" value=\"imprimir\" class=\"btn btn-info btn-responsive btninter\">";
+    
 	endif;
 ?>
 </form>

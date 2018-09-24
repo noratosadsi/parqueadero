@@ -1,0 +1,2546 @@
+{
+  "title" : "",
+  "description" : "",
+  "author" : "",
+  "width" : 1364.0,
+  "height" : 768.0,
+  "version" : "0.5",
+  "editRate" : 30,
+  "authoringClientName" :  {
+    "name" : "Camtasia Studio",
+    "platform" : "Windows",
+    "version" : "9.0"
+  },
+  "sourceBin" : [
+    {
+      "id" : 1,
+      "src" : "C:\\Users\\LEOOOO\\Documents\\Camtasia Studio\\Rec 02-12-18 2.trec",
+      "rect" : [0, 0, 1364, 768],
+      "lastMod" : "20180212T205625",
+      "sourceTracks" : [
+        {
+          "range" : [0, 4589],
+          "type" : 0,
+          "editRate" : 30,
+          "trackRect" : [0, 0, 1364, 768],
+          "sampleRate" : 28,
+          "bitDepth" : 0,
+          "numChannels" : 0,
+          "metaData" : "Rec 02-12-18 2.trec;"
+        }
+      ]
+    },
+    {
+      "id" : 2,
+      "src" : "C:\\ProgramData\\TechSmith\\Camtasia Studio\\Library 3.0\\Animated Backgrounds - floatingboxes\\Animated Backgrounds - floatingboxes.mp4",
+      "rect" : [0, 0, 1920, 1080],
+      "lastMod" : "20160810T201342",
+      "sourceTracks" : [
+        {
+          "range" : [0, 100333333],
+          "type" : 0,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 1920, 1080],
+          "sampleRate" : "2000000/66671",
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 3,
+      "src" : "E:\\INSTRUCTOR LEONARDO\\LOGO NEGRO.png",
+      "rect" : [0, 0, 1600, 1559],
+      "lastMod" : "20171206T191052",
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 1600, 1559],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 4,
+      "src" : "E:\\INSTRUCTOR LEONARDO\\logo senaaaa.png",
+      "rect" : [0, 0, 734, 516],
+      "lastMod" : "20150302T012358",
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 734, 516],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 5,
+      "src" : "C:\\ProgramData\\TechSmith\\Camtasia Studio\\Library 3.0\\Motion Graphics - Intro Clips - spinningcomputer\\Motion Graphics - Intro Clips - spinningcomputer.mp4",
+      "rect" : [0, 0, 1920, 1080],
+      "lastMod" : "20160808T204020",
+      "sourceTracks" : [
+        {
+          "range" : [0, 229000000],
+          "type" : 0,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 1920, 1080],
+          "sampleRate" : "10000000/333333",
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 6,
+      "src" : "C:\\ProgramData\\TechSmith\\Camtasia Studio\\Library 3.0\\Motion Graphics - Intro Clips - slidingbackground\\Motion Graphics - Intro Clips - slidingbackground.mp4",
+      "rect" : [0, 0, 1920, 1080],
+      "lastMod" : "20160808T203208",
+      "sourceTracks" : [
+        {
+          "range" : [0, 160666667],
+          "type" : 0,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 1920, 1080],
+          "sampleRate" : 25,
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 7,
+      "src" : "C:\\ProgramData\\TechSmith\\Camtasia Studio\\Library 3.0\\Motion Graphics - Intro Clips - slidingbackground\\Motion Graphics - Intro Clips - slidingbackground.png",
+      "rect" : [0, 0, 1920, 1080],
+      "lastMod" : "20160804T001342",
+      "sourceTracks" : [
+        {
+          "range" : [0, 1],
+          "type" : 1,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 1920, 1080],
+          "sampleRate" : 0,
+          "bitDepth" : 32,
+          "numChannels" : 0,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 8,
+      "src" : "C:\\ProgramData\\TechSmith\\Camtasia Studio\\Library 3.0\\Motion Graphics - Intro Clips - fadingsquares\\Motion Graphics - Intro Clips - fadingsquares.mp4",
+      "rect" : [0, 0, 1920, 1080],
+      "lastMod" : "20160808T202454",
+      "sourceTracks" : [
+        {
+          "range" : [0, 200333333],
+          "type" : 0,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 1920, 1080],
+          "sampleRate" : "5000000/166833",
+          "bitDepth" : 24,
+          "numChannels" : 0,
+          "metaData" : ""
+        }
+      ]
+    },
+    {
+      "id" : 9,
+      "src" : "C:\\ProgramData\\TechSmith\\Camtasia Studio\\Library 3.0\\Music Tracks - videogamemusic\\Music Tracks - videogamemusic.mp3",
+      "rect" : [0, 0, 0, 0],
+      "lastMod" : "20160810T201858",
+      "sourceTracks" : [
+        {
+          "range" : [0, 1378666667],
+          "type" : 2,
+          "editRate" : 10000000,
+          "trackRect" : [0, 0, 0, 0],
+          "sampleRate" : 48000,
+          "bitDepth" : 0,
+          "numChannels" : 2,
+          "metaData" : ""
+        }
+      ]
+    }
+  ],
+  "timeline" : {
+    "id" : 10,
+    "sceneTrack" : {
+      "scenes" : [
+        {
+          "duration" : 79.6333333333333,
+          "title" : "",
+          "type" : "",
+          "csml" : {
+            "tracks" : [
+              {
+                "trackIndex" : 0,
+                "medias" : [
+                ]
+              },
+              {
+                "trackIndex" : 1,
+                "medias" : [
+                  {
+                    "id" : 11,
+                    "_type" : "AMFile",
+                    "src" : 9,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "video-game-music",
+                      "sampleRate" : 48000,
+                      "bitDepth" : 0,
+                      "gain" : 1.0,
+                      "mixToMono" : false
+                    },
+                      "channelNumber" : "0,1",
+                    "parameters" : {
+                      "volume" : {
+                        "type" : "double",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : 0.10989010989011,
+                            "duration" : 0
+                          },
+                          {
+                            "time" : 3173,
+                            "value" : 0.10989010989011,
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 2359,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 2359,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 2,
+                "medias" : [
+                  {
+                    "id" : 12,
+                    "_type" : "VMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "floating-boxes-background"
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 300,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 300,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 13,
+                    "_type" : "ScreenVMFile",
+                    "src" : 1,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "Rec 02-12-18 2"
+                    },
+                    "parameters" : {
+                      "cursorScale" : {
+                        "type" : "double",
+                        "defaultValue" : 1.0,
+                        "interp" : "linr"
+                      },
+                      "cursorOpacity" : {
+                        "type" : "double",
+                        "defaultValue" : 1.0,
+                        "interp" : "linr"
+                      }
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 595,
+                    "duration" : 1479,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1479,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "AutoAppliedSmartFocus" : "False",
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 14,
+                    "_type" : "VMFile",
+                    "src" : 2,
+                    "trackNumber" : 0,
+                    "attributes" : {
+                      "ident" : "floating-boxes-background"
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 2074,
+                    "duration" : 300,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 300,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ],
+                "transitions" : [
+                  {
+                    "name" : "FadeThroughBlack",
+                    "duration" : 15,
+                    "useAudioPreRoll" : false,
+                    "useVisualPreRoll" : true,
+                    "leftMedia" : 12
+                  },
+                  {
+                    "name" : "FadeThroughBlack",
+                    "duration" : 15,
+                    "useAudioPreRoll" : false,
+                    "useVisualPreRoll" : true,
+                    "rightMedia" : 13
+                  },
+                  {
+                    "name" : "PageRoll",
+                    "duration" : 30,
+                    "useAudioPreRoll" : false,
+                    "useVisualPreRoll" : true,
+                    "leftMedia" : 13
+                  },
+                  {
+                    "name" : "FadeThroughBlack",
+                    "duration" : 15,
+                    "useAudioPreRoll" : false,
+                    "useVisualPreRoll" : true,
+                    "leftMedia" : 14
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 3,
+                "medias" : [
+                  {
+                    "id" : 15,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "height" : 366.0,
+                      "width" : 1239.22147650988,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "text" : "Configuración \rOracle - SQL Developer",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : [{"name":"fgColor","rangeEnd":24,"rangeStart":15,"value":"(252,66,66,255)","valueType":"color"},{"name":"underline","rangeEnd":38,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":25,"rangeStart":24,"value":"(0,0,0,255)","valueType":"color"},{"name":"fgColor","rangeEnd":38,"rangeStart":25,"value":"(252,66,66,255)","valueType":"color"},{"name":"fgColor","rangeEnd":15,"rangeStart":0,"value":"(0,0,0,255)","valueType":"color"},{"name":"fontItalic","rangeEnd":38,"rangeStart":0,"value":2,"valueType":"int"},{"name":"fontWeight","rangeEnd":38,"rangeStart":0,"value":700,"valueType":"int"},{"name":"fontName","rangeEnd":38,"rangeStart":0,"value":"Montserrat","valueType":"string"},{"name":"strikethrough","rangeEnd":38,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontSize","rangeEnd":38,"rangeStart":0,"value":103,"valueType":"double"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : 0.389261745084714,
+                      "translation1" : 91.7658780294611
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "DropShadow",
+                          "category" : "categoryVisualEffects",
+                          "parameters" : {
+                            "angle" : {
+                              "type" : "double",
+                              "defaultValue" : 5.49778714378214,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 0.0,
+                                "defaultValue" : 5.49778714378214
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "blur" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 50.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-alpha" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 1.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-blue" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-green" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-red" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "enabled" : {
+                              "type" : "int",
+                              "valueBounds" : {
+                                "minValue" : 0,
+                                "maxValue" : 1,
+                                "defaultValue" : 1
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              },
+                              "keyframes" : [
+                                {
+                                  "time" : 0,
+                                  "value" : 1,
+                                  "duration" : 0
+                                }
+                              ]
+                            },
+                            "offset" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 250.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "opacity" : {
+                              "type" : "double",
+                              "defaultValue" : 0.4,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.4
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            }
+                          }
+                        }
+                    ],
+                    "start" : 0,
+                    "duration" : 300,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 300,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-VAlign" : "center",
+                      "default-text-attributes" : "[{\"name\":\"strikethrough\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontSize\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":103,\"valueType\":\"double\"},{\"name\":\"fontItalic\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":2,\"valueType\":\"int\"},{\"name\":\"fontName\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":\"Montserrat\",\"valueType\":\"string\"},{\"name\":\"fgColor\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":\"(0,0,0,255)\",\"valueType\":\"color\"},{\"name\":\"underline\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontWeight\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":700,\"valueType\":\"int\"}]",
+                      "default-translation0" : -33.067961165023,
+                      "default-translation1" : 22.5
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 16,
+                    "_type" : "IMFile",
+                    "src" : 3,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "LOGO NEGRO"
+                    },
+                    "parameters" : {
+                      "translation0" : 497.961165048495,
+                      "translation1" : -208.831462279846,
+                      "scale0" : 0.182247262995532,
+                      "scale1" : 0.182247262995532
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 2074,
+                    "duration" : 300,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-scale0" : 0.492623476587556,
+                      "default-scale1" : 0.492623476587556,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 4,
+                "medias" : [
+                  {
+                    "id" : 17,
+                    "_type" : "IMFile",
+                    "src" : 3,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 0,
+                    "attributes" : {
+                      "ident" : "LOGO NEGRO"
+                    },
+                    "parameters" : {
+                      "translation0" : 497.961165048495,
+                      "translation1" : -208.831462279846,
+                      "scale0" : 0.182247262995532,
+                      "scale1" : 0.182247262995532
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 0,
+                    "duration" : 300,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-scale0" : 0.492623476587556,
+                      "default-scale1" : 0.492623476587556,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 18,
+                    "_type" : "Group",
+                    "parameters" : {
+                      "volume" : 1.0
+                    },
+                    "tracks" : [
+                      {
+                        "trackIndex" : 0,
+                        "medias" : [
+                          {
+                            "id" : 19,
+                            "_type" : "Group",
+                            "parameters" : {
+                              "volume" : 1.0
+                            },
+                            "tracks" : [
+                              {
+                                "trackIndex" : 0,
+                                "medias" : [
+                                  {
+                                    "id" : 20,
+                                    "_type" : "StitchedMedia",
+                                    "minMediaStart" : 0,
+                                    "attributes" : {
+                                      "ident" : "laptop-open-background",
+                                      "gain" : 1.0,
+                                      "mixToMono" : false
+                                    },
+                                    "parameters" : {
+                                      "cursorOpacity" : 1.0,
+                                      "cursorScale" : 1.0
+                                    },
+                                    "medias" : [
+                                        {
+                                          "id" : 21,
+                                          "_type" : "VMFile",
+                                          "src" : 5,
+                                          "trackNumber" : 0,
+                                          "attributes" : {
+                                            "ident" : "laptop-open-background"
+                                          },
+                                          "effects" : [
+
+                                          ],
+                                          "start" : 0,
+                                          "duration" : 100,
+                                          "mediaStart" : 0,
+                                          "mediaDuration" : 100,
+                                          "scalar" : 1,
+                                          "metadata" : {
+                                            "WinSubProjectDisplayName" : "",
+                                            "clipSpeedAttribute" : false
+                                          },
+                                          "animationTracks" : {
+
+                                          }
+                                        },
+                                        {
+                                          "id" : 22,
+                                          "_type" : "IMFile",
+                                          "src" : 5,
+                                          "trackNumber" : 0,
+                                          "trimStartSum" : 0,
+                                          "attributes" : {
+                                            "ident" : "laptop-open-background"
+                                          },
+                                          "effects" : [
+
+                                          ],
+                                          "start" : 100,
+                                          "duration" : 90,
+                                          "mediaStart" : 99,
+                                          "mediaDuration" : 1,
+                                          "scalar" : 1,
+                                          "metadata" : {
+                                            "WinSubProjectDisplayName" : ""
+                                          },
+                                          "animationTracks" : {
+
+                                          }
+                                        },
+                                        {
+                                          "id" : 23,
+                                          "_type" : "VMFile",
+                                          "src" : 5,
+                                          "trackNumber" : 0,
+                                          "attributes" : {
+                                            "ident" : "laptop-open-background"
+                                          },
+                                          "effects" : [
+
+                                          ],
+                                          "start" : 190,
+                                          "duration" : 587,
+                                          "mediaStart" : 100,
+                                          "mediaDuration" : 587,
+                                          "scalar" : 1,
+                                          "metadata" : {
+                                            "WinSubProjectDisplayName" : "",
+                                            "clipSpeedAttribute" : false
+                                          },
+                                          "animationTracks" : {
+
+                                          }
+                                        }
+                                    ],
+                                    "effects" : [
+
+                                    ],
+                                    "start" : 0,
+                                    "duration" : 191,
+                                    "mediaStart" : 0,
+                                    "mediaDuration" : 191,
+                                    "scalar" : 1,
+                                    "metadata" : {
+                                      "WinSubProjectDisplayName" : "",
+                                      "clipSpeedAttribute" : false
+                                    },
+                                    "animationTracks" : {
+
+                                    }
+                                  },
+                                  {
+                                    "id" : 24,
+                                    "_type" : "VMFile",
+                                    "src" : 5,
+                                    "trackNumber" : 0,
+                                    "attributes" : {
+                                      "ident" : "laptop-open-background"
+                                    },
+                                    "effects" : [
+
+                                    ],
+                                    "start" : 191,
+                                    "duration" : 104,
+                                    "mediaStart" : 109,
+                                    "mediaDuration" : 104,
+                                    "scalar" : 1,
+                                    "metadata" : {
+                                      "WinSubProjectDisplayName" : "",
+                                      "clipSpeedAttribute" : false
+                                    },
+                                    "animationTracks" : {
+
+                                    }
+                                  }
+                                ],
+                                  "ident" : "",
+                                  "audioMuted" : false,
+                                  "videoHidden" : false,
+                                  "metadata" : {
+                                    "IsLocked" : "False",
+                                    "WinTrackHeight" : "0"
+                                  }
+                              }
+                            ],
+                            "attributes" : {
+                              "ident" : "Shapes",
+                              "gain" : 1.0,
+                              "mixToMono" : false
+                            },
+                            "effects" : [
+
+                            ],
+                            "start" : 0,
+                            "duration" : 295,
+                            "mediaStart" : 0.0,
+                            "mediaDuration" : 295.0,
+                            "scalar" : 1,
+                            "metadata" : {
+                              "IsGroupExpanded" : "False",
+                              "WinSubProjectDisplayName" : "Shapes"
+                            },
+                            "animationTracks" : {
+
+                            }
+                          }
+                        ],
+                          "ident" : "",
+                          "audioMuted" : false,
+                          "videoHidden" : false,
+                          "metadata" : {
+                            "IsLocked" : "False",
+                            "WinTrackHeight" : "0"
+                          }
+                      },
+                      {
+                        "trackIndex" : 1,
+                        "medias" : [
+                          {
+                            "id" : 25,
+                            "_type" : "Callout",
+                            "def" : {
+                              "kind" : "remix",
+                              "shape" : "text",
+                              "style" : "basic",
+                              "height" : 467.916666666808,
+                              "width" : 819.999999998967,
+                              "word-wrap" : 1.0,
+                              "horizontal-alignment" : "center",
+                              "text" : "Creación\r de \rcuenta...",
+                              "vertical-alignment" : "center",
+                              "font" : {
+                                "color-blue" : 1.0,
+                                "color-green" : 1.0,
+                                "color-red" : 1.0,
+                                "size" : 96.0,
+                                "tracking" : 0.0,
+                                "name" : "Montserrat",
+                                "weight" : "Regular"
+                              },
+                              "textAttributes" : {
+                                "type" : "textAttributeList",
+                                "keyframes" : [
+                                  {
+                                    "time" : 0,
+                                    "value" : [{"name":"fontItalic","rangeEnd":24,"rangeStart":0,"value":0,"valueType":"int"},{"name":"strikethrough","rangeEnd":24,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontName","rangeEnd":24,"rangeStart":0,"value":"Montserrat","valueType":"string"},{"name":"underline","rangeEnd":24,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontWeight","rangeEnd":24,"rangeStart":0,"value":400,"valueType":"int"},{"name":"fontSize","rangeEnd":24,"rangeStart":0,"value":95,"valueType":"double"},{"name":"fgColor","rangeEnd":24,"rangeStart":0,"value":"(64,64,64,255)","valueType":"color"}],
+                                    "duration" : 0
+                                  }
+                                ]
+                              }
+                            },
+                            "attributes" : {
+                              "autoRotateText" : true
+                            },
+                            "parameters" : {
+                              "translation0" : -33.7499999993803,
+                              "translation1" : 91.3669479645318
+                            },
+                            "effects" : [
+                                {
+                                  "_type" : "GenericBehaviorEffect",
+                                  "effectName" : "scale",
+                                  "start" : -15,
+                                  "duration" : 163                                ,
+                                  "in" : {
+                                    "attributes" : {
+                                      "name" : "grow",
+                                      "type" : 1,
+                                      "characterOrder" : 6,
+                                      "offsetBetweenCharacters" : 1,
+                                      "suggestedDurationPerCharacter" : 18,
+                                      "overlapProportion" : "3/4",
+                                      "movement" : 30,
+                                      "springDamping" : 5.0,
+                                      "springStiffness" : 50.0,
+                                      "bounceBounciness" : 0.45
+                                    }
+                                  
+                                  },
+                                  "center" : {
+                                    "attributes" : {
+                                      "name" : "none",
+                                      "type" : 1,
+                                      "characterOrder" : 6,
+                                      "offsetBetweenCharacters" : 0,
+                                      "secondsPerLoop" : 1,
+                                      "numberOfLoops" : -1,
+                                      "delayBetweenLoops" : 0,
+                                      "offsetBetweenCharacters" : 0
+                                    }
+                                  
+                                  },
+                                  "out" : {
+                                    "attributes" : {
+                                      "name" : "shrink",
+                                      "type" : 1,
+                                      "characterOrder" : 6,
+                                      "offsetBetweenCharacters" : 1,
+                                      "suggestedDurationPerCharacter" : "29/2",
+                                      "overlapProportion" : "1/10",
+                                      "movement" : 11,
+                                      "springDamping" : 5.0,
+                                      "springStiffness" : 50.0,
+                                      "bounceBounciness" : 0.45
+                                    }
+                                  
+                                  }
+                                }
+                            ],
+                            "start" : 86,
+                            "duration" : 163,
+                            "mediaStart" : -15,
+                            "mediaDuration" : 163,
+                            "scalar" : 1,
+                            "metadata" : {
+                              "WinSubProjectDisplayName" : "",
+                              "clipSpeedAttribute" : false,
+                              "default-HAlign" : "center",
+                              "default-VAlign" : "center",
+                              "default-text-attributes" : "[{\"name\":\"fontItalic\",\"rangeEnd\":18,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontWeight\",\"rangeEnd\":18,\"rangeStart\":0,\"value\":100,\"valueType\":\"int\"},{\"name\":\"underline\",\"rangeEnd\":18,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontName\",\"rangeEnd\":18,\"rangeStart\":0,\"value\":\"Montserrat\",\"valueType\":\"string\"},{\"name\":\"fgColor\",\"rangeEnd\":18,\"rangeStart\":0,\"value\":\"(64,64,64,255)\",\"valueType\":\"color\"},{\"name\":\"strikethrough\",\"rangeEnd\":18,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontSize\",\"rangeEnd\":18,\"rangeStart\":0,\"value\":75,\"valueType\":\"double\"}]",
+                              "default-translation0" : -33.7499999993803,
+                              "default-translation1" : 94.1250000000071
+                            },
+                            "animationTracks" : {
+
+                            }
+                          }
+                        ],
+                          "ident" : "",
+                          "audioMuted" : false,
+                          "videoHidden" : false,
+                          "metadata" : {
+                            "IsLocked" : "False",
+                            "WinTrackHeight" : "2.62876508344081e-312"
+                          }
+                      }
+                    ],
+                    "attributes" : {
+                      "ident" : "spinningcomputer",
+                      "gain" : 1.0,
+                      "mixToMono" : false
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 300,
+                    "duration" : 295,
+                    "mediaStart" : 0.0,
+                    "mediaDuration" : 295.0,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "IsGroupExpanded" : "False",
+                      "WinSubProjectDisplayName" : ""
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 5,
+                "medias" : [
+                  {
+                    "id" : 26,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "height" : 80.3689320388844,
+                      "width" : 685.234421493681,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "text" : "Instructor Leonardo...",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : [{"name":"underline","rangeEnd":22,"rangeStart":0,"value":0,"valueType":"int"},{"name":"strikethrough","rangeEnd":22,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontName","rangeEnd":22,"rangeStart":0,"value":"Montserrat","valueType":"string"},{"name":"fontWeight","rangeEnd":22,"rangeStart":0,"value":700,"valueType":"int"},{"name":"fgColor","rangeEnd":22,"rangeStart":0,"value":"(0,0,0,255)","valueType":"color"},{"name":"fontItalic","rangeEnd":22,"rangeStart":0,"value":2,"valueType":"int"},{"name":"fontSize","rangeEnd":22,"rangeStart":0,"value":103,"valueType":"double"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : -300.88906611112,
+                      "translation1" : -310.393202488637
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "DropShadow",
+                          "category" : "categoryVisualEffects",
+                          "parameters" : {
+                            "angle" : {
+                              "type" : "double",
+                              "defaultValue" : 5.49778714378214,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 0.0,
+                                "defaultValue" : 5.49778714378214
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "blur" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 50.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-alpha" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 1.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-blue" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-green" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-red" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "enabled" : {
+                              "type" : "int",
+                              "valueBounds" : {
+                                "minValue" : 0,
+                                "maxValue" : 1,
+                                "defaultValue" : 1
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              },
+                              "keyframes" : [
+                                {
+                                  "time" : 0,
+                                  "value" : 1,
+                                  "duration" : 0
+                                }
+                              ]
+                            },
+                            "offset" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 250.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "opacity" : {
+                              "type" : "double",
+                              "defaultValue" : 0.4,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.4
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            }
+                          }
+                        }
+                    ],
+                    "start" : 0,
+                    "duration" : 300,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 300,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-VAlign" : "center",
+                      "default-translation0" : -33.067961165023,
+                      "default-translation1" : 22.5
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 6,
+                "medias" : [
+                  {
+                    "id" : 27,
+                    "_type" : "IMFile",
+                    "src" : 4,
+                    "trackNumber" : 0,
+                    "trimStartSum" : 300,
+                    "attributes" : {
+                      "ident" : "logo senaaaa"
+                    },
+                    "parameters" : {
+                      "translation0" : 510.330097087154,
+                      "translation1" : -263.316526017665,
+                      "scale0" : 0.467765403032177,
+                      "scale1" : 0.467765403032177
+                    },
+                    "effects" : [
+
+                    ],
+                    "start" : 285,
+                    "duration" : 1789,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 1,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-scale0" : 1.0,
+                      "default-scale1" : 1.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 28,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text",
+                      "style" : "basic",
+                      "height" : 366.0,
+                      "width" : 1239.22147650988,
+                      "word-wrap" : 1.0,
+                      "horizontal-alignment" : "center",
+                      "text" : "GRACIAS!!!",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 96.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : [{"name":"fontWeight","rangeEnd":10,"rangeStart":0,"value":700,"valueType":"int"},{"name":"fgColor","rangeEnd":10,"rangeStart":0,"value":"(0,0,0,255)","valueType":"color"},{"name":"fontItalic","rangeEnd":10,"rangeStart":0,"value":2,"valueType":"int"},{"name":"fontSize","rangeEnd":10,"rangeStart":0,"value":128,"valueType":"double"},{"name":"fontName","rangeEnd":10,"rangeStart":0,"value":"Montserrat","valueType":"string"},{"name":"strikethrough","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"},{"name":"underline","rangeEnd":10,"rangeStart":0,"value":0,"valueType":"int"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : 0.389261745084714,
+                      "translation1" : 93.9729977705855
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "DropShadow",
+                          "category" : "categoryVisualEffects",
+                          "parameters" : {
+                            "angle" : {
+                              "type" : "double",
+                              "defaultValue" : 5.49778714378214,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 0.0,
+                                "defaultValue" : 5.49778714378214
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "blur" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 50.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-alpha" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 1.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-blue" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-green" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-red" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "enabled" : {
+                              "type" : "int",
+                              "valueBounds" : {
+                                "minValue" : 0,
+                                "maxValue" : 1,
+                                "defaultValue" : 1
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              },
+                              "keyframes" : [
+                                {
+                                  "time" : 0,
+                                  "value" : 1,
+                                  "duration" : 0
+                                }
+                              ]
+                            },
+                            "offset" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 250.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "opacity" : {
+                              "type" : "double",
+                              "defaultValue" : 0.4,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.4
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            }
+                          }
+                        }
+                    ],
+                    "start" : 2074,
+                    "duration" : 315,
+                    "mediaStart" : -15,
+                    "mediaDuration" : 315,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-VAlign" : "center",
+                      "default-text-attributes" : "[{\"name\":\"strikethrough\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontSize\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":103,\"valueType\":\"double\"},{\"name\":\"fontItalic\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":2,\"valueType\":\"int\"},{\"name\":\"fontName\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":\"Montserrat\",\"valueType\":\"string\"},{\"name\":\"fgColor\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":\"(0,0,0,255)\",\"valueType\":\"color\"},{\"name\":\"underline\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":0,\"valueType\":\"int\"},{\"name\":\"fontWeight\",\"rangeEnd\":36,\"rangeStart\":0,\"value\":700,\"valueType\":\"int\"}]",
+                      "default-translation0" : -33.067961165023,
+                      "default-translation1" : 22.5
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 7,
+                "medias" : [
+                  {
+                    "id" : 29,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text-arrow",
+                      "style" : "basic",
+                      "fill-color-blue" : 0.258823529411765,
+                      "fill-color-green" : 0.258823529411765,
+                      "fill-color-opacity" : 1.0,
+                      "fill-color-red" : 0.988235294117647,
+                      "height" : 55.993527508173,
+                      "stroke-color-blue" : 1.0,
+                      "stroke-color-green" : 1.0,
+                      "stroke-color-opacity" : 1.0,
+                      "stroke-color-red" : 1.0,
+                      "stroke-width" : 0.0,
+                      "tail-x" : -121.391585760517,
+                      "tail-y" : 12.0032362459135,
+                      "width" : 157.216828478965,
+                      "word-wrap" : 1.0,
+                      "fill-style" : "solid",
+                      "horizontal-alignment" : "center",
+                      "stroke-style" : "solid",
+                      "text" : "Crear nueva conexión",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 64.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : [{"name":"underline","rangeEnd":22,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":22,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"fontSize","rangeEnd":22,"rangeStart":0,"value":64,"valueType":"double"},{"name":"strikethrough","rangeEnd":22,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontItalic","rangeEnd":22,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontName","rangeEnd":22,"rangeStart":0,"value":"Montserrat","valueType":"string"},{"name":"fontWeight","rangeEnd":22,"rangeStart":0,"value":100,"valueType":"int"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : -354.498381877075,
+                      "translation1" : 251.745588741396,
+                      "rotation2" : -3.14159265358979
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "DropShadow",
+                          "category" : "categoryVisualEffects",
+                          "parameters" : {
+                            "angle" : {
+                              "type" : "double",
+                              "defaultValue" : 5.49778714378214,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 0.0,
+                                "defaultValue" : 5.49778714378214
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "blur" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 50.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-alpha" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 1.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-blue" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-green" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-red" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "enabled" : {
+                              "type" : "int",
+                              "valueBounds" : {
+                                "minValue" : 0,
+                                "maxValue" : 1,
+                                "defaultValue" : 1
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              },
+                              "keyframes" : [
+                                {
+                                  "time" : 0,
+                                  "value" : 1,
+                                  "duration" : 0
+                                }
+                              ]
+                            },
+                            "offset" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 250.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "opacity" : {
+                              "type" : "double",
+                              "defaultValue" : 0.4,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.4
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            }
+                          }
+                        }
+                    ],
+                    "start" : 695,
+                    "duration" : 117,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 117,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-VAlign" : "center",
+                      "default-rotation2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 30,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text-arrow",
+                      "style" : "basic",
+                      "fill-color-blue" : 0.172549019607843,
+                      "fill-color-green" : 0.615686274509804,
+                      "fill-color-opacity" : 1.0,
+                      "fill-color-red" : 0.105882352941176,
+                      "height" : 38.3365695792643,
+                      "stroke-color-blue" : 1.0,
+                      "stroke-color-green" : 1.0,
+                      "stroke-color-opacity" : 1.0,
+                      "stroke-color-red" : 1.0,
+                      "stroke-width" : 0.0,
+                      "tail-x" : -147.877022653767,
+                      "tail-y" : 20.8317152103678,
+                      "width" : 104.245954692465,
+                      "word-wrap" : 1.0,
+                      "fill-style" : "solid",
+                      "horizontal-alignment" : "center",
+                      "stroke-style" : "solid",
+                      "text" : "Probar Conexión",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 64.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : [{"name":"fontItalic","rangeEnd":17,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontWeight","rangeEnd":17,"rangeStart":0,"value":100,"valueType":"int"},{"name":"strikethrough","rangeEnd":17,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontName","rangeEnd":17,"rangeStart":0,"value":"Montserrat","valueType":"string"},{"name":"fontSize","rangeEnd":17,"rangeStart":0,"value":64,"valueType":"double"},{"name":"fgColor","rangeEnd":17,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"underline","rangeEnd":17,"rangeStart":0,"value":0,"valueType":"int"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : 286.537215963857,
+                      "translation1" : -161.80133740523,
+                      "rotation2" : -3.14159265358979
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "DropShadow",
+                          "category" : "categoryVisualEffects",
+                          "parameters" : {
+                            "angle" : {
+                              "type" : "double",
+                              "defaultValue" : 5.49778714378214,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 0.0,
+                                "defaultValue" : 5.49778714378214
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "blur" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 50.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-alpha" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 1.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-blue" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-green" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-red" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "enabled" : {
+                              "type" : "int",
+                              "valueBounds" : {
+                                "minValue" : 0,
+                                "maxValue" : 1,
+                                "defaultValue" : 1
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              },
+                              "keyframes" : [
+                                {
+                                  "time" : 0,
+                                  "value" : 1,
+                                  "duration" : 0
+                                }
+                              ]
+                            },
+                            "offset" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 250.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "opacity" : {
+                              "type" : "double",
+                              "defaultValue" : 0.4,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.4
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            }
+                          }
+                        }
+                    ],
+                    "start" : 1230,
+                    "duration" : 68,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 68,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-VAlign" : "center",
+                      "default-fill-color-blue" : 0.258823529411765,
+                      "default-fill-color-green" : 0.258823529411765,
+                      "default-fill-color-red" : 0.988235294117647,
+                      "default-rotation2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 31,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "text-arrow",
+                      "style" : "basic",
+                      "fill-color-blue" : 0.172549019607843,
+                      "fill-color-green" : 0.615686274509804,
+                      "fill-color-opacity" : 1.0,
+                      "fill-color-red" : 0.105882352941176,
+                      "height" : 55.993527508173,
+                      "stroke-color-blue" : 1.0,
+                      "stroke-color-green" : 1.0,
+                      "stroke-color-opacity" : 1.0,
+                      "stroke-color-red" : 1.0,
+                      "stroke-width" : 0.0,
+                      "tail-x" : -121.391585760517,
+                      "tail-y" : 12.0032362459135,
+                      "width" : 157.216828478965,
+                      "word-wrap" : 1.0,
+                      "fill-style" : "solid",
+                      "horizontal-alignment" : "center",
+                      "stroke-style" : "solid",
+                      "text" : "Conectado",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 64.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : [{"name":"strikethrough","rangeEnd":9,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":9,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"fontSize","rangeEnd":9,"rangeStart":0,"value":64,"valueType":"double"},{"name":"fontWeight","rangeEnd":9,"rangeStart":0,"value":100,"valueType":"int"},{"name":"underline","rangeEnd":9,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontItalic","rangeEnd":9,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontName","rangeEnd":9,"rangeStart":0,"value":"Montserrat","valueType":"string"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : -531.067961165081,
+                      "translation1" : -55.2420314649636,
+                      "rotation2" : -6.66454292040517
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "DropShadow",
+                          "category" : "categoryVisualEffects",
+                          "parameters" : {
+                            "angle" : {
+                              "type" : "double",
+                              "defaultValue" : 5.49778714378214,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 0.0,
+                                "defaultValue" : 5.49778714378214
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "blur" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 50.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-alpha" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 1.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-blue" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-green" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-red" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "enabled" : {
+                              "type" : "int",
+                              "valueBounds" : {
+                                "minValue" : 0,
+                                "maxValue" : 1,
+                                "defaultValue" : 1
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              },
+                              "keyframes" : [
+                                {
+                                  "time" : 0,
+                                  "value" : 1,
+                                  "duration" : 0
+                                }
+                              ]
+                            },
+                            "offset" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 250.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "opacity" : {
+                              "type" : "double",
+                              "defaultValue" : 0.4,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.4
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            }
+                          }
+                        }
+                    ],
+                    "start" : 1298,
+                    "duration" : 91,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 91,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-VAlign" : "center",
+                      "default-fill-color-blue" : 0.258823529411765,
+                      "default-fill-color-green" : 0.258823529411765,
+                      "default-fill-color-red" : 0.988235294117647,
+                      "default-rotation2" : 0.0,
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 32,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "speech-bubble2",
+                      "style" : "urban",
+                      "fill-color-blue" : 0.384313725490196,
+                      "fill-color-green" : 0.525490196078431,
+                      "fill-color-opacity" : 1.0,
+                      "fill-color-red" : 0.96078431372549,
+                      "height" : 120.543689320368,
+                      "stroke-color-blue" : 1.0,
+                      "stroke-color-green" : 1.0,
+                      "stroke-color-opacity" : 1.0,
+                      "stroke-color-red" : 1.0,
+                      "stroke-width" : 0.0,
+                      "tail-x" : -218.621359223291,
+                      "tail-y" : -67.300970873802,
+                      "width" : 187.300970873796,
+                      "word-wrap" : 1.0,
+                      "fill-style" : "solid",
+                      "horizontal-alignment" : "center",
+                      "stroke-style" : "solid",
+                      "text" : "Verificar tablas creadas en este usuario (Leo)",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 70.0,
+                        "tracking" : 0.0,
+                        "name" : "Dosis",
+                        "weight" : "Semi Bold"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : [{"name":"strikethrough","rangeEnd":46,"rangeStart":0,"value":0,"valueType":"int"},{"name":"underline","rangeEnd":46,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontSize","rangeEnd":46,"rangeStart":0,"value":70,"valueType":"double"},{"name":"fontName","rangeEnd":46,"rangeStart":0,"value":"Dosis","valueType":"string"},{"name":"fontWeight","rangeEnd":46,"rangeStart":0,"value":100,"valueType":"int"},{"name":"fgColor","rangeEnd":46,"rangeStart":0,"value":"(255,255,255,255)","valueType":"color"},{"name":"fontItalic","rangeEnd":46,"rangeStart":0,"value":0,"valueType":"int"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : -297.961165048469,
+                      "translation1" : 274.786407767028
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "DropShadow",
+                          "category" : "categoryVisualEffects",
+                          "parameters" : {
+                            "angle" : {
+                              "type" : "double",
+                              "defaultValue" : 5.49778714378214,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 0.0,
+                                "defaultValue" : 5.49778714378214
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "blur" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 50.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-alpha" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 1.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-blue" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-green" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-red" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "enabled" : {
+                              "type" : "int",
+                              "valueBounds" : {
+                                "minValue" : 0,
+                                "maxValue" : 1,
+                                "defaultValue" : 1
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              },
+                              "keyframes" : [
+                                {
+                                  "time" : 0,
+                                  "value" : 1,
+                                  "duration" : 0
+                                }
+                              ]
+                            },
+                            "offset" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 250.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "opacity" : {
+                              "type" : "double",
+                              "defaultValue" : 0.4,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.4
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            }
+                          }
+                        }
+                    ],
+                    "start" : 1595,
+                    "duration" : 150,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 150,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-VAlign" : "center",
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  },
+                  {
+                    "id" : 33,
+                    "_type" : "Callout",
+                    "def" : {
+                      "kind" : "remix",
+                      "shape" : "thought-bubble2",
+                      "style" : "basic",
+                      "fill-color-blue" : 0.0235294117647059,
+                      "fill-color-green" : 0.674509803921569,
+                      "fill-color-opacity" : 1.0,
+                      "fill-color-red" : 0.968627450980392,
+                      "height" : 150.0,
+                      "stroke-color-blue" : 1.0,
+                      "stroke-color-green" : 1.0,
+                      "stroke-color-opacity" : 1.0,
+                      "stroke-color-red" : 1.0,
+                      "stroke-width" : 0.0,
+                      "tail-x" : -541.423948220081,
+                      "tail-y" : 133.275080906171,
+                      "width" : 300.0,
+                      "word-wrap" : 1.0,
+                      "fill-style" : "solid",
+                      "horizontal-alignment" : "center",
+                      "stroke-style" : "solid",
+                      "text" : "Model: muestra el MR de las tablas creadas.",
+                      "vertical-alignment" : "center",
+                      "font" : {
+                        "color-blue" : 1.0,
+                        "color-green" : 1.0,
+                        "color-red" : 1.0,
+                        "size" : 64.0,
+                        "tracking" : 0.0,
+                        "name" : "Montserrat",
+                        "weight" : "Regular"
+                      },
+                      "textAttributes" : {
+                        "type" : "textAttributeList",
+                        "keyframes" : [
+                          {
+                            "time" : 0,
+                            "value" : [{"name":"fontWeight","rangeEnd":43,"rangeStart":0,"value":100,"valueType":"int"},{"name":"strikethrough","rangeEnd":43,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fontSize","rangeEnd":43,"rangeStart":0,"value":64,"valueType":"double"},{"name":"fontItalic","rangeEnd":43,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":43,"rangeStart":6,"value":"(255,255,255,255)","valueType":"color"},{"name":"underline","rangeEnd":43,"rangeStart":0,"value":0,"valueType":"int"},{"name":"fgColor","rangeEnd":6,"rangeStart":0,"value":"(0,0,0,255)","valueType":"color"},{"name":"fontName","rangeEnd":43,"rangeStart":0,"value":"Montserrat","valueType":"string"}],
+                            "duration" : 0
+                          }
+                        ]
+                      }
+                    },
+                    "attributes" : {
+                      "autoRotateText" : true
+                    },
+                    "parameters" : {
+                      "translation0" : 222.919093851013,
+                      "translation1" : 135.737864077753
+                    },
+                    "effects" : [
+                        {
+                          "effectName" : "DropShadow",
+                          "category" : "categoryVisualEffects",
+                          "parameters" : {
+                            "angle" : {
+                              "type" : "double",
+                              "defaultValue" : 5.49778714378214,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 0.0,
+                                "defaultValue" : 5.49778714378214
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "blur" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 50.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-alpha" : {
+                              "type" : "double",
+                              "defaultValue" : 1.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 1.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-blue" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-green" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "color-red" : {
+                              "type" : "double",
+                              "defaultValue" : 0.1216,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.1216
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "enabled" : {
+                              "type" : "int",
+                              "valueBounds" : {
+                                "minValue" : 0,
+                                "maxValue" : 1,
+                                "defaultValue" : 1
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              },
+                              "keyframes" : [
+                                {
+                                  "time" : 0,
+                                  "value" : 1,
+                                  "duration" : 0
+                                }
+                              ]
+                            },
+                            "offset" : {
+                              "type" : "double",
+                              "defaultValue" : 10.0,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 250.0,
+                                "defaultValue" : 10.0
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            },
+                            "opacity" : {
+                              "type" : "double",
+                              "defaultValue" : 0.4,
+                              "valueBounds" : {
+                                "minValue" : 0.0,
+                                "maxValue" : 1.0,
+                                "defaultValue" : 0.4
+                              },
+                              "uiHints" : {
+                                "userInterfaceType" : 0,
+                                "unitType" : 0
+                              }
+                            }
+                          }
+                        }
+                    ],
+                    "start" : 1976,
+                    "duration" : 80,
+                    "mediaStart" : 0,
+                    "mediaDuration" : 80,
+                    "scalar" : 1,
+                    "metadata" : {
+                      "WinSubProjectDisplayName" : "",
+                      "clipSpeedAttribute" : false,
+                      "default-HAlign" : "center",
+                      "default-VAlign" : "center",
+                      "default-translation0" : 0.0,
+                      "default-translation1" : 0.0
+                    },
+                    "animationTracks" : {
+
+                    }
+                  }
+                ]
+              },
+              {
+                "trackIndex" : 8,
+                "medias" : [
+                ]
+              },
+              {
+                "trackIndex" : 9,
+                "medias" : [
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "trackAttributes" : [
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      },
+      {
+        "ident" : "",
+        "audioMuted" : false,
+        "videoHidden" : false,
+        "metadata" : {
+          "IsLocked" : "False",
+          "WinTrackHeight" : "56"
+        }
+      }
+    ],
+    "captionAttributes" : {
+      "enabled" : true,
+      "fontName" : "Arial",
+      "fontSize" : 45,
+      "backgroundColor" : [ 0, 0, 0, 191],
+      "foregroundColor" : [ 255, 255, 255, 255],
+      "lang" : "en",
+      "alignment" : 0,
+      "defaultFontSize" : true,
+      "opacity" : 0.5,
+      "backgroundEnabled" : true,
+      "backgroundOnlyAroundText" : true
+    },
+    "backgroundColor" : [ 0, 0, 0, 255]
+  },
+  "metadata" : {
+    "AutoSaveFile" : "C:\\Users\\LEOOOO\\AppData\\Local\\TechSmith\\Camtasia Studio\\9.0\\Auto-Saves\\Migracion oracle to mysqlb008674.autosave.tscproj",
+    "CanvasZoom" : 45,
+    "Date" : "2018-02-12 03:26:26 p. m.",
+    "IsAutoSave" : "0",
+    "Language" : "ENU",
+    "ProfileName" : "MP4 only (up to 1080p)",
+    "ProjectDimensionsChanged" : "1",
+    "Title" : "Migracion oracle to mysql",
+    "audioNarrationNotes" : "",
+    "calloutStyle" : "All",
+    "canvasDetached" : "False",
+    "canvasPositionHeight" : "0",
+    "canvasPositionLeft" : "0",
+    "canvasPositionTop" : "0",
+    "canvasPositionWidth" : "0"
+  }
+}
